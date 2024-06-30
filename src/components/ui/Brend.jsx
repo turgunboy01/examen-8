@@ -12,10 +12,42 @@ const Brend = () => {
 
   const settings = {
     dots: true,
-    infinite: true,
+    infinite: false,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
+    initialSlide: 0,
+    infinite: true,
+
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+    ],
   };
 
   const slides = [
@@ -36,13 +68,18 @@ const Brend = () => {
   return (
     <div className="bg-[#f8f7f3] py-[80px] pb-[150px]">
       <div className="max-w-[1350px] mx-auto px-5 flex flex-col md:flex-row w-full gap-[30px]">
-        <div className="sm:w-1/3 w-full">
-          <h1 className="text-[30px] font-medium">Бренды</h1>
+        <div className=" md:w-1/3 w-full">
+          <div className="flex justify-between">
+            <h1 className="text-[30px] font-medium">Бренды</h1>
+            <button className="px-5 py-3 hidden sm:block md:hidden  rounded-full border text-[14px] text-[#fff] bg-[#088269]">
+              Сертификаты
+            </button>
+          </div>
           <p className="text-[#202020] text-[16px] pt-[10px]">
             Эксклюзивные поставщики
           </p>
         </div>
-        <div className="h-[350px] sm:w-2/3 w-full flex flex-col gap-[40px]">
+        <div className="h-[350px] md:w-2/3 w-full flex flex-col gap-[40px]">
           <div>
             <Slider ref={sliderRef} {...settings}>
               {slides.map((slide, index) => (
@@ -57,8 +94,8 @@ const Brend = () => {
               ))}
             </Slider>
           </div>
-          <div className="flex justify-between ">
-            <div className="flex gap-3">
+          <div className="flex sm:hidden md:flex justify-center md:justify-between  ">
+            <div className="hidden md:flex gap-3">
               <button
                 className="w-[41px] h-[41px] rounded-full border flex items-center justify-center"
                 onClick={() => sliderRef.current.slickPrev()}
@@ -72,7 +109,7 @@ const Brend = () => {
                 <BiArrowToRight />
               </button>
             </div>
-            <button className="px-5 py-3 rounded-full border text-[14px] text-[#fff] bg-[#088269]">
+            <button className="px-5 py-3  rounded-full border text-[14px] text-[#fff] bg-[#088269]">
               Сертификаты
             </button>
           </div>

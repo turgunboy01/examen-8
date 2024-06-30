@@ -12,67 +12,67 @@ const Category = () => {
     <div className="bg-[#f8f7f3]">
       <div className="max-w-[1350px] mx-auto px-5">
         <h2 className="text-[30px] py-[20px]">Популярные категории</h2>
-        <div className="grid grid-cols-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
           <div className="flex flex-col gap-3">
-            <div className="w-[320px]   border-[1px] overflow-hidden rounded-lg ">
+            <div className="w-   border-[1px] overflow-hidden rounded-lg ">
               <div className="h-[220px] bg-white  flex  items-center flex-col justify-center">
                 <img src={img1} alt="s" />
               </div>
-              <h2 className="p-[20px] text-[#202020] text-[18px]">
+              <h2 className="p-[20px] text-[#202020] text-[14px] lg:text-[16px] xl:text-[18px]">
                 Дерматологическое оборудование
               </h2>
             </div>
-            <div className="w-[320px]   border-[1px] overflow-hidden rounded-lg ">
+            <div className="   border-[1px] overflow-hidden rounded-lg ">
               <div className="h-[220px] bg-white  flex  items-center flex-col justify-center">
                 <img src={img2} alt="s" />
               </div>
-              <h2 className="p-[20px] text-[#202020] text-[18px]">
+              <h2 className="p-[20px] text-[#202020] text-[14px] lg:text-[16px] xl:text-[18px]">
                 Ветеринарное оборудование
               </h2>
             </div>
           </div>
           <div className="">
-            <div className="w-[320px]   border-[1px] overflow-hidden rounded-lg ">
+            <div className="  border-[1px] overflow-hidden rounded-lg ">
               <div className="h-[550px] bg-white  flex  items-center flex-col justify-center">
                 <img src={img7} alt="s" />
               </div>
-              <h2 className="p-[20px] text-[#202020] text-[18px]">
+              <h2 className="p-[20px] text-[#202020] text-[14px]   lg:text-[16px] xl:text-[18px]">
                 Дерматологическое оборудование
               </h2>
             </div>
           </div>
           <div className="flex flex-col gap-3">
-            <div className="w-[320px]   border-[1px] overflow-hidden rounded-lg ">
+            <div className="   border-[1px] overflow-hidden rounded-lg ">
               <div className="h-[220px] bg-white  flex  items-center flex-col justify-center">
                 <img src={img3} alt="s" />
               </div>
-              <h2 className="p-[20px] text-[#202020] text-[18px]">
+              <h2 className="p-[20px] text-[#202020] text-[14px] lg:text-[16px] xl:text-[18px]">
                 Оборудование для анастезиологии
               </h2>
             </div>
-            <div className="w-[320px]   border-[1px] overflow-hidden rounded-lg ">
+            <div className="   border-[1px] overflow-hidden rounded-lg ">
               <div className="h-[220px] bg-white  flex  items-center flex-col justify-center">
                 <img src={img4} alt="s" />
               </div>
-              <h2 className="p-[20px] text-[#202020] text-[18px]">
+              <h2 className="p-[20px] text-[#202020] text-[14px] lg:text-[16px] xl:text-[18px]">
                 Оборудование для анастезиологии
               </h2>
             </div>
           </div>{" "}
           <div className="flex flex-col gap-3">
-            <div className="w-[320px]   border-[1px] overflow-hidden rounded-lg ">
+            <div className="   border-[1px] overflow-hidden rounded-lg ">
               <div className="h-[220px] bg-white  flex  items-center flex-col justify-center">
                 <img src={img5} alt="s" />
               </div>
-              <h2 className="p-[20px] text-[#202020] text-[18px]">
+              <h2 className="p-[20px] text-[#202020] text-[14px] lg:text-[16px] xl:text-[18px]">
                 Мебель для медецинских целей
               </h2>
             </div>
-            <div className="w-[320px]   border-[1px] overflow-hidden rounded-lg ">
+            <div className="   border-[1px] overflow-hidden rounded-lg ">
               <div className="h-[220px] bg-white  flex  items-center flex-col justify-center">
                 <img src={img6} alt="s" />
               </div>
-              <h2 className="p-[20px] text-[#202020] text-[18px]">
+              <h2 className="p-[20px] text-[#202020] text-[14px] lg:text-[16px] xl:text-[18px]">
                 Дерматологическое оборудование
               </h2>
             </div>

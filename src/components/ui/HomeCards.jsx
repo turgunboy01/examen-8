@@ -13,22 +13,30 @@ const HomeCards = () => {
         <h2 className="text-[30px] text-[#202020] pb-[30px]">
           Почему выбирают нас?
         </h2>
-        <div className=" flex flex-wrap gap-2 ">
-          <div className="w-[320px] h-[320px] border rounded-lg flex-col gap-2  flex justify-center items-center">
+        <div className=" grid grid-cols-2 md:grid-cols-4 gap-2 ">
+          <div className=" h-[250px] xl:h-[320px] border rounded-lg flex-col gap-4  flex justify-center items-center">
             <CardIcon1 />
-            <h2 className="text-[#202020]">Быстрая доставка</h2>
+            <h2 className="text-[#202020] text-center text-[12px] sm:text-[15px]">
+              Быстрая доставка
+            </h2>
           </div>
-          <div className="w-[320px] h-[320px] rounded-lg border flex-col flex gap-2 justify-center items-center">
+          <div className="h-[250px] xl:h-[320px] rounded-lg border flex-col flex gap-4 justify-center items-center">
             <CardIcon2 />
-            <h2 className="text-[#202020]">Весь товар сертифицирован</h2>
+            <h2 className="text-[#202020] text-center text-[12px] sm:text-[15px]">
+              Весь товар сертифицирован
+            </h2>
           </div>
-          <div className="w-[320px] h-[320px] rounded-lg border flex-col flex gap-2 justify-center items-center">
+          <div className=" h-[250px] xl:h-[320px]  rounded-lg border flex-col flex gap-4 justify-center items-center">
             <CardIcon3 />
-            <h2 className="text-[#202020]">Гибкая система скидок</h2>
+            <h2 className="text-[#202020] text-center text-[12px] sm:text-[15px]">
+              Гибкая система скидок
+            </h2>
           </div>
-          <div className="w-[320px] h-[320px] rounded-lg border flex flex-col  gap-2 justify-center items-center">
+          <div className=" h-[250px] xl:h-[320px] rounded-lg border flex flex-col  gap-4 justify-center items-center">
             <CardIcon4 />
-            <h2 className="text-[#202020]">Лет на рынке</h2>
+            <h2 className="text-[#202020] text-center text-[12px] sm:text-[15px]">
+              Лет на рынке
+            </h2>
           </div>
         </div>
       </div>
