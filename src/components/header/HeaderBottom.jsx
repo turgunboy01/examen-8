@@ -9,6 +9,7 @@ import {
   MenuIcon5,
 } from "../../assets/HeaderSvg";
 import { IoCallOutline } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 const HeaderBottom = () => {
   return (
@@ -17,12 +18,12 @@ const HeaderBottom = () => {
         <div className="hidden sm:flex justify-between items-center py-4 ">
           <div className="flex items-center gap-[10px] md:gap-[20px] xl:gap-[30px]">
             <li>
-              <a
-                href="#"
+              <Link
+                to="/katalog"
                 className="flex items-center text-[10px] pt-1 gap-1 md:text-[12px]"
               >
                 <HederCatalog className="w-[10px]" /> Каталог
-              </a>
+              </Link>
             </li>
             <li>
               <a
@@ -107,13 +108,13 @@ const HeaderBottom = () => {
             </a>
           </li>
           <li>
-            <a
-              href="#"
+            <Link
+              to="/katalog"
               className="flex flex-col text-[12px] items-center justify-center"
             >
               <MenuIcon2 />
               Каталог
-            </a>
+            </Link>
           </li>
           <li>
             <a

@@ -1,5 +1,4 @@
 import React from "react";
-import { BsArrowBarRight } from "react-icons/bs";
 import { RiArrowRightSLine } from "react-icons/ri";
 import img1 from "../../assets/katalog/katalog1.png";
 import img2 from "../../assets/katalog/katalog2.png";
@@ -144,7 +143,7 @@ const KatalogComponent = () => {
             <div className="flex gap-5 flex-col">
               <div className="border-[1px] overflow-hidden rounded-lg ">
                 <div className=" p-[20px] h-[220px] bg-white  flex  items-center flex-col justify-center">
-                  <img src={img1} alt="s" />
+                  <img src={img7} alt="s" />
                 </div>
                 <h2 className="p-[20px] text-[#202020] text-[14px] lg:text-[16px] xl:text-[18px]">
                   Дерматологическое оборудование
@@ -152,7 +151,7 @@ const KatalogComponent = () => {
               </div>
               <div className="border-[1px] overflow-hidden rounded-lg ">
                 <div className=" p-[20px] h-[220px] bg-white  flex  items-center flex-col justify-center">
-                  <img src={img2} alt="s" />
+                  <img src={img8} alt="s" />
                 </div>
                 <h2 className="p-[20px] text-[#202020] text-[14px] lg:text-[16px] xl:text-[18px]">
                   Дерматологическое оборудование
@@ -162,7 +161,7 @@ const KatalogComponent = () => {
             <div className="flex gap-5 flex-col">
               <div className="border-[1px] overflow-hidden rounded-lg ">
                 <div className=" p-[20px] h-[220px] bg-white  flex  items-center flex-col justify-center">
-                  <img src={img3} alt="s" />
+                  <img src={img9} alt="s" />
                 </div>
                 <h2 className="p-[20px] text-[#202020] text-[14px] lg:text-[16px] xl:text-[18px]">
                   Дерматологическое оборудование
@@ -170,7 +169,7 @@ const KatalogComponent = () => {
               </div>
               <div className="border-[1px] overflow-hidden rounded-lg ">
                 <div className=" p-[20px] h-[220px] bg-white  flex  items-center flex-col justify-center">
-                  <img src={img4} alt="s" />
+                  <img src={img10} alt="s" />
                 </div>
                 <h2 className="p-[20px] text-[#202020] text-[14px] lg:text-[16px] xl:text-[18px]">
                   Дерматологическое оборудование

@@ -7,15 +7,16 @@ import {
   HeaderIcon4,
   HeaderLogo,
 } from "../../assets/HeaderSvg";
+import { Link } from "react-router-dom";
 
 const HeaderCenter = () => {
   return (
     <div className="max-w-[1350px] w-full mx-auto px-5">
       <div className="py-[20px]  flex justify-between gap-4 ">
         <div className="flex gap-[30px] w-full md:gap-[50px]">
-          <div className="hidden sm:block">
+          <Link to={"/"} className="hidden sm:block">
             <HeaderLogo />
-          </div>
+          </Link>
           <div className="w-full lg:w-[500px] overflow-hidden h-[43px] md:h-[47px] justify-between bg-[#d5d1e1] rounded-full  flex  items-center border ">
             <div className="flex-1 flex  bg-white rounded-full">
               <select
