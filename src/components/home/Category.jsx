@@ -14,7 +14,7 @@ const Category = () => {
         <h2 className="text-[30px] py-[20px]">Популярные категории</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
           <div className="flex flex-col gap-3">
-            <div className="w-   border-[1px] overflow-hidden rounded-lg ">
+            <div className="   border-[1px] overflow-hidden rounded-lg ">
               <div className="h-[220px] bg-white  flex  items-center flex-col justify-center">
                 <img src={img1} alt="s" />
               </div>
