@@ -96,7 +96,7 @@ const HeaderBottom = () => {
           </div>
         </div>
       </div>
-      <div className="fixed bottom-0 bg-[#fff] border-t w-full  px-[20px] py-3  z-[999]">
+      <div className="fixed  sm:hidden block bottom-0 bg-[#fff] border-t w-full  px-[20px] py-3  z-[999]">
         <ul className="flex justify-between gap-4">
           <li>
             <a
