@@ -44,38 +44,56 @@ const Opit = () => {
   ];
   return (
     <div className="bg-[#f8f7f3] py-[80px]">
-      <div className="max-w-[1350px] mx-auto px-5 flex w-full justify-between gap-[30px]">
-        <div className="h-[300px] w-1/2">
-          <h1 className="text-[30px] font-medium">
-            Популярные <br /> категории
+      <div className="max-w-[1350px] mx-auto px-5 flex w-full md:flex-row flex-col justify-between  gap-[30px]">
+        <div className=" md:w-1/2 w-full">
+          <h1 className="text-[30px] leading-[36px] font-medium">
+            Опытные сотрудники из производственных компаний
           </h1>
+          <p className="text-[16px] pt-[20px]">
+            Наши сотрудники имеют огромный опыт работы в сложных условиях,
+            в том числе в разгар пандемии COVID–19. В этот период мы осуществили
+            поставки медицинских аппаратов в новейшие клиники Минобороны
+            в различных регионах страны.
+          </p>
         </div>
-        <div className=" w-1/2  gap-[40px]">
+        <div className=" md:w-1/2 w-full  gap-[40px]">
           <div>
             <Slider ref={sliderRef} {...settings}>
               {slides.map((slide, index) => (
                 <div key={index} className="   bg-[#f8f7f3]">
                   <div className="flex gap-2">
-                    <div className="border">
-                      <div className="w-full   bg-[#fff] flex items-center justify-center">
-                        <img src={slide.src} alt={slide.title} />
+                    <div className="border w-full sm:w-[60%] rounded-lg">
+                      <div className="w-full bg-[#fff] flex items-center justify-center">
+                        <img
+                          src={slide.src}
+                          className="h-[250px] w-full"
+                          alt={slide.title}
+                        />
                       </div>
-                      <h2 className="text-[#202020] px-4 pt-3 border-t w-[30%]">
+                      <h2 className="text-[#202020] px-4 pt-3 text-[16px] border-t w-[100%] lg:w-[30%]">
                         {slide.title}
                       </h2>
-                      <p className="px-4  text-[15px] text-[grey] w-[80%]">
+                      <p className="px-4  text-[14px] text-[grey] pb-2 w-[80%]">
                         {slide.desc}
                       </p>
                     </div>{" "}
-                    <div className="flex flex-col gap-2">
+                    <div className="hidden sm:flex flex-col w-[40%] gap-2">
                       <div className="">
                         <div className="w-full  bg-[#fff] flex items-center justify-center">
-                          <img src={slide.src1} alt={slide.title} />
+                          <img
+                            src={slide.src1}
+                            className="h-[178px] w-full md:w-[220px]"
+                            alt={slide.title}
+                          />
                         </div>
                       </div>{" "}
                       <div className="">
                         <div className="w-full  bg-[#fff] flex items-center justify-center">
-                          <img src={slide.src2} alt={slide.title} />
+                          <img
+                            src={slide.src2}
+                            className="h-[178px] w-full md:w-[220px]"
+                            alt={slide.title}
+                          />
                         </div>
                       </div>
                     </div>
@@ -99,9 +117,6 @@ const Opit = () => {
                 <BiArrowToRight />
               </button>
             </div>
-            <button className="px-5 py-3 rounded-full border text-[14px] text-[#fff] bg-[#088269]">
-              Сертификаты
-            </button>
           </div>
         </div>
       </div>

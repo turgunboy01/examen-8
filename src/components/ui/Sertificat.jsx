@@ -12,12 +12,43 @@ const Sertificat = () => {
 
   const settings = {
     dots: true,
-    infinite: true,
+    infinite: false,
     speed: 500,
-    slidesToShow: 5,
+    slidesToShow: 4,
     slidesToScroll: 1,
-  };
+    initialSlide: 0,
+    infinite: true,
 
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+    ],
+  };
   const slides = [
     {
       src: img1,
@@ -40,14 +71,12 @@ const Sertificat = () => {
   ];
 
   return (
-    <div className="bg-[#f8f7f3] py-[80px]">
-      <div className="max-w-[1350px] mx-auto px-5 flex w-full gap-[30px]">
-        <div className="h-[300px] w-1/3">
-          <h1 className="text-[30px] font-medium">
-            Сертификаты на <br /> продукцию
-          </h1>
+    <div className="bg-[#f8f7f3] ">
+      <div className="max-w-[1350px] mx-auto px-5 flex flex-col md:flex-row w-full gap-[30px]">
+        <div className=" md:w-1/3 w-full">
+          <h1 className="text-[30px] font-medium">Сертификаты на продукцию</h1>
         </div>
-        <div className="h-[350px] w-2/3 flex flex-col gap-[40px]">
+        <div className="h-[350px] md:w-2/3 w-full flex flex-col gap-[40px]">
           <div>
             <Slider ref={sliderRef} {...settings}>
               {slides.map((slide, index) => (
@@ -66,7 +95,7 @@ const Sertificat = () => {
               ))}
             </Slider>
           </div>
-          <div className="flex justify-between">
+          <div className="hidden md:flex justify-between">
             <div className="flex gap-3">
               <button
                 className="w-[41px] h-[41px] rounded-full border flex items-center justify-center"
@@ -81,9 +110,6 @@ const Sertificat = () => {
                 <BiArrowToRight />
               </button>
             </div>
-            <button className="px-5 py-3 rounded-full border text-[14px] text-[#fff] bg-[#088269]">
-              Сертификаты
-            </button>
           </div>
         </div>
       </div>

@@ -1,5 +1,10 @@
 import React from "react";
-import { CardIcon5, CardIcon6, CardIcon7, CardIcon8 } from "../../assets/HomeSvg";
+import {
+  CardIcon5,
+  CardIcon6,
+  CardIcon7,
+  CardIcon8,
+} from "../../assets/HomeSvg";
 const Udovno = () => {
   return (
     <div className="bg-[#f8f7f3] py-[80px]">
@@ -9,35 +14,40 @@ const Udovno = () => {
             <h2 className="text-[30px] text-[#202020] pb-[30px]">
               С нами выгодно и удобно
             </h2>
-            <button className="px-5 py-3 rounded-full border text-[14px] text-[#fff] bg-[#088269]">
+            <button className="lg:hidden sm:block hidden px-5 py-3 rounded-full border text-[14px] text-[#fff] bg-[#088269]">
               Проверить статус доставки
             </button>
           </div>
-          <div className=" flex flex-wrap gap-2 ">
-            <div className="w-[320px] h-[320px] border rounded-lg flex-col gap-2 text-center  flex justify-center items-center">
+          <div className=" grid grid-cols-2 md:grid-cols-4 gap-2 ">
+            <div className=" h-[250px] xl:h-[320px] border rounded-lg flex-col gap-4  flex justify-center items-center">
               <CardIcon5 />
-              <h2 className="text-[#202020] pt-[10px]">
+              <h2 className="text-[#202020] text-center text-[12px] sm:text-[15px]">
                 Доставка <br /> по всей России
               </h2>
             </div>
-            <div className="w-[320px] h-[320px] rounded-lg border flex-col text-center flex gap-2 justify-center items-center">
+            <div className="h-[250px] xl:h-[320px] rounded-lg border flex-col flex gap-4 justify-center items-center">
               <CardIcon6 />
-              <h2 className="text-[#202020] pt-[15px]">
+              <h2 className="text-[#202020] text-center text-[12px] sm:text-[15px]">
                 Собственный склад <br /> с продукцией
               </h2>
             </div>
-            <div className="w-[320px] h-[320px] rounded-lg border flex-col text-center flex gap-2 justify-center items-center">
+            <div className="h-[250px] xl:h-[320px] rounded-lg border flex-col flex gap-4 justify-center items-center">
               <CardIcon7 />
-              <h2 className="text-[#202020] pt-[10px]">
+              <h2 className="text-[#202020] text-center text-[12px] sm:text-[15px]">
                 Весь товар <br /> сертифицирован
               </h2>
             </div>
-            <div className="w-[320px] h-[320px] rounded-lg border text-center  flex flex-col  gap-2 justify-center items-center">
+            <div className="h-[250px] xl:h-[320px] rounded-lg border flex-col flex gap-4 justify-center items-center">
               <CardIcon8 />
-              <h2 className="text-[#202020]  pt-[10px]">
+              <h2 className="text-[#202020] text-center text-[12px] sm:text-[15px]">
                 Безопасные <br /> способы оплаты
               </h2>
             </div>
+          </div>
+          <div className="flex sm:hidden lg:flex justify-center sm:justify-end mt-6">
+            <button className="px-5 py-3 rounded-full border text-[14px] text-[#fff] bg-[#088269]">
+              Проверить статус доставки
+            </button>
           </div>
         </div>
         <div className="grid grid-cols-2 py-[80px]">

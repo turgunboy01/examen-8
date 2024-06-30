@@ -3,15 +3,15 @@ import img from "../../assets/partnyor.png";
 const Partnyor = () => {
   return (
     <div className="bg-[#088269] py-[80px] ">
-      <div className="max-w-[1350px] mx-auto px-5 flex">
-        <div className="w-1/2">
+      <div className="max-w-[1350px] mx-auto px-5 flex gap-[40px] flex-col lg:flex-row">
+        <div className="w-full sm:w-1/2">
           <img src={img} alt="" />
         </div>
-        <div className="w-1/2">
+        <div className=" lg:w-1/2 w-full">
           <h2 className="text-[32px] text-[#fff] font-semibold">
             Наши партнёры
           </h2>
-          <p className="pt-[10px] text-[#F8F7F3]">
+          <p className="pt-[10px] text-[16px] lg:text-[14px] text-[#F8F7F3]">
             Нашими партнёрами являются наиболее серьёзные игроки на мировом
             рынке профильного оборудования. Это позволяет нам наладить
             долгосрочное и успешное сотрудничество, добиться лучших
