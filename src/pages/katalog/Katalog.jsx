@@ -7,10 +7,12 @@ import Brend from "../../components/ui/Brend";
 import News from "../../components/ui/News";
 import Accardion from "../../components/ui/Accardion";
 import Contact from "../../components/home/Contact";
+import KatalogComponent from "../../components/katalog/Katalog";
 
 const Katalog = () => {
   return (
     <div className="">
+      <KatalogComponent />
       <Kabinet />
       <HomeCards />
       <CategoryTovar />
