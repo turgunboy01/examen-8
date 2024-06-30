@@ -34,18 +34,20 @@ const Accardion = () => {
 
   return (
     <div className="py-[80px] bg-[#088269]">
-      <div className="mx-auto max-w-[1350px] flex gap-5 px-5">
-        <div className="w-1/2 h-[300px]">
-          <h3 className="text-[30px] text-[#fff]">Часто задоваемые вопросы</h3>
+      <div className="mx-auto max-w-[1350px] flex sm:flex-row flex-col gap-5 px-5">
+        <div className="sm:w-1/2 w-full ">
+          <h3 className="text-[20px] md:text-[30px] pb-[30px] sm:pb-[10px] text-[#fff]">
+            Часто задоваемые вопросы
+          </h3>
         </div>
-        <div className="w-1/2 flex flex-col gap-5">
+        <div className="sm:w-1/2 w-full flex flex-col gap-5">
           {accordionItems.map((item, index) => (
             <div key={index} className="border-t">
               <div
                 onClick={() => toggleAccordion(index)}
-                className="flex pt-[20px] items-center pb-[15px] justify-between"
+                className="flex pt-[15px] items-center pb-[15px] justify-between"
               >
-                <h2 className="text-[18px] font-semibold text-[#fff]">
+                <h2 className=" text-[15px] md:text-[18px] font-semibold text-[#fff]">
                   {item.title}
                 </h2>
                 <button

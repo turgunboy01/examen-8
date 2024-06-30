@@ -41,14 +41,13 @@ const News = () => {
 
   return (
     <div className="bg-[#f8f7f3] py-[80px]">
-      <div className="max-w-[1350px] mx-auto px-5 flex w-full gap-[30px]">
-        <div className="h-[300px] w-1/3">
-          <h1 className="text-[30px] font-medium">
-            Новости <br /> компании
+      <div className="max-w-[1350px] mx-auto px-5 flex flex-col md:flex-row w-full gap-[30px]">
+        <div className=" w-full md:w-1/3">
+          <h1 className="text-[30px] w-full md:w-[50%] font-medium">
+            Новости компании
           </h1>
-          {/* <p className="text-[#202020] text-[16px] pt-[10px]">Эксклюзивные поставщики</p> */}
         </div>
-        <div className=" w-2/3 flex flex-col gap-[40px]">
+        <div className=" w-full md:w-2/3 flex flex-col gap-[40px]">
           <div>
             <Slider ref={sliderRef} {...settings}>
               {slides.map((slide, index) => (

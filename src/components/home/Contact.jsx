@@ -3,8 +3,8 @@ import React from "react";
 const Contact = () => {
   return (
     <div className="bg-[#f8f7f3]">
-      <div className="max-w-[1350px] mx-auto py-[80px] px-5 grid grid-cols-2 gap-3">
-        <div className="border h-[612px]  rounded-xl overflow-hidden">
+      <div className="max-w-[1350px] mx-auto py-[80px] px-5 grid grid-cols-1  md:grid-cols-2 gap-3">
+        <div className="border h-[612px]  rounded-xl overflow-hidden ">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23985.317776691176!2d69.20951579999999!3d41.283519350000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8a4758a84dc7%3A0xd5e59538910cd043!2sGafur%20Gulyam%20Recreation%20Park!5e0!3m2!1sen!2s!4v1719390343527!5m2!1sen!2s"
             //   width="600"
@@ -16,7 +16,7 @@ const Contact = () => {
             referrerpolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
-        <div className="bg-[#fff] p-[50px] flex flex-col justify-between rounded-xl">
+        <div className="bg-[#fff] p-[30px] lg:p-[50px] flex flex-col justify-between order-first md:order-last rounded-xl">
           <div className="">
             <h3 className="text-[30px] text-[#202020]">Остались вопросы?</h3>
             <p className="text-[16px] text-[#7A7687] py-[20px]">
