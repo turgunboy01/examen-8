@@ -5,17 +5,17 @@ import img2 from "../../assets/countryBrend2.png";
 
 const CountryBrend = () => {
   return (
-    <div className="bg-[]">
+    <div className="bg-[#f8f7f3]">
       <div className="max-w-[1350px] mx-auto px-5">
         <h2 className="text-[48px] leading-[52.8px] pt-[30px]">
           Медецинское оборудование Draeger
         </h2>
 
-        <div className="grid grid-cols-2 py-[50px] gap-[20px]">
+        <div className="grid sm:grid-cols-2 py-[50px] gap-[20px]">
           <img src={img1} alt="" />
           <img src={img2} alt="" />
         </div>
-        <div className="grid grid-cols-2 py-[50px] gap-[20px]">
+        <div className="grid md:grid-cols-2 md:py-[50px] gap-[20px]">
           <h1></h1>
           <div className="">
             <p>

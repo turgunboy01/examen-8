@@ -22,8 +22,8 @@ const Hero = () => {
             Пункт выдачи
           </button>
         </div>
-        <div className="grid py-[30px] grid-cols-2">
-          <h1></h1>
+        <div className="grid py-[30px] md:grid-cols-2">
+          <h1 className="hidden md:block"></h1>
           <p className="text-[16px] text-[#202020] ">
             Учитывая стремительное развитие мировых медицинских технологий,
             врачи в Российской Федерации и соседних странах столкнулись

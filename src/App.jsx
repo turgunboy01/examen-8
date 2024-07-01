@@ -18,6 +18,9 @@ import AksiyaPage from "./pages/aksiya/Aksiya";
 import CountryKabinetPodKluch from "./pages/cobinetPodKluch/KobinetPodKluch";
 import KobinetPodKluchPage from "./pages/KobinetPobKluch/KobinetPobKluchPage";
 import ProizvaditelPage from "./pages/proizvaditel/Proizvaditel";
+import ContactPage from "./pages/Contact/ContactPage";
+import WishlistPage from "./pages/wishlist/WishlistPage";
+import FaqPage from "./pages/faq/Faq";
 
 const App = () => {
   return (
@@ -45,6 +48,9 @@ const App = () => {
             <Route path="/aksiya" element={<AksiyaPage />} />
             <Route path="/podkluch" element={<KobinetPodKluchPage />} />
             <Route path="/proizvaditel" element={<ProizvaditelPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/wishlist" element={<WishlistPage />} />
+            <Route path="/faq" element={<FaqPage />} />
           </Routes>
         </div>
 

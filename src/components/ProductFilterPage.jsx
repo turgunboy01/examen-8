@@ -16,6 +16,7 @@ import img3 from "../assets/home/category3.png";
 import img4 from "../assets/home/category4.png";
 import img5 from "../assets/home/category5.png";
 import { FilterSvg1, FilterSvg2 } from "../assets/HomeSvg";
+import Product2 from "./ui/Product2";
 
 const countries = [
   "Австралия",
@@ -72,6 +73,7 @@ const ProductFilterPage = () => {
   const [price, setPrice] = useState(true);
   const [country, setCountry] = useState(true);
   const [product, setProduct] = useState(false);
+  const [vertical, setVertical] = useState(false);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -82,12 +84,12 @@ const ProductFilterPage = () => {
   };
 
   return (
-    <div className="bg-[#f8f7f3] py-[80px]">
+    <div className="bg-[#f8f7f3] py-[80px] overflow-hidden">
       <div className="max-w-[1350px] mx-auto px-5">
         <h2 className="text-[30px] leading-[36px] py-5">
           Оборудование Draeger
         </h2>
-        <div className="flex gap-4">
+        <div className="flex gap-4 overflow-x-scroll">
           <button className="py-2 px-5 bg-[#fff] border rounded-full">
             Дерматологическое оборудование
           </button>
@@ -104,21 +106,21 @@ const ProductFilterPage = () => {
             Показать все
           </button>
         </div>
-        <div className="flex gap-[30px] my-[30px] ">
-          <div className="w-[30%]">
+        <div className="flex gap-[30px] sm:flex-row flex-col my-[30px] ">
+          <div className="sm:w-[30%] ">
             <div className="px-[20px]  py-[14px] border rounded-xl">
-              <h2 className="flex justify-between">
+              <h2 className="flex justify-between items-center">
                 Направления <MdKeyboardArrowDown />
               </h2>
             </div>
             <div
               className={`px-[20px] py-[10px] duration-300 overflow-hidden ${
-                product ? "h-[900px]" : "h-[55px]"
+                product ? "h-[900px]" : " h-[55px] sm:h-[80px] md:h-[55px]"
               } border mt-[15px]  rounded-xl`}
             >
               <h2
                 onClick={() => setProduct(!product)}
-                className="flex justify-between py-2 border-b"
+                className="flex justify-between items-center py-2 border-b"
               >
                 Фильтр по товарам{" "}
                 <MdKeyboardArrowDown
@@ -246,11 +248,11 @@ const ProductFilterPage = () => {
                 </h2>
               </div>
             </div>
-            <div className="flex  gap-3 pt-[10px]">
-              <button className="px-10 py-2 border rounded-full">
+            <div className="flex md:flex-row flex-col  gap-3 pt-[10px]">
+              <button className="px-5 lg:px-10 py-2 border rounded-full">
                 Сбросить
               </button>
-              <button className="px-6 w-full py-2 bg-[#088269] text-[#fff] border rounded-full">
+              <button className="px-3 lg:px-6 w-full py-2 bg-[#088269] text-[#fff] border rounded-full">
                 Показать
               </button>
             </div>
@@ -270,15 +272,31 @@ const ProductFilterPage = () => {
                   </span>
                 </div>
                 <div className="flex items-center gap-1">
-                  <FilterSvg1 />
-                  <FilterSvg2 />
+                  <div className="" onClick={() => setVertical(true)}>
+                    <FilterSvg1 color={vertical ? "#088269" : "#7a7687"} />
+                  </div>
+                  <div className="" onClick={() => setVertical(false)}>
+                    <FilterSvg2 color={vertical ? "#7a7687" : "#088269"} />
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="grid grid-cols-3 gap-4 pt-3">
-              {slides.map((slide, index) => (
-                <Product key={index} slide={slide} />
-              ))}
+            <div
+              className={`grid ${
+                vertical ? "grid-cols-1" : " grid-cols-2 lg:grid-cols-3"
+              } gap-4 pt-3`}
+            >
+              {slides.map((slide, index) =>
+                vertical ? (
+                  <>
+                    <Product2 slide={slide} key={index} />
+                  </>
+                ) : (
+                  <>
+                    <Product slide={slide} key={index} />
+                  </>
+                )
+              )}
             </div>
           </div>
         </div>

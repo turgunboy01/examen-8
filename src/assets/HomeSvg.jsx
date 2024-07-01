@@ -344,7 +344,7 @@ export const CategoryIcons2 = () => {
   );
 };
 
-export const FilterSvg1 = () => {
+export const FilterSvg1 = ({ color }) => {
   return (
     <svg
       width="20"
@@ -353,14 +353,14 @@ export const FilterSvg1 = () => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <path d="M3 5H17V6.11111H3V5Z" fill="#7A7687" />
-      <path d="M3 9.44444H17V10.5556H3V9.44444Z" fill="#7A7687" />
-      <path d="M3 13.8889V15H17V13.8889H3Z" fill="#7A7687" />
+      <path d="M3 5H17V6.11111H3V5Z" fill={color} />
+      <path d="M3 9.44444H17V10.5556H3V9.44444Z" fill={color} />
+      <path d="M3 13.8889V15H17V13.8889H3Z" fill={color} />
     </svg>
   );
 };
 
-export const FilterSvg2 = () => {
+export const FilterSvg2 = ({ color }) => {
   return (
     <svg
       width="20"
@@ -373,25 +373,25 @@ export const FilterSvg2 = () => {
         fill-rule="evenodd"
         clip-rule="evenodd"
         d="M3.53846 3C3.24108 3 3 3.24108 3 3.53846V8.5641C3 8.86149 3.24108 9.10256 3.53846 9.10256H8.5641C8.86149 9.10256 9.10256 8.86149 9.10256 8.5641V3.53846C9.10256 3.24108 8.86149 3 8.5641 3H3.53846ZM4.07692 8.02564V4.07692H8.02564V8.02564H4.07692Z"
-        fill="#088269"
+        fill={color}
       />
       <path
         fill-rule="evenodd"
         clip-rule="evenodd"
         d="M11.4359 3C11.1385 3 10.8974 3.24108 10.8974 3.53846V8.5641C10.8974 8.86149 11.1385 9.10256 11.4359 9.10256H16.4615C16.7589 9.10256 17 8.86149 17 8.5641V3.53846C17 3.24108 16.7589 3 16.4615 3H11.4359ZM11.9744 8.02564V4.07692H15.9231V8.02564H11.9744Z"
-        fill="#088269"
+        fill={color}
       />
       <path
         fill-rule="evenodd"
         clip-rule="evenodd"
         d="M3 11.4359C3 11.1385 3.24108 10.8974 3.53846 10.8974H8.5641C8.86149 10.8974 9.10256 11.1385 9.10256 11.4359V16.4615C9.10256 16.7589 8.86149 17 8.5641 17H3.53846C3.24108 17 3 16.7589 3 16.4615V11.4359ZM4.07692 11.9744V15.9231H8.02564V11.9744H4.07692Z"
-        fill="#088269"
+        fill={color}
       />
       <path
         fill-rule="evenodd"
         clip-rule="evenodd"
         d="M11.4359 10.8974C11.1385 10.8974 10.8974 11.1385 10.8974 11.4359V16.4615C10.8974 16.7589 11.1385 17 11.4359 17H16.4615C16.7589 17 17 16.7589 17 16.4615V11.4359C17 11.1385 16.7589 10.8974 16.4615 10.8974H11.4359ZM11.9744 15.9231V11.9744H15.9231V15.9231H11.9744Z"
-        fill="#088269"
+        fill={color}
       />
     </svg>
   );

@@ -50,12 +50,12 @@ const Udovno = () => {
             </button>
           </div>
         </div>
-        <div className="grid grid-cols-2 py-[80px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-[30px] py-[80px]">
           <div className="">
-            <h2 className="text-[30px] pb-[15px] leading-[36px]">
-              Правила получения <br /> товара в пункте выдачи
+            <h2 className=" text-[20px] md:text-[25px] lg:text-[30px] pb-[15px] leading-[36px]">
+              Правила получения  товара в пункте выдачи
             </h2>
-            <p className="text-[14px] w-[70%]">
+            <p className="text-[14px] sm:w-[70%]">
               Учитывая стремительное развитие мировых медицинских технологий,
               врачи в Российской Федерации и соседних странах столкнулись
               с вызовом, требующим обновления приборов.

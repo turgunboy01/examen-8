@@ -5,14 +5,14 @@ const Oplata = () => {
       <div className="max-w-[1350px] mx-auto px-5">
         <div className="pt-[40px]">
           <h1 className="text-[30px] leading-[36px]">Оплата</h1>
-          <p className="py-[20px] w-[70%]">
+          <p className="py-[20px] sm:w-[70%]">
             Учитывая стремительное развитие мировых медицинских технологий,
             врачи в Российской Федерации и соседних странах столкнулись
             с вызовом, требующим обновления приборов в различных направлениях,
             от установок компьютерной томографии до ультразвуковых сканеров
             и ЛОР комбайнов.{" "}
           </p>
-          <div className="grid grid-cols-3 gap-5 py-[20px]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 py-[20px]">
             <div className="bg-[#fff] p-[20px] border rounded-lg">
               <h3 className="text-[16px] pb-4">Оплата наличными</h3>
               <p className="text-[14px] text-[#7A7687]">
@@ -40,7 +40,7 @@ const Oplata = () => {
                 3. Также как постоянное
               </p>
             </div>{" "}
-            <div className="bg-[#fff] p-[20px] border rounded-lg">
+            <div className="bg-[#fff] p-[20px] col-span-1 sm:col-span-2 md:col-span-1 border rounded-lg">
               <h3 className="text-[16px] pb-4">Оплата банковской картой</h3>
               <p className="text-[14px] text-[#7A7687]">
                 1. Требующим обновления приборов в различных направлениях,
@@ -62,14 +62,14 @@ const Oplata = () => {
           <h1 className="text-[30px] leading-[36px]">
             Порядок возврата денежных средств
           </h1>
-          <p className="py-[20px] w-[70%]">
+          <p className="py-[20px] sm:w-[70%]">
             Учитывая стремительное развитие мировых медицинских технологий,
             врачи в Российской Федерации и соседних странах столкнулись
             с вызовом, требующим обновления приборов в различных направлениях,
             от установок компьютерной томографии до ультразвуковых сканеров
             и ЛОР комбайнов.{" "}
           </p>
-          <div className="grid grid-cols-3 gap-5 py-[20px]">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-5 py-[20px]">
             <div className="bg-[#fff] p-[20px] border rounded-lg">
               <h3 className="text-[16px] pb-4">При оплате наличными</h3>
               <p className="text-[14px] text-[#7A7687]">
@@ -99,14 +99,14 @@ const Oplata = () => {
         </div>
         <div className="pt-[40px]">
           <h1 className="text-[30px] leading-[36px]">Условия поставок</h1>
-          <p className="py-[20px] w-[70%]">
+          <p className="py-[20px] sm:w-[70%]">
             Учитывая стремительное развитие мировых медицинских технологий,
             врачи в Российской Федерации и соседних странах столкнулись
             с вызовом, требующим обновления приборов в различных направлениях,
             от установок компьютерной томографии до ультразвуковых сканеров
             и ЛОР комбайнов.{" "}
           </p>
-          <div className="grid grid-cols-3 gap-5 py-[20px]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 py-[20px]">
             <div className="bg-[#fff] p-[20px] border rounded-lg">
               <h3 className="text-[16px] pb-4">При оплате наличными</h3>
               <p className="text-[14px] text-[#7A7687]">

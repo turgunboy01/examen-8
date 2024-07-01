@@ -1,45 +1,18 @@
-import React, { useState } from "react";
-import { AiOutlinePlus } from "react-icons/ai";
-import { MdOutlineArrowOutward } from "react-icons/md";
 import KonsulTatsiya from "../ui/KonsulTatsiya";
+import AccardionWhite from "../ui/AccardionWhite";
 
 const Dostavka = () => {
-  const [activeIndex, setActiveIndex] = useState(null);
-
-  const toggleAccordion = (index) => {
-    setActiveIndex(activeIndex === index ? null : index);
-  };
-
-  const accordionItems = [
-    {
-      title: "Юридические лица",
-      content:
-        "Но синтетическое тестирование, в своём классическом представлении, допускает внедрение поэтапного и последовательного развития общества. В рамках спецификации современных стандартов, сторонники тоталитаризма в науке будут функционально разнесены.",
-    },
-    {
-      title: "Индивидуальные предприниматели",
-      content:
-        "Но синтетическое тестирование, в своём классическом представлении, допускает внедрение поэтапного и последовательного развития общества. В рамках спецификации современных стандартов, сторонники тоталитаризма в науке будут функционально разнесены.",
-    },
-    {
-      title: "Физические лица",
-      content:
-        "Но синтетическое тестирование, в своём классическом представлении, допускает внедрение поэтапного и последовательного развития общества. В рамках спецификации современных стандартов, сторонники тоталитаризма в науке будут функционально разнесены.",
-    },
-  ];
-
   return (
     <div className="">
       <div className="bg-[]">
         <div className="max-w-[1350px] mx-auto px-5 py-[80px]">
-          <div className="grid  grid-cols-2 ">
-            <h1 className="text-[30px] leading-[36px] ">
-              {" "}
+          <div className="grid  md:grid-cols-2 ">
+            <h1 className="text-[25px] xl:text-[30px] leading-[36px] ">
               Вы сможете забрать оборудование{" "}
               <span className="text-[#088269]">самостоятельно</span> из нашего
               офиса
             </h1>
-            <div className="grid grid-cols-2  gap-5">
+            <div className=" hidden md:grid grid-cols-2  gap-5">
               <div className="border rounded-lg p-4">
                 <h2 className="pb-[10px] text-[19px] font-medium">Контакты</h2>
                 <p className="text-[#7A7687] text-[14px]">+7 (000) 000-00-00</p>
@@ -69,55 +42,21 @@ const Dostavka = () => {
               </button>
             </div>
           </div>
-        </div>
-      </div>
-
-      <div className="py-[80px] bg-[#e5e4ed]">
-        <div className="mx-auto max-w-[1350px] flex gap-5 px-5">
-          <div className="w-1/2 h-[300px]">
-            <h3 className="text-[30px] text-[#222]">
-              Документы, необходимые <br /> для получения груза
-            </h3>
-            <p className="text-[15px] w-[70%] pt-[20px]">
-              По копиям доверенностей и доверенностям с незаполненными
-              обязательными реквизитами отгрузка не производится
-            </p>
-          </div>
-          <div className="w-1/2 flex flex-col gap-5">
-            {accordionItems.map((item, index) => (
-              <div key={index} className="border-t">
-                <div
-                  onClick={() => toggleAccordion(index)}
-                  className="flex pt-[20px] items-center pb-[15px] justify-between"
-                >
-                  <h2 className="text-[18px] font-semibold text-[#333]">
-                    {item.title}
-                  </h2>
-                  <button
-                    className={`w-[40px] h-[40px] ${
-                      activeIndex === index
-                        ? "bg-[#088269] text-[#fff] rotate-45"
-                        : "text-[#333] bg-transparent rotate-0"
-                    } rounded-full border flex justify-center duration-300 items-center`}
-                  >
-                    <AiOutlinePlus size={20} />
-                  </button>
-                </div>
-                <div
-                  className={`${
-                    activeIndex === index ? "h-[150px]" : "h-0"
-                  } overflow-hidden duration-300`}
-                >
-                  <p className="text-[#222]">{item.content}</p>
-                  <button className="flex mt-[20px] text-[#222] gap-1 items-center">
-                    Подробнее <MdOutlineArrowOutward />
-                  </button>
-                </div>
-              </div>
-            ))}
+          <div className=" grid md:hidden grid-cols-1 sm:grid-cols-2  gap-5">
+            <div className="border rounded-lg p-4">
+              <h2 className="pb-[10px] text-[19px] font-medium">Контакты</h2>
+              <p className="text-[#7A7687] text-[14px]">+7 (000) 000-00-00</p>
+              <p className="text-[#7A7687] text-[14px]">info@mail.ru</p>
+            </div>{" "}
+            <div className="border rounded-lg p-4">
+              <h2 className="pb-[10px] text-[19px] font-medium">Контакты</h2>
+              <p className="text-[#7A7687] text-[14px]">+7 (000) 000-00-00</p>
+              <p className="text-[#7A7687] text-[14px]">info@mail.ru</p>
+            </div>
           </div>
         </div>
       </div>
+      <AccardionWhite />
 
       <KonsulTatsiya />
     </div>

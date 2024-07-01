@@ -63,10 +63,10 @@ const Uslugi = () => {
     <div className="bg-[#f8f7f3] py-[70px]">
       <div className="max-w-[1350px] mx-auto px-5">
         <h1 className="text-[48px] leading-[56px] py-[30px]">Услуги</h1>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid sm:grid-cols-2 gap-4">
           {data.map((item) => (
-            <div className="grid grid-cols-2 rounded-lg bg-[#fff]">
-              <div className="p-[20px] flex flex-col justify-between">
+            <div className="flex flex-col md:flex-row  rounded-lg bg-[#fff]">
+              <div className="p-[20px] w-full md:w-[55%] md:order-first order-last flex flex-col justify-between">
                 <div className="">
                   <h2 className="text-[18px] font-medium">{item.name}</h2>
                   <p className="text-[#7A7687] text-[12px] py-2">
@@ -81,7 +81,9 @@ const Uslugi = () => {
                   </button>
                 </span>
               </div>
-              <img src={item.img} className="w-full h-[350px]" alt="" />
+              <div className="w-full md:w-[45%]">
+                <img src={item.img} className="w-full h-full" alt="" />
+              </div>
             </div>
           ))}
         </div>
