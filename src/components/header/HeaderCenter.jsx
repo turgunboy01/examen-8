@@ -7,7 +7,7 @@ import {
   HeaderIcon4,
   HeaderLogo,
 } from "../../assets/HeaderSvg";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import img from "../../assets/header.png";
 import { IoIosSearch, IoMdArrowDropdown } from "react-icons/io";
 
@@ -154,18 +154,24 @@ const HeaderCenter = () => {
             <HeaderIcon1 />
             <p className="text-[#8a8694] text-[14px] hidden lg:block">Войти</p>
           </span>{" "}
-          <span className="flex flex-col gap-1 items-center">
+          <NavLink
+            to={"/wishlist"}
+            className="flex flex-col gap-1 items-center"
+          >
             <HeaderIcon2 />
             <p className="text-[#8a8694] text-[14px] hidden lg:block">
               Избранное
             </p>
-          </span>{" "}
-          <span className="flex flex-col gap-1 items-center">
+          </NavLink>{" "}
+          <NavLink
+            to={"/sravnenie"}
+            className="flex flex-col gap-1 items-center"
+          >
             <HeaderIcon3 />
             <p className="text-[#8a8694] text-[14px] hidden lg:block">
               Сравнить
             </p>
-          </span>{" "}
+          </NavLink>{" "}
           <span className="flex flex-col gap-1 items-center">
             <HeaderIcon4 />
             <p className="text-[#8a8694] text-[14px] hidden lg:block">

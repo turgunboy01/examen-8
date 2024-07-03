@@ -106,7 +106,7 @@ const Faq = () => {
                 </div>
                 <div
                   className={`${
-                    activeIndex === index ? "h-[150px]" : "h-0"
+                    activeIndex === index ? "h-[180px]" : "h-0"
                   } overflow-hidden duration-300`}
                 >
                   <p className="">{item.content}</p>

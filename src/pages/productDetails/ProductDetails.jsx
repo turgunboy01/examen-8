@@ -6,6 +6,7 @@ import Popular from "../../components/ui/Popular";
 import Sertificat from "../../components/ui/Sertificat";
 import ProductDetails from "../../components/productDetails/ProductDetails";
 import Camentary from "../../components/productDetails/Camentary";
+import FooterEmail from "../../components/ui/FooterEmail";
 
 const ProductDetailsPage = () => {
   return (
@@ -16,6 +17,7 @@ const ProductDetailsPage = () => {
       <Kabinet />
       <Popular />
       <Brend />
+      <FooterEmail />
     </div>
   );
 };

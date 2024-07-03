@@ -6,6 +6,9 @@
   list-style: none;
 }
 
+a.active {
+  color: #088269 !important;
+}
 .slick-track {
   display: flex;
   gap: 10px;

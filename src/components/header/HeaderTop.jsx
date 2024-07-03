@@ -1,7 +1,7 @@
 import React from "react";
 import { IoCallOutline, IoMenuOutline } from "react-icons/io5";
 import { HeaderLogo } from "../../assets/HeaderSvg";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const HeaderTop = () => {
   return (
@@ -9,12 +9,16 @@ const HeaderTop = () => {
       <div className="hidden sm:flex justify-between py-3 items-center">
         <div className="flex gap-[30px]">
           <li className="group relative">
-            <Link to="/about" className="text-[#827e8e] text-[12px]  ">
+            <NavLink to="/about" className="text-[#827e8e] text-[12px]  ">
               О компании
-            </Link>
+            </NavLink>
             <div className="absolute top-[24px] hidden z-30 group-hover:flex -left-3  flex-col gap-2 w-[180px] p-3 bg-[#fff] ">
-              <p className="text-[12px] cursor-pointer">Вакансии</p>
-              <p className="text-[12px] cursor-pointer">Отзывы Сертификаты</p>
+              <NavLink to={"/vakansy"} className="text-[12px] cursor-pointer">
+                Вакансии
+              </NavLink>
+              <NavLink to={"/sertifat"} className="text-[12px] cursor-pointer">
+                Отзывы Сертификаты
+              </NavLink>
               <p className="text-[12px] cursor-pointer">
                 Партнерские программы
               </p>
@@ -23,39 +27,48 @@ const HeaderTop = () => {
             </div>
           </li>
           <li>
-            <Link
+            <NavLink
               to={"/dostavka"}
               className="text-[#827e8e] text-[12px]"
               href="#"
             >
               Доставка
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
+            <NavLink
               to={"/oplata"}
               className="text-[#827e8e] text-[12px] "
               href="#"
             >
               Оплата
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
+            <NavLink
               to={"/garanty"}
               className="text-[#827e8e] text-[12px] "
               href="#"
             >
               Гарантии
-            </Link>
+            </NavLink>
           </li>
           <li className="group relative">
-            <Link to={"/blog"} className="text-[#827e8e] text-[12px] " href="#">
+            <NavLink
+              to={"/blog"}
+              className="text-[#827e8e] text-[12px] "
+              href="#"
+            >
               Блог
-            </Link>
+            </NavLink>
             <div className="absolute top-[24px] -left-3 hidden z-50 group-hover:flex flex-col gap-1 text-[#202020] p-3 bg-[#fff] ">
               <p className="text-[12px] cursor-pointer">Новости</p>
-              <p className="text-[12px] cursor-pointer">Статьи</p>
+              <NavLink
+                to={"/StatyaPage"}
+                className="text-[12px] cursor-pointer"
+              >
+                Статьи
+              </NavLink>
               <p className="text-[12px] cursor-pointer">Видео</p>
             </div>
           </li>

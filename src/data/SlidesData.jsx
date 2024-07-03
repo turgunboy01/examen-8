@@ -216,6 +216,7 @@ export const PodKluchData = [
   },
 ];
 
+
 export const SettingsSlide = {
   dots: true,
   infinite: false,
@@ -255,3 +256,4 @@ export const SettingsSlide = {
     },
   ],
 };
+

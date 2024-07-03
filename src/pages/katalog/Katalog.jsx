@@ -8,6 +8,7 @@ import News from "../../components/ui/News";
 import Accardion from "../../components/ui/Accardion";
 import Contact from "../../components/home/Contact";
 import KatalogComponent from "../../components/katalog/Katalog";
+import FooterEmail from "../../components/ui/FooterEmail";
 
 const Katalog = () => {
   return (
@@ -20,6 +21,7 @@ const Katalog = () => {
       <News />
       <Accardion />
       <Contact />
+      <FooterEmail />
     </div>
   );
 };

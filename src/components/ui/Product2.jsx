@@ -6,7 +6,7 @@ const Product2 = ({ slide }) => {
     <div className=" border rounded-xl relative  flex overflow-hidden  bg-[#f8f7f3]">
       <div className="w-[320px] h-[270px] bg-[#fff] flex items-center relative justify-center">
         <img
-          src={slide.src}
+          src={slide.img}
           alt={slide.title}
           className="w-full object-contain h-full"
         />

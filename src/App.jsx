@@ -24,6 +24,7 @@ import FaqPage from "./pages/faq/Faq";
 import VakansyPage from "./pages/vakansy/Vakansy";
 import SertifikatPage from "./pages/sertifikat/SertifikatPage";
 import Test from "./Test";
+import SravneniePage from "./pages/sravnenie/Sravnenie";
 
 const App = () => {
   return (
@@ -56,7 +57,7 @@ const App = () => {
             <Route path="/faq" element={<FaqPage />} />
             <Route path="/sertifat" element={<SertifikatPage />} />
             <Route path="/vakansy" element={<VakansyPage />} />
-            {/* <Route path="/test" element={<Test />} /> */}
+            <Route path="/sravnenie" element={<SravneniePage />} />
           </Routes>
         </div>
 

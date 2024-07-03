@@ -5,6 +5,7 @@ import Udovno from "../../components/ui/Udovno";
 import Accardion from "../../components/ui/Accardion";
 import Contact from "../../components/home/Contact";
 import News from "../../components/ui/News";
+import FooterEmail from "../../components/ui/FooterEmail";
 
 const DostavkaPage = () => {
   return (
@@ -13,6 +14,7 @@ const DostavkaPage = () => {
       <Udovno />
       <Accardion />
       <Dostavka />
+      <FooterEmail />
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FooterIcons1, FooterLogo } from "../../assets/FooterSvg";
 import { FiMinus, FiPlus } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 const FooterTop = () => {
   const [accodion, setAccodion] = useState("0");
@@ -24,9 +25,9 @@ const FooterTop = () => {
           <div className="hidden sm:flex gap-[30px] lg:gap-[40px] pt-[10px]">
             <div className="">
               <li>
-                <a href="#" className="text-[12px] md:text-[14px]">
+                <Link to="/about" className="text-[12px] md:text-[14px]">
                   О компании
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="#" className="text-[12px] md:text-[14px]">

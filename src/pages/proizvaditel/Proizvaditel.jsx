@@ -5,6 +5,7 @@ import News from "../../components/ui/News";
 import HomeCards from "../../components/ui/HomeCards";
 import CategoryTovar from "../../components/home/CategoryTovar";
 import Proizvaditel from "../../components/Proizvaditel/Proizvaditel";
+import FooterEmail from "../../components/ui/FooterEmail";
 
 const ProizvaditelPage = () => {
   return (
@@ -15,6 +16,7 @@ const ProizvaditelPage = () => {
       <News />
       <Accardion />
       <Contact />
+      <FooterEmail />
     </div>
   );
 };

@@ -11,6 +11,7 @@ import {
 } from "react-icons/md";
 import { FilterSvg1, FilterSvg2 } from "../../assets/HomeSvg";
 import Product2 from "../ui/Product2";
+import { Products } from "../../data/ProductsData";
 
 const slides = [
   {
@@ -92,7 +93,7 @@ const Wishlist = () => {
                 vertical ? "grid-cols-1" : " grid-cols-2 lg:grid-cols-3"
               } gap-4 pt-3`}
             >
-              {slides.map((slide, index) =>
+              {Products.map((slide, index) =>
                 vertical ? (
                   <>
                     <Product2 slide={slide} key={index} />

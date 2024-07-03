@@ -96,7 +96,9 @@ const HeaderBottom = () => {
                   Каталоги оборудования PDF
                 </p>
                 <p className="text-[12px] cursor-pointer">Оформить претензию</p>
-                <p className="text-[12px] cursor-pointer">FAQ</p>
+                <Link to={"/faq"} className="text-[12px] cursor-pointer">
+                  FAQ
+                </Link>
               </div>
             </li>
             <li>

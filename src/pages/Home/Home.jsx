@@ -10,6 +10,7 @@ import CategoryTovar from "../../components/home/CategoryTovar";
 import Kabinet from "../../components/ui/Kabinet";
 import Accardion from "../../components/ui/Accardion";
 import HomeSlide from "../../components/home/HomeSlide";
+import FooterEmail from "../../components/ui/FooterEmail";
 
 const Home = () => {
   return (
@@ -24,6 +25,7 @@ const Home = () => {
       <Accardion />
       <News />
       <Contact />
+      <FooterEmail />
     </div>
   );
 };

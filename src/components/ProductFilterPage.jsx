@@ -10,13 +10,9 @@ import { IoIosSearch } from "react-icons/io";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import Product from "./ui/Product";
 
-import img1 from "../assets/home/category1.png";
-import img2 from "../assets/home/category2.png";
-import img3 from "../assets/home/category3.png";
-import img4 from "../assets/home/category4.png";
-import img5 from "../assets/home/category5.png";
 import { FilterSvg1, FilterSvg2 } from "../assets/HomeSvg";
 import Product2 from "./ui/Product2";
+import { Products } from "../data/ProductsData";
 
 const countries = [
   "Австралия",
@@ -27,45 +23,6 @@ const countries = [
   "Германия",
   "Израиль",
   "Испания",
-];
-
-const slides = [
-  {
-    src: img1,
-    title: "Анализатор мочи MIND UA- 66",
-    artikl: "Артикул: 213134 В наличии",
-    price: "300 000 руб.",
-  },
-  {
-    src: img2,
-    title: "Анализатор мочи MIND UA- 66",
-    artikl: "Артикул: 213134 В наличии",
-    price: "300 000 руб.",
-  },
-  {
-    src: img3,
-    title: "Анализатор мочи MIND UA- 66",
-    artikl: "Артикул: 213134 В наличии",
-    price: "300 000 руб.",
-  },
-  {
-    src: img4,
-    title: "Анализатор мочи MIND UA- 66",
-    artikl: "Артикул: 213134 В наличии",
-    price: "300 000 руб.",
-  },
-  {
-    src: img5,
-    title: "Анализатор мочи MIND UA- 66",
-    artikl: "Артикул: 213134 В наличии",
-    price: "300 000 руб.",
-  },
-  {
-    src: img2,
-    title: "Анализатор мочи MIND UA- 66",
-    artikl: "Артикул: 213134 В наличии",
-    price: "300 000 руб.",
-  },
 ];
 
 const ProductFilterPage = () => {
@@ -286,7 +243,7 @@ const ProductFilterPage = () => {
                 vertical ? "grid-cols-1" : " grid-cols-2 lg:grid-cols-3"
               } gap-4 pt-3`}
             >
-              {slides.map((slide, index) =>
+              {Products.map((slide, index) =>
                 vertical ? (
                   <>
                     <Product2 slide={slide} key={index} />
