@@ -6,7 +6,6 @@ import Accardion from "../../components/ui/Accardion";
 const KobinetPodKluchPage = () => {
   return (
     <div>
-      
       <KobinetPodKluch />
       <Accardion />
       <Contact />

@@ -6,32 +6,10 @@ import Slider from "react-slick";
 import { BiArrowToLeft, BiArrowToRight } from "react-icons/bi";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { PopularSlides, SettingsSlide } from "../../data/SlidesData";
 
 const Popular = () => {
   const sliderRef = useRef(null);
-
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-  };
-
-  const slides = [
-    {
-      src: img1,
-      title: "Оборудование для анастезиологии",
-    },
-    {
-      src: img2,
-title: "Оборудование для анастезиологии",
-    },
-    {
-      src: img3,
-      title: "Оборудование для анастезиологии",
-    },
-  ];
 
   return (
     <div className="bg-[#f8f7f3] py-[80px]">
@@ -43,8 +21,8 @@ title: "Оборудование для анастезиологии",
         </div>
         <div className="h-[350px] w-2/3 flex flex-col gap-[40px]">
           <div>
-            <Slider ref={sliderRef} {...settings}>
-              {slides.map((slide, index) => (
+            <Slider ref={sliderRef} {...SettingsSlide}>
+              {PopularSlides.map((slide, index) => (
                 <div key={index} className="w-[320px] border bg-[#f8f7f3]">
                   <div className="w-full h-[220px] bg-[#fff] flex items-center justify-center">
                     <img src={slide.src} alt={slide.title} />

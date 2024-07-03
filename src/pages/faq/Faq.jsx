@@ -1,9 +1,11 @@
-import React from 'react'
-
+import React from "react";
+import Faq from "../../components/faq/Faq";
 const FaqPage = () => {
   return (
-    <div>Faq</div>
-  )
-}
+    <div>
+      <Faq />
+    </div>
+  );
+};
 
-export default FaqPage
+export default FaqPage;

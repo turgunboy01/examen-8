@@ -21,6 +21,9 @@ import ProizvaditelPage from "./pages/proizvaditel/Proizvaditel";
 import ContactPage from "./pages/Contact/ContactPage";
 import WishlistPage from "./pages/wishlist/WishlistPage";
 import FaqPage from "./pages/faq/Faq";
+import VakansyPage from "./pages/vakansy/Vakansy";
+import SertifikatPage from "./pages/sertifikat/SertifikatPage";
+import Test from "./Test";
 
 const App = () => {
   return (
@@ -39,7 +42,7 @@ const App = () => {
             <Route path="/oplata" element={<OplataPage />} />
             <Route path="/countryBrend" element={<CountryBrendPage />} />
             <Route
-              path="/kabinetPodKluch"
+              path="/kabinetPodKluch/:id"
               element={<CountryKabinetPodKluch />}
             />
             <Route path="/garanty" element={<GarantyPage />} />
@@ -51,6 +54,9 @@ const App = () => {
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/wishlist" element={<WishlistPage />} />
             <Route path="/faq" element={<FaqPage />} />
+            <Route path="/sertifat" element={<SertifikatPage />} />
+            <Route path="/vakansy" element={<VakansyPage />} />
+            {/* <Route path="/test" element={<Test />} /> */}
           </Routes>
         </div>
 

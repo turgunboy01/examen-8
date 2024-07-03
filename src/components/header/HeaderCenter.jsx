@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import {
   HeaderIcon1,
@@ -8,36 +8,136 @@ import {
   HeaderLogo,
 } from "../../assets/HeaderSvg";
 import { Link } from "react-router-dom";
+import img from "../../assets/header.png";
+import { IoIosSearch, IoMdArrowDropdown } from "react-icons/io";
 
 const HeaderCenter = () => {
+  const [searchProduct, setSearchProduct] = useState("");
+  const [dropdown, setDropdown] = useState(false);
   return (
     <div className="max-w-[1350px] w-full mx-auto px-5">
       <div className="py-[20px]  flex justify-between gap-4 ">
-        <div className="flex gap-[30px] w-full md:gap-[50px]">
+        <div className="flex gap-[30px] w-full md:gap-[40px]">
           <Link to={"/"} className="hidden sm:block">
             <HeaderLogo />
           </Link>
-          <div className="w-full lg:w-[500px] overflow-hidden h-[43px] md:h-[47px] justify-between bg-[#d5d1e1] rounded-full  flex  items-center border ">
-            <div className="flex-1 flex  bg-white rounded-full">
-              <select
-                className=" px-3 lg:px-6 py-3.5 rounded-full text-[12px] md:text-[16px]"
-                name=""
-                id=""
-              >
-                <option value="" className="text-[12px]">
-                  Все категории
-                </option>
-              </select>
-              <input
-                type="text"
-                className=" w-[70%] md:w-full pl-4 outline-none  text-[14px]  rounded-full"
-                placeholder="Поиск"
-              />
+          <div className="w-full lg:w-[500px] relative  h-[40px] flex items-center ">
+            <div className="flex  items-center justify-between  h-[37px] rounded-full  bg-[#d5d1e1]">
+              <div className="flex-1 relative flex  bg-white rounded-full">
+                <div
+                  onClick={() => setDropdown(!dropdown)}
+                  className="  px-3 w-[210px] flex justify-between items-center   lg:px-4 py-2 bg-[#efefef] rounded-full text-[14px] font-medium"
+                >
+                  <p>Все категории </p>
+                  <IoMdArrowDropdown
+                    className={`${
+                      dropdown ? "rotate-180" : "rotate-0"
+                    } duration-300`}
+                  />
+                </div>
+                {dropdown && (
+                  <div className="absolute top-[35px] z-50 w-[150px] flex flex-col gap-2 left-0  bg-[#fff] px-[15px] py-[10px] rounded-lg border">
+                    <p className="text-[12px] cursor-pointer">Реанимация</p>
+                    <p className="text-[12px] cursor-pointer">Хирургия</p>
+                    <p className="text-[12px] cursor-pointer">Офтальмология</p>
+                    <p className="text-[12px] cursor-pointer">
+                      Лабораторная диагностика
+                    </p>
+                    <p className="text-[12px] cursor-pointer">Акушерство</p>
+                    <p className="text-[12px] cursor-pointer">Гинекология</p>
+                    <p className="text-[12px] cursor-pointer">Гистология</p>
+                    <p className="text-[12px] cursor-pointer">Косметология</p>
+                    <p className="text-[12px] cursor-pointer">
+                      Оториноларингология
+                    </p>
+                    <p className="text-[12px] cursor-pointer">
+                      Рентгенология и томография
+                    </p>
+                    <p className="text-[12px] cursor-pointer">
+                      Оториноларингология
+                    </p>
+                    <p className="text-[12px] cursor-pointer">Стерилизация</p>
+                    <p className="text-[12px] cursor-pointer">
+                      Физиотерапия и реабилитация
+                    </p>
+                    <p className="text-[12px] cursor-pointer"> Эндоскопия</p>
+                    <p className="text-[12px] cursor-pointer"> Новинки</p>
+                    <p className="text-[12px] cursor-pointer"> Распродажи</p>
+                    <p className="text-[12px] cursor-pointer">
+                      Кабинеты под ключ
+                    </p>
+                  </div>
+                )}
+                <input
+                  type="text"
+                  value={searchProduct}
+                  onChange={(e) => setSearchProduct(e.target.value)}
+                  className=" w-[70%] md:w-full px-4 py-1 outline-none  text-[14px]  rounded-full"
+                  placeholder="Поиск"
+                />
+              </div>
+              <div className="py-2 px-2  bg-[#d5d1e1] rounded-r-full">
+                <IoIosSearch size={20} className=" " />
+              </div>
             </div>
-            <div className="p-4  bg-[#d5d1e1]">
-              <FaSearch size={20} />
-            </div>
-            <div className="p"></div>
+            {searchProduct && (
+              <div className="w-full flex justify-end">
+                <div className="absolute top-[50px] z-[999] border rounded-lg bg-[#fff] p-[20px] w-full sm:w-[73%]">
+                  <div className="">
+                    <h2 className="border-b text-[#7A7687] text-[12px] py-1">
+                      Бренд
+                    </h2>
+                    <div className="py-[10px] flex flex-col gap-2">
+                      <div className="flex gap-2 items-center">
+                        <img src={img} alt="as" />
+                        <h2 className="text-[14px]">Aircast</h2>
+                      </div>
+                      <div className="flex gap-2 items-center">
+                        <img src={img} alt="as" />
+                        <h2 className="text-[14px]">Allcare Innovations</h2>
+                      </div>
+                      <div className="flex gap-2 items-center">
+                        <img src={img} alt="as" />
+                        <h2 className="text-[14px]">
+                          Asclepion Laser Technologies
+                        </h2>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="">
+                    <h2 className="border-b text-[#7A7687] text-[12px] py-1">
+                      Подкатегория
+                    </h2>
+                    <div className="py-[10px] flex flex-col gap-2">
+                      <h2 className="text-[14px]">Аппараты ИВЛ</h2>
+                      <h2 className="text-[14px]">Амплификаторы</h2>
+                      <h2 className="text-[14px]">Аспираторы</h2>
+                    </div>
+                  </div>
+                  <div className="">
+                    <h2 className="border-b text-[#7A7687] text-[12px] py-1">
+                      Бренд
+                    </h2>
+                    <div className="py-[10px] flex flex-col gap-2">
+                      <div className="flex gap-2 items-center">
+                        <img src={img} alt="as" />
+                        <h2 className="text-[14px]">
+                          Amedetron Dynamic Proxima
+                        </h2>
+                      </div>
+                      <div className="flex gap-2 items-center">
+                        <img src={img} alt="as" />
+                        <h2 className="text-[14px]">Amedetron Dynamic Mini</h2>
+                      </div>
+                      <div className="flex gap-2 items-center">
+                        <img src={img} alt="as" />
+                        <h2 className="text-[14px]">Amindray HD3 FULL HD</h2>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
           <div className="hidden xl:block">
             <p className="text-[#8a8694] text-[14px] font-medium">

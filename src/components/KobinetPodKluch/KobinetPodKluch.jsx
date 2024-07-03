@@ -2,15 +2,21 @@ import React, { useState } from "react";
 import img from "../../assets/podKluch.png";
 import Standart from "./Standart";
 import ProductArray from "./ProductArray";
+import { useParams } from "react-router-dom";
+import { PodKluchData } from "../../data/SlidesData";
 const KobinetPodKluch = () => {
+  const { id } = useParams();
+  const product = PodKluchData.find((item) => item.id == id);
+  console.log(product);
+
   const [standart, setStandart] = useState(true);
   return (
-    <div className="bg-[#f8f7f3] py-[80px]">
+    <div className="bg-[#f8f7f3] py-[20px]">
       <div className="max-w-[1350px] mx-auto px-5">
         <h2 className="text-[48px] leading-[52.6px] py-[20px] pt-[60px]">
           Комплексное оснащение палаты реанимации и интенсивной терапии
         </h2>
-        <img src={img} alt="" />
+        <img src={product.img} alt="" className="w-full" />
         <div className="grid lg:grid-cols-2 gap-3 py-[20px]">
           <h1></h1>
           <div className="">
