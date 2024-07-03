@@ -30,41 +30,41 @@ const FooterTop = () => {
                 </Link>
               </li>
               <li>
-                <a href="#" className="text-[12px] md:text-[14px]">
+                <Link to="/sertifat" className="text-[12px] md:text-[14px]">
                   Сертификаты
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-[12px] md:text-[14px]">
+                <Link to="/vakansy" className="text-[12px] md:text-[14px]">
                   Вакансии
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-[12px] md:text-[14px]">
+                <Link to="/garanty" className="text-[12px] md:text-[14px]">
                   Гарантии
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-[12px] md:text-[14px]">
+                <Link to="/uslugi" className="text-[12px] md:text-[14px]">
                   Услуги
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-[12px] md:text-[14px]">
+                <Link to="/aksiya" className="text-[12px] md:text-[14px]">
                   Акции
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-[12px] md:text-[14px]">
+                <Link to="/dostavka" className="text-[12px] md:text-[14px]">
                   Доставка
-                </a>
+                </Link>
               </li>
             </div>
             <div className="">
               <li>
-                <a href="#" className="text-[12px] md:text-[14px]">
+                <Link to="/oplata" className="text-[12px] md:text-[14px]">
                   Оплата
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="#" className="text-[12px] md:text-[14px]">
@@ -72,9 +72,9 @@ const FooterTop = () => {
                 </a>
               </li>
               <li>
-                <a href="#" className="text-[12px] md:text-[14px]">
+                <Link to="/faq" className="text-[12px] md:text-[14px]">
                   FAQ
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="#" className="text-[12px] md:text-[14px]">
@@ -82,14 +82,14 @@ const FooterTop = () => {
                 </a>
               </li>
               <li>
-                <a href="#" className="text-[12px] md:text-[14px]">
+                <Link to="/otziv" className="text-[12px] md:text-[14px]">
                   Отзывы
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-[12px] md:text-[14px]">
+                <Link to="/blog" className="text-[12px] md:text-[14px]">
                   Блог
-                </a>
+                </Link>
               </li>
             </div>
           </div>
@@ -97,46 +97,46 @@ const FooterTop = () => {
             <div className="flex sm:hidden gap-[30px] lg:gap-[40px] pt-[10px]">
               <div className="">
                 <li>
-                  <a href="#" className="text-[12px] md:text-[14px]">
+                  <Link to="/about" className="text-[12px] md:text-[14px]">
                     О компании
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="text-[12px] md:text-[14px]">
+                  <Link to="/sertifat" className="text-[12px] md:text-[14px]">
                     Сертификаты
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="text-[12px] md:text-[14px]">
+                  <Link to="/vakansy" className="text-[12px] md:text-[14px]">
                     Вакансии
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="text-[12px] md:text-[14px]">
+                  <Link to="/garanty" className="text-[12px] md:text-[14px]">
                     Гарантии
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="text-[12px] md:text-[14px]">
+                  <Link to="/uslugi" className="text-[12px] md:text-[14px]">
                     Услуги
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="text-[12px] md:text-[14px]">
+                  <Link to="/aksiya" className="text-[12px] md:text-[14px]">
                     Акции
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="text-[12px] md:text-[14px]">
+                  <Link to="/dostavka" className="text-[12px] md:text-[14px]">
                     Доставка
-                  </a>
+                  </Link>
                 </li>
               </div>
               <div className="">
                 <li>
-                  <a href="#" className="text-[12px] md:text-[14px]">
+                  <Link to="/oplata" className="text-[12px] md:text-[14px]">
                     Оплата
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <a href="#" className="text-[12px] md:text-[14px]">
@@ -144,9 +144,9 @@ const FooterTop = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-[12px] md:text-[14px]">
+                  <Link to="/faq" className="text-[12px] md:text-[14px]">
                     FAQ
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <a href="#" className="text-[12px] md:text-[14px]">
@@ -154,14 +154,14 @@ const FooterTop = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-[12px] md:text-[14px]">
+                  <Link to="/otziv" className="text-[12px] md:text-[14px]">
                     Отзывы
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="text-[12px] md:text-[14px]">
+                  <Link to="/blog" className="text-[12px] md:text-[14px]">
                     Блог
-                  </a>
+                  </Link>
                 </li>
               </div>
             </div>
@@ -216,7 +216,6 @@ const FooterTop = () => {
                 </a>
               </li>
               <span className="block md:hidden">
-                {" "}
                 <li>
                   <a href="#" className="text-[12px] md:text-[14px]">
                     Орториноларингология

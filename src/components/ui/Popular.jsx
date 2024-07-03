@@ -7,6 +7,7 @@ import { BiArrowToLeft, BiArrowToRight } from "react-icons/bi";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { PopularSlides, SettingsSlide } from "../../data/SlidesData";
+import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 
 const Popular = () => {
   const sliderRef = useRef(null);
@@ -40,13 +41,13 @@ const Popular = () => {
                 className="w-[41px] h-[41px] rounded-full border flex items-center justify-center"
                 onClick={() => sliderRef.current.slickPrev()}
               >
-                <BiArrowToLeft />
+                <GoArrowLeft />
               </button>
               <button
                 className="w-[41px] h-[41px] rounded-full border flex items-center justify-center"
                 onClick={() => sliderRef.current.slickNext()}
               >
-                <BiArrowToRight />
+                <GoArrowRight />
               </button>
             </div>
             <button className="px-5 py-3 rounded-full border text-[14px] text-[#fff] bg-[#088269]">

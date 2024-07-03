@@ -3,6 +3,7 @@ import { BiArrowToLeft, BiArrowToRight } from "react-icons/bi";
 import Slider from "react-slick";
 import img1 from "../../assets/Banner.png";
 import img2 from "../../assets/home/slide.png";
+import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 
 const HomeSlide = () => {
   const sliderRef = useRef(null);
@@ -103,13 +104,13 @@ const HomeSlide = () => {
                 className="w-[41px] h-[41px] rounded-full border bg-[#fff] flex items-center justify-center"
                 onClick={() => sliderRef.current.slickPrev()}
               >
-                <BiArrowToLeft />
+                <GoArrowLeft />
               </button>
               <button
                 className="w-[41px] h-[41px] rounded-full border bg-[#fff]  flex items-center justify-center"
                 onClick={() => sliderRef.current.slickNext()}
               >
-                <BiArrowToRight />
+                <GoArrowRight />
               </button>
             </div>
           </div>

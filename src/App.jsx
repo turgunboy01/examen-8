@@ -25,12 +25,14 @@ import VakansyPage from "./pages/vakansy/Vakansy";
 import SertifikatPage from "./pages/sertifikat/SertifikatPage";
 import Test from "./Test";
 import SravneniePage from "./pages/sravnenie/Sravnenie";
+import ScrollToTop from "./components/ScrollToTop";
 
 const App = () => {
   return (
     <div>
       <BrowserRouter>
         <Header />
+        <ScrollToTop />
         <div className="pt-[140px] sm:pt-[200px]">
           <Routes>
             <Route path="/" element={<Home />} />

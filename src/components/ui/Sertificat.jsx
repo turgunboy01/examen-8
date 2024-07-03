@@ -7,6 +7,7 @@ import { BiArrowToLeft, BiArrowToRight } from "react-icons/bi";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { SertifikatSlides, SettingsSlide } from "../../data/SlidesData";
+import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 
 const Sertificat = () => {
   const sliderRef = useRef(null);
@@ -44,13 +45,13 @@ const Sertificat = () => {
                 className="w-[41px] h-[41px] rounded-full border flex items-center justify-center"
                 onClick={() => sliderRef.current.slickPrev()}
               >
-                <BiArrowToLeft />
+                <GoArrowLeft />
               </button>
               <button
                 className="w-[41px] h-[41px] rounded-full border flex items-center justify-center"
                 onClick={() => sliderRef.current.slickNext()}
               >
-                <BiArrowToRight />
+                <GoArrowRight />
               </button>
             </div>
           </div>

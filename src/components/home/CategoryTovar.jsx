@@ -12,6 +12,7 @@ import { BiArrowToLeft, BiArrowToRight } from "react-icons/bi";
 import { CategoryIcons1, CategoryIcons2 } from "../../assets/HomeSvg";
 import { SettingsSlide } from "../../data/SlidesData";
 import { Products } from "../../data/ProductsData";
+import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 const CategoryTovar = () => {
   const sliderRef = useRef(null);
 
@@ -90,13 +91,13 @@ const CategoryTovar = () => {
                   className="w-[41px] h-[41px] rounded-full border flex items-center justify-center"
                   onClick={() => sliderRef.current.slickPrev()}
                 >
-                  <BiArrowToLeft />
+                  <GoArrowLeft />
                 </button>
                 <button
                   className="w-[41px] h-[41px] rounded-full border flex items-center justify-center"
                   onClick={() => sliderRef.current.slickNext()}
                 >
-                  <BiArrowToRight />
+                  <GoArrowRight />
                 </button>
               </div>
               <div className="flex gap-2 ">
