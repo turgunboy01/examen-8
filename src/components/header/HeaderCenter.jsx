@@ -172,12 +172,12 @@ const HeaderCenter = () => {
               Сравнить
             </p>
           </NavLink>{" "}
-          <span className="flex flex-col gap-1 items-center">
+          <Link to={"/cart"} className="flex flex-col gap-1 items-center">
             <HeaderIcon4 />
             <p className="text-[#8a8694] text-[14px] hidden lg:block">
               Корзина
             </p>
-          </span>
+          </Link>
         </div>
       </div>
     </div>

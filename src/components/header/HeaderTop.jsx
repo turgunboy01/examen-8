@@ -17,7 +17,10 @@ const HeaderTop = () => {
                 Вакансии
               </NavLink>
               <NavLink to={"/sertifat"} className="text-[12px] cursor-pointer">
-                Отзывы Сертификаты
+                Сертификаты
+              </NavLink>
+              <NavLink to={"/otziv"} className="text-[12px] cursor-pointer">
+                Отзывы
               </NavLink>
               <p className="text-[12px] cursor-pointer">
                 Партнерские программы
@@ -63,12 +66,7 @@ const HeaderTop = () => {
             </NavLink>
             <div className="absolute top-[24px] -left-3 hidden z-50 group-hover:flex flex-col gap-1 text-[#202020] p-3 bg-[#fff] ">
               <p className="text-[12px] cursor-pointer">Новости</p>
-              <NavLink
-                to={"/StatyaPage"}
-                className="text-[12px] cursor-pointer"
-              >
-                Статьи
-              </NavLink>
+              <p className="text-[12px] cursor-pointer">Статьи</p>
               <p className="text-[12px] cursor-pointer">Видео</p>
             </div>
           </li>

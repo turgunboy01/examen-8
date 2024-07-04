@@ -8,13 +8,26 @@ import img3 from "../../assets/home/category3.png";
 import img4 from "../../assets/home/category4.png";
 import img5 from "../../assets/home/category5.png";
 
-import { BiArrowToLeft, BiArrowToRight } from "react-icons/bi";
+// import { BiArrowToLeft, BiArrowToRight } from "react-icons/bi";
 import { CategoryIcons1, CategoryIcons2 } from "../../assets/HomeSvg";
 import { SettingsSlide } from "../../data/SlidesData";
 import { Products } from "../../data/ProductsData";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../redux/CartSlice";
 const CategoryTovar = () => {
   const sliderRef = useRef(null);
+
+  const dispatch = useDispatch();
+  const handleAddToCart = (product) => {
+    let totalPrice = 1 * product.price;
+    const tempProduct = {
+      ...product,
+      quantity: 1,
+      totalPrice,
+    };
+    dispatch(addToCart(tempProduct));
+  };
 
   return (
     <div className="bg-[#f8f7f3] py-[80px]">
@@ -51,7 +64,7 @@ const CategoryTovar = () => {
                     <div className="w-full h-[300px] bg-[#fff] flex items-center relative justify-center">
                       <img src={slide.img} alt={slide.title} />
                       <div
-                        className={`absolute top-3 left-3 px-2 py-1 text-[13px] border border-[#088269] text-[#088269] bg-[#e1efe6] ${
+                        className={`absolute top-3 left-3 px-2 py-1 text-[14px] font-semibold border border border-[#088269] text-[#088269] bg-[#e1efe6] ${
                           slide.aksiya == "-30%"
                             ? "text-[#855E00] bg-[#FFE095] border-[#AD7B00]"
                             : slide.aksiya == "Хит продаж"
@@ -77,7 +90,10 @@ const CategoryTovar = () => {
                       <p className=" font-semibold pt-[15px]">
                         {slide.price} руб
                       </p>
-                      <button className="py-2 border text-[13px] lg:text-[16px] hover:text-[#fff] hover:bg-[#088269] border-[#80808035] w-full mt-[20px] text-[#088269] rounded-full">
+                      <button
+                        onClick={() => handleAddToCart(slide)}
+                        className="py-2 border text-[13px] lg:text-[16px] hover:text-[#fff] hover:bg-[#088269] border-[#80808035] w-full mt-[20px] text-[#088269] rounded-full"
+                      >
                         Добавить в корзину
                       </button>
                     </div>

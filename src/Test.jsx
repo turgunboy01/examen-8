@@ -1,45 +1,68 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import "./index.css";
+import { Modal } from "antd";
 
-const Test = () => {
-  const [text, setText] = useState({
-    title: "",
-    id: Date.now(),
-    isCompleted: false,
-  });
+function Test() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalTitle, setModalTitle] = useState("");
+  const [modalContent, setModalContent] = useState(null);
 
-  const [items, setItems] = useState(() => {
-    const savedItems = localStorage.getItem("item");
-    return savedItems ? JSON.parse(savedItems) : [];
-  });
+  const openModal = (title, content) => {
+    setModalTitle(title);
+    setModalContent(content);
+    setIsModalOpen(true);
+  };
 
-  useEffect(() => {
-    localStorage.setItem("item", JSON.stringify(items));
-  }, [items]);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setItems([...items, text]);
-    setText({ title: "", id: Date.now(), isCompleted: false });
+  const closeModal = () => {
+    setIsModalOpen(false);
   };
 
   return (
-    <div className="py-[30px]">
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={text.title}
-          className="border p-2"
-          onChange={(e) =>
-            setText((prevText) => ({
-              ...prevText,
-              title: e.target.value,
-            }))
-          }
-        />
-        <button type="submit">Add</button>
-      </form>
+    <div className="flex flex-col items-center justify-center h-screen bg-gray-100 space-y-4">
+      <button
+        className="bg-blue-500 text-white px-4 py-2 rounded"
+        onClick={() =>
+          openModal(
+            "Modal Oynasi 1",
+            <p>
+              Bu <strong>birinchi</strong> modal oynaning mazmuni
+            </p>
+          )
+        }
+      >
+        Modal 1 ni ochish
+      </button>
+      <button
+        className="bg-green-500 text-white px-4 py-2 rounded"
+        onClick={() =>
+          openModal(
+            "Modal Oynasi 2",
+            <p>
+              Bu <em>ikkinchi</em> modal oynaning mazmuni
+            </p>
+          )
+        }
+      >
+        Modal 2 ni ochish
+      </button>
+      <button
+        className="bg-red-500 text-white px-4 py-2 rounded"
+        onClick={() =>
+          openModal(
+            "Modal Oynasi 3",
+            <p>
+              Bu <u>uchinchi</u> modal oynaning mazmuni
+            </p>
+          )
+        }
+      >
+        Modal 3 ni ochish
+      </button>
+      <Modal isOpen={isModalOpen} onClose={closeModal} title={modalTitle}>
+        {modalContent}
+      </Modal>
     </div>
   );
-};
+}
 
 export default Test;

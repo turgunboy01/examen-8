@@ -12,6 +12,8 @@ import img9 from "../../assets/katalog/katalog9.png";
 import img10 from "../../assets/katalog/katalog10.png";
 import { Settings } from "../../assets/SvgIcons";
 
+
+
 const KatalogComponent = () => {
   const [catalog, setCatalog] = useState(false);
   return (
@@ -38,70 +40,6 @@ const KatalogComponent = () => {
                 Реанимация
                 <RiArrowRightSLine />
               </h2>{" "}
-              <h2 className="py-3 flex justify-between text-[14px] items-center">
-                Реанимация
-                <RiArrowRightSLine />
-              </h2>{" "}
-              <h2 className="py-3 flex justify-between text-[14px] items-center">
-                Хирургия
-                <RiArrowRightSLine />
-              </h2>{" "}
-              <h2 className="py-3 flex justify-between text-[14px] items-center">
-                Офтальмология
-                <RiArrowRightSLine />
-              </h2>{" "}
-              <h2 className="py-3 flex justify-between text-[14px] items-center">
-                Лабораторная диагностика
-                <RiArrowRightSLine />
-              </h2>{" "}
-              <h2 className="py-3 flex justify-between text-[14px] items-center">
-                Акушерство и Гинекология
-                <RiArrowRightSLine />
-              </h2>{" "}
-              <h2 className="py-3 flex justify-between text-[14px] items-center">
-                Гистология
-                <RiArrowRightSLine />
-              </h2>{" "}
-              <h2 className="py-3 flex justify-between text-[14px] items-center">
-                Косметология
-                <RiArrowRightSLine />
-              </h2>{" "}
-              <h2 className="py-3 flex justify-between text-[14px] items-center">
-                Оториноларингология
-                <RiArrowRightSLine />
-              </h2>{" "}
-              <h2 className="py-3 flex justify-between text-[14px] items-center">
-                Рентгенология и томография
-                <RiArrowRightSLine />
-              </h2>{" "}
-              <h2 className="py-3 flex justify-between text-[14px] items-center">
-                Стерилизация
-                <RiArrowRightSLine />
-              </h2>{" "}
-              <h2 className="py-3 flex justify-between text-[14px] items-center">
-                Физиотерапия и реабилитация
-                <RiArrowRightSLine />
-              </h2>{" "}
-              <h2 className="py-3 flex justify-between text-[14px] items-center">
-                Функциональная диагностика
-                <RiArrowRightSLine />
-              </h2>{" "}
-              <h2 className="py-3 flex justify-between text-[14px] items-center">
-                Эндоскопия
-                <RiArrowRightSLine />
-              </h2>{" "}
-              <h2 className="py-3 flex justify-between text-[14px] items-center">
-                Новинки
-                <RiArrowRightSLine />
-              </h2>{" "}
-              <h2 className="py-3 flex justify-between text-[14px] items-center">
-                Распродажи
-                <RiArrowRightSLine />
-              </h2>{" "}
-              <h2 className="py-3 flex justify-between text-[14px] items-center">
-                Кабинеты под ключ
-                <RiArrowRightSLine />
-              </h2>
             </div>
           </div>
         </div>

@@ -23,9 +23,9 @@ import WishlistPage from "./pages/wishlist/WishlistPage";
 import FaqPage from "./pages/faq/Faq";
 import VakansyPage from "./pages/vakansy/Vakansy";
 import SertifikatPage from "./pages/sertifikat/SertifikatPage";
-import Test from "./Test";
 import SravneniePage from "./pages/sravnenie/Sravnenie";
 import ScrollToTop from "./components/ScrollToTop";
+import Card from "./pages/cart/Card";
 
 const App = () => {
   return (
@@ -60,11 +60,13 @@ const App = () => {
             <Route path="/sertifat" element={<SertifikatPage />} />
             <Route path="/vakansy" element={<VakansyPage />} />
             <Route path="/sravnenie" element={<SravneniePage />} />
+            <Route path="/cart" element={<Card />} />
           </Routes>
         </div>
 
         <Footer />
       </BrowserRouter>
+      {/* <Test /> */}
     </div>
   );
 };

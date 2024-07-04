@@ -7,18 +7,20 @@ import Slider from "react-slick";
 import { BiArrowToLeft, BiArrowToRight } from "react-icons/bi";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 
 const Opit = () => {
   const sliderRef = useRef(null);
 
-  const settings = {
+  const SettingsSlide = {
     dots: true,
-    infinite: true,
+    infinite: false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    initialSlide: 0,
+    infinite: true,
   };
-
   const slides = [
     {
       src: img1,
@@ -28,16 +30,16 @@ const Opit = () => {
       title: "Константин Константинопольский ",
     },
     {
-      src: img1,
-      src1: img2,
-      src2: img3,
+      src: img2,
+      src1: img3,
+      src2: img1,
       title: "Оборудование для анастезиологии",
       desc: "Основатель компании",
     },
     {
-      src: img1,
-      src1: img2,
-      src2: img3,
+      src: img3,
+      src1: img1,
+      src2: img2,
       title: "Оборудование для анастезиологии",
       desc: "Основатель компании",
     },
@@ -58,7 +60,7 @@ const Opit = () => {
         </div>
         <div className=" md:w-1/2 w-full  gap-[40px]">
           <div>
-            <Slider ref={sliderRef} {...settings}>
+            <Slider ref={sliderRef} {...SettingsSlide}>
               {slides.map((slide, index) => (
                 <div key={index} className="   bg-[#f8f7f3]">
                   <div className="flex gap-2">
@@ -108,13 +110,14 @@ const Opit = () => {
                 className="w-[41px] h-[41px] rounded-full border flex items-center justify-center"
                 onClick={() => sliderRef.current.slickPrev()}
               >
-                <BiArrowToLeft />
+                <GoArrowLeft />
               </button>
+
               <button
                 className="w-[41px] h-[41px] rounded-full border flex items-center justify-center"
                 onClick={() => sliderRef.current.slickNext()}
               >
-                <BiArrowToRight />
+                <GoArrowRight />
               </button>
             </div>
           </div>
