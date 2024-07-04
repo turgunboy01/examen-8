@@ -26,6 +26,7 @@ import SertifikatPage from "./pages/sertifikat/SertifikatPage";
 import SravneniePage from "./pages/sravnenie/Sravnenie";
 import ScrollToTop from "./components/ScrollToTop";
 import Card from "./pages/cart/Card";
+// import Test from "./Test";
 
 const App = () => {
   return (
