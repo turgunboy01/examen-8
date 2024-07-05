@@ -1,18 +1,17 @@
 import React from "react";
 import CardProduct from "./CardProduct";
 import { useSelector } from "react-redux";
-import { selectCart } from "../../redux/CartSlice";
-// import { selectCart } from "../redux/cartSlice"; // Path to your cart slice
 
 const CartComponents = () => {
-  // Redux store'dan cart ma'lumotlarini olish
-  const data = useSelector(selectCart);
+  const data = useSelector((state) => state.cart.data);
+  console.log(data);
 
-  // Subtotal hisoblash
   const subtotal = data.reduce(
     (sum, product) => sum + product.price * product.quantity,
     0
   );
+
+  
 
   return (
     <div className="max-w-[1350px] mx-auto pt-[30px] pb-[100px] px-5">

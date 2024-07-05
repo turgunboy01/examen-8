@@ -1,28 +1,38 @@
 // src/components/CartItem.js
 import React from "react";
-import { useDispatch } from "react-redux";
-// import {  removeItem, updateQuantity } from "../redux/cartSlice"; // path to your slice
+import { useDispatch, useSelector } from "react-redux";
 import { CgClose } from "react-icons/cg";
-import { removeItem, updateQuantity } from "../../redux/CartSlice";
+import { descrement, increment, removeItem } from "../../redux/CartSlice";
 import { CategoryIcons1, CategoryIcons2 } from "../../assets/HomeSvg";
+import { SelectSrav, setTosrav } from "../../redux/SravSlice";
+import { setToWishList } from "../../redux/WishlistSlice";
+import { FaHeart, FaRegHeart } from "react-icons/fa";
 
 const CartItem = ({ slide }) => {
   const dispatch = useDispatch();
   console.log(slide);
-  const increaseQty = (id, currentQuantity) => {
-    dispatch(updateQuantity({ id, quantity: currentQuantity + 1 }));
+
+  const increaseQty = (productId) => {
+    dispatch(increment(productId));
   };
 
-  const decreaseQty = (id, currentQuantity) => {
-    if (currentQuantity > 1) {
-      dispatch(updateQuantity({ id, quantity: currentQuantity - 1 }));
-    } else {
-      dispatch(removeItem(id));
-    }
+  const decreaseQty = (productId) => {
+    dispatch(descrement(productId));
   };
 
   const handleRemoveItem = (id) => {
     dispatch(removeItem(id));
+  };
+
+  const sravList = useSelector(SelectSrav);
+  const likeList = useSelector((state) => state.like.data);
+
+  const handleSravToggle = (product) => {
+    dispatch(setTosrav(product));
+  };
+
+  const handleWishListToggle = (product) => {
+    dispatch(setToWishList(product));
   };
 
   return (
@@ -35,7 +45,7 @@ const CartItem = ({ slide }) => {
         />
         <div className="absolute top-3 left-3 w-full flex justify-between">
           <div
-            className={`px-2 py-1 text-[12px] font-semibold border border-[#088269] text-[#088269] bg-[#e1efe6] ${
+            className={`px-3 py-1 text-[12px] font-semibold border border-[#088269] text-[#088269] bg-[#e1efe6] ${
               slide.aksiya === "-30%"
                 ? "text-[#855E00] bg-[#ffe095] border-[#AD7B00]"
                 : slide.aksiya === "Хит продаж"
@@ -45,9 +55,21 @@ const CartItem = ({ slide }) => {
           >
             {slide.aksiya}
           </div>
-          <div className="flex gap-1 pr-5">
-            <CategoryIcons1 />
-            <CategoryIcons2 />
+          <div className="md:hidden flex gap-1 pr-5">
+            <button onClick={() => handleSravToggle(slide)}>
+              {sravList.some((sravItem) => sravItem.id === slide.id) ? (
+                <CategoryIcons2 />
+              ) : (
+                <CategoryIcons1 />
+              )}
+            </button>
+            <button onClick={() => handleWishListToggle(slide)}>
+              {likeList.some((wishItem) => wishItem.id === slide.id) ? (
+                <FaHeart size={20} />
+              ) : (
+                <FaRegHeart size={20} />
+              )}
+            </button>
           </div>
         </div>
       </div>
@@ -68,17 +90,11 @@ const CartItem = ({ slide }) => {
             </p>
             <div className="">
               <span className="border mt-[30px] rounded-full w-[90px] py-2 flex justify-center items-center gap-2">
-                <button
-                  className="p-2"
-                  onClick={() => decreaseQty(slide.id, slide.quantity)}
-                >
+                <button className="p-2" onClick={() => decreaseQty(slide.id)}>
                   -
                 </button>
-                <p>{slide.quantity}</p>
-                <button
-                  className="p-2"
-                  onClick={() => increaseQty(slide.id, slide.quantity)}
-                >
+                <p>{slide.amount}</p>
+                <button className="p-2" onClick={() => increaseQty(slide.id)}>
                   +
                 </button>
               </span>
@@ -86,8 +102,20 @@ const CartItem = ({ slide }) => {
           </div>
           <div className="flex gap-1 items-start top-5 ">
             <div className=" hidden md:flex gap-1">
-              <CategoryIcons1 />
-              <CategoryIcons2 />
+              <button onClick={() => handleSravToggle(slide)}>
+                {sravList.some((sravItem) => sravItem.id === slide.id) ? (
+                  <CategoryIcons2 />
+                ) : (
+                  <CategoryIcons1 />
+                )}
+              </button>
+              <button onClick={() => handleWishListToggle(slide)}>
+                {likeList.some((wishItem) => wishItem.id === slide.id) ? (
+                  <FaHeart size={20} />
+                ) : (
+                  <FaRegHeart size={20} />
+                )}
+              </button>
             </div>
             <button
               className="flex absolute md:relative top-2 sm:top-5 md:top-0 right-[10px] md:right-0"

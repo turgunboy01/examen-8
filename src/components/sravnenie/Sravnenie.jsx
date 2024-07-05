@@ -1,9 +1,12 @@
 import React from "react";
-import { Products } from "../../data/ProductsData";
-import Product2 from "../ui/Product2";
 import Product from "../ui/Product";
+import { useSelector } from "react-redux";
+import { SelectSrav } from "../../redux/SravSlice";
 
 const Sravnenie = () => {
+  const sravList = useSelector(SelectSrav);
+  console.log(sravList);
+
   return (
     <div className="bg-[#f8f7f3]">
       <div className="max-w-[1350px] mx-auto px-5 py-[30px] ">
@@ -25,9 +28,9 @@ const Sravnenie = () => {
               Флюорографы
             </h2>{" "}
           </div>
-          <div className="md:w-[70%] h-[800px] overflow-y-scroll">
-            <div className={`grid  grid-cols-3 gap-4 pt-3`}>
-              {Products.map((slide, index) => (
+          <div className="md:w-[70%] h-[800px] p-[30px] overflow-y-scroll">
+            <div className={`grid  grid-cols-2  md:grid-cols-3 gap-4 pt-3`}>
+              {sravList.map((slide, index) => (
                 <div>
                   <Product slide={slide} key={index} />
                 </div>

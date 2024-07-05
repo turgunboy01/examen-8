@@ -25,6 +25,7 @@ export const Products = [
     scanDate: 10,
     otziv: 6,
     country: "Австралия",
+    quantity: 0,
   },
   {
     id: 2,
@@ -38,10 +39,10 @@ export const Products = [
     desc: "",
     ves: 70,
     aksiya: "Хит продаж",
-
     scanDate: 10,
     otziv: 3,
     country: "Австрия",
+    quantity: 0,
   },
   {
     id: 3,
@@ -58,6 +59,9 @@ export const Products = [
     scanDate: 15,
     otziv: 7,
     country: "Бельгия",
+    srav: false,
+    like: false,
+    quantity: 0,
   },
   {
     id: 4,
@@ -74,6 +78,8 @@ export const Products = [
     aksiya: "Хит продаж",
     otziv: 8,
     country: "Великобритания",
+
+    quantity: 0,
   },
   {
     id: 5,
@@ -90,6 +96,8 @@ export const Products = [
     otziv: 4,
     aksiya: "-30%",
     country: "Германия",
+
+    quantity: 0,
   },
   {
     id: 6,
@@ -106,6 +114,8 @@ export const Products = [
     otziv: 6,
     country: "Израиль",
     aksiya: "Хит продаж",
+ 
+    quantity: 0,
   },
   {
     id: 7,
@@ -122,6 +132,9 @@ export const Products = [
     otziv: 2,
     country: "Испания",
     aksiya: "Новинка",
+    srav: false,
+    like: false,
+    quantity: 0,
   },
   {
     id: 8,
@@ -137,6 +150,8 @@ export const Products = [
     ves: 60,
     scanDate: 31,
     otziv: 5,
+
+    quantity: 0,
   },
   {
     id: 9,
@@ -152,6 +167,8 @@ export const Products = [
     scanDate: 13,
     aksiya: "-30%",
     otziv: 4,
+
+    quantity: 0,
   },
   {
     id: 10,
@@ -166,6 +183,8 @@ export const Products = [
     ves: 45,
     scanDate: 15,
     otziv: 5,
+
+    quantity: 0,
     aksiya: "Новинка",
   },
   {
@@ -183,6 +202,8 @@ export const Products = [
     scanDate: 10,
     otziv: 6,
     country: "Австралия",
+
+    quantity: 0,
   },
   {
     id: 12,
@@ -197,6 +218,7 @@ export const Products = [
     ves: 70,
     aksiya: "Хит продаж",
 
+    quantity: 0,
     scanDate: 10,
     otziv: 3,
     country: "Австрия",
@@ -216,6 +238,8 @@ export const Products = [
     scanDate: 15,
     otziv: 7,
     country: "Бельгия",
+ 
+    quantity: 0,
   },
   {
     id: 14,
@@ -232,6 +256,8 @@ export const Products = [
     aksiya: "Хит продаж",
     otziv: 8,
     country: "Великобритания",
+ 
+    quantity: 0,
   },
   {
     id: 15,
@@ -248,6 +274,8 @@ export const Products = [
     otziv: 4,
     aksiya: "-30%",
     country: "Германия",
+ 
+    quantity: 0,
   },
   {
     id: 16,
@@ -264,6 +292,8 @@ export const Products = [
     otziv: 6,
     country: "Израиль",
     aksiya: "Хит продаж",
+ 
+    quantity: 0,
   },
   {
     id: 17,
@@ -280,6 +310,8 @@ export const Products = [
     otziv: 2,
     country: "Испания",
     aksiya: "Новинка",
+ 
+    quantity: 0,
   },
   {
     id: 18,
@@ -294,6 +326,8 @@ export const Products = [
     aksiya: "-30%",
     ves: 60,
     scanDate: 31,
+ 
+    quantity: 0,
     otziv: 5,
   },
   {
@@ -310,6 +344,8 @@ export const Products = [
     scanDate: 13,
     aksiya: "-30%",
     otziv: 4,
+   
+    quantity: 0,
   },
   {
     id: 20,
@@ -325,6 +361,8 @@ export const Products = [
     scanDate: 15,
     otziv: 5,
     aksiya: "Новинка",
+
+    quantity: 0,
   },
   {
     id: 21,
@@ -340,6 +378,8 @@ export const Products = [
     aksiya: "-30%",
     scanDate: 10,
     otziv: 6,
+   
+    quantity: 0,
     country: "Австралия",
   },
   {
@@ -354,7 +394,8 @@ export const Products = [
     desc: "",
     ves: 70,
     aksiya: "Хит продаж",
-
+   
+    quantity: 0,
     scanDate: 10,
     otziv: 3,
     country: "Австрия",
@@ -374,6 +415,8 @@ export const Products = [
     scanDate: 15,
     otziv: 7,
     country: "Бельгия",
+  
+    quantity: 0,
   },
   {
     id: 24,
@@ -390,6 +433,8 @@ export const Products = [
     aksiya: "Хит продаж",
     otziv: 8,
     country: "Великобритания",
+   
+    quantity: 0,
   },
   {
     id: 25,
@@ -406,6 +451,8 @@ export const Products = [
     otziv: 4,
     aksiya: "-30%",
     country: "Германия",
+   
+    quantity: 0,
   },
   {
     id: 26,
@@ -422,6 +469,8 @@ export const Products = [
     otziv: 6,
     country: "Израиль",
     aksiya: "Хит продаж",
+   
+    quantity: 0,
   },
   {
     id: 27,
@@ -438,6 +487,8 @@ export const Products = [
     otziv: 2,
     country: "Испания",
     aksiya: "Новинка",
+   
+    quantity: 0,
   },
   {
     id: 28,
@@ -453,6 +504,8 @@ export const Products = [
     ves: 60,
     scanDate: 31,
     otziv: 5,
+   
+    quantity: 0,
   },
   {
     id: 29,
@@ -468,6 +521,8 @@ export const Products = [
     scanDate: 13,
     aksiya: "-30%",
     otziv: 4,
+   
+    quantity: 0,
   },
   {
     id: 30,
@@ -483,6 +538,8 @@ export const Products = [
     scanDate: 15,
     otziv: 5,
     aksiya: "Новинка",
+   
+    quantity: 0,
   },
   {
     id: 31,
@@ -499,6 +556,8 @@ export const Products = [
     scanDate: 10,
     otziv: 6,
     country: "Австралия",
+   
+    quantity: 0,
   },
   {
     id: 32,
@@ -512,7 +571,8 @@ export const Products = [
     desc: "",
     ves: 70,
     aksiya: "Хит продаж",
-
+   
+    quantity: 0,
     scanDate: 10,
     otziv: 3,
     country: "Австрия",
@@ -532,6 +592,8 @@ export const Products = [
     scanDate: 15,
     otziv: 7,
     country: "Бельгия",
+   
+    quantity: 0,
   },
   {
     id: 34,
@@ -548,6 +610,8 @@ export const Products = [
     aksiya: "Хит продаж",
     otziv: 8,
     country: "Великобритания",
+   
+    quantity: 0,
   },
   {
     id: 35,
@@ -564,6 +628,8 @@ export const Products = [
     otziv: 4,
     aksiya: "-30%",
     country: "Германия",
+ 
+    quantity: 0,
   },
   {
     id: 36,
@@ -580,6 +646,8 @@ export const Products = [
     otziv: 6,
     country: "Израиль",
     aksiya: "Хит продаж",
+    
+    quantity: 0,
   },
   {
     id: 37,
@@ -596,6 +664,8 @@ export const Products = [
     otziv: 2,
     country: "Испания",
     aksiya: "Новинка",
+   
+    quantity: 0,
   },
   {
     id: 38,
@@ -611,6 +681,8 @@ export const Products = [
     ves: 60,
     scanDate: 31,
     otziv: 5,
+   
+    quantity: 0,
   },
   {
     id: 39,
@@ -626,6 +698,8 @@ export const Products = [
     scanDate: 13,
     aksiya: "-30%",
     otziv: 4,
+   
+    quantity: 0,
   },
   {
     id: 40,
@@ -641,5 +715,7 @@ export const Products = [
     scanDate: 15,
     otziv: 5,
     aksiya: "Новинка",
+   
+    quantity: 0,
   },
 ];

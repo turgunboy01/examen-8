@@ -31,42 +31,40 @@ import Card from "./pages/cart/Card";
 const App = () => {
   return (
     <div>
-      <BrowserRouter>
-        <Header />
-        <ScrollToTop />
-        <div className="pt-[140px] sm:pt-[200px]">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/katalog" element={<Katalog />} />
-            <Route path="/dostavka" element={<DostavkaPage />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/product" element={<ProductDetailsPage />} />
-            <Route path="/uslugi" element={<UslugiPage />} />
-            <Route path="/statya" element={<StatyaPage />} />
-            <Route path="/oplata" element={<OplataPage />} />
-            <Route path="/countryBrend" element={<CountryBrendPage />} />
-            <Route
-              path="/kabinetPodKluch/:id"
-              element={<CountryKabinetPodKluch />}
-            />
-            <Route path="/garanty" element={<GarantyPage />} />
-            <Route path="/otziv" element={<OtzivPage />} />
-            <Route path="/blog" element={<BlogPage />} />
-            <Route path="/aksiya" element={<AksiyaPage />} />
-            <Route path="/podkluch" element={<KobinetPodKluchPage />} />
-            <Route path="/proizvaditel" element={<ProizvaditelPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/wishlist" element={<WishlistPage />} />
-            <Route path="/faq" element={<FaqPage />} />
-            <Route path="/sertifat" element={<SertifikatPage />} />
-            <Route path="/vakansy" element={<VakansyPage />} />
-            <Route path="/sravnenie" element={<SravneniePage />} />
-            <Route path="/cart" element={<Card />} />
-          </Routes>
-        </div>
+      <Header />
+      <ScrollToTop />
+      <div className="pt-[140px] sm:pt-[200px]">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/katalog" element={<Katalog />} />
+          <Route path="/dostavka" element={<DostavkaPage />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/product" element={<ProductDetailsPage />} />
+          <Route path="/uslugi" element={<UslugiPage />} />
+          <Route path="/statya" element={<StatyaPage />} />
+          <Route path="/oplata" element={<OplataPage />} />
+          <Route path="/countryBrend" element={<CountryBrendPage />} />
+          <Route
+            path="/kabinetPodKluch/:id"
+            element={<CountryKabinetPodKluch />}
+          />
+          <Route path="/garanty" element={<GarantyPage />} />
+          <Route path="/otziv" element={<OtzivPage />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/aksiya" element={<AksiyaPage />} />
+          <Route path="/podkluch" element={<KobinetPodKluchPage />} />
+          <Route path="/proizvaditel" element={<ProizvaditelPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/wishlist" element={<WishlistPage />} />
+          <Route path="/faq" element={<FaqPage />} />
+          <Route path="/sertifat" element={<SertifikatPage />} />
+          <Route path="/vakansy" element={<VakansyPage />} />
+          <Route path="/sravnenie" element={<SravneniePage />} />
+          <Route path="/cart" element={<Card />} />
+        </Routes>
+      </div>
 
-        <Footer />
-      </BrowserRouter>
+      <Footer />
       {/* <Test /> */}
     </div>
   );

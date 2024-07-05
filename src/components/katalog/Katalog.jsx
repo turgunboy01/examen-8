@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { RiArrowRightSLine } from "react-icons/ri";
 import img1 from "../../assets/katalog/katalog1.png";
 import img2 from "../../assets/katalog/katalog2.png";
@@ -11,11 +11,24 @@ import img8 from "../../assets/katalog/katalog8.png";
 import img9 from "../../assets/katalog/katalog9.png";
 import img10 from "../../assets/katalog/katalog10.png";
 import { Settings } from "../../assets/SvgIcons";
-
-
+import { Products } from "../../data/ProductsData";
 
 const KatalogComponent = () => {
   const [catalog, setCatalog] = useState(false);
+  const [categories, setCategories] = useState([]);
+  const [changeCategory, setChangeCategory] = useState("");
+  const listUniqueCategories = () => {
+    const uniqueCategories = [...new Set(Products.map((cat) => cat.category))];
+    setCategories(uniqueCategories);
+  };
+
+  useEffect(() => {
+    listUniqueCategories();
+  }, []);
+
+  const fill = Products.filter((fil) => fil.category == changeCategory);
+
+  console.log(fill);
   return (
     <div className="bg-[#f8f7f3]">
       <div className="max-w-[1350px] mx-auto px-5 py-[30px]">
@@ -39,7 +52,7 @@ const KatalogComponent = () => {
               <h2 className="py-3 flex justify-between text-[14px] items-center">
                 Реанимация
                 <RiArrowRightSLine />
-              </h2>{" "}
+              </h2>
             </div>
           </div>
         </div>
@@ -47,74 +60,16 @@ const KatalogComponent = () => {
           <div className="w-[30%] hidden lg:block border h-full rounded-lg p-5">
             <div className="">
               <h2 className=" pb-4  border-b">Направления</h2>
-              <h2 className="py-3 flex justify-between text-[14px] items-center">
-                Реанимация
-                <RiArrowRightSLine />
-              </h2>{" "}
-              <h2 className="py-3 flex justify-between text-[14px] items-center">
-                Реанимация
-                <RiArrowRightSLine />
-              </h2>{" "}
-              <h2 className="py-3 flex justify-between text-[14px] items-center">
-                Хирургия
-                <RiArrowRightSLine />
-              </h2>{" "}
-              <h2 className="py-3 flex justify-between text-[14px] items-center">
-                Офтальмология
-                <RiArrowRightSLine />
-              </h2>{" "}
-              <h2 className="py-3 flex justify-between text-[14px] items-center">
-                Лабораторная диагностика
-                <RiArrowRightSLine />
-              </h2>{" "}
-              <h2 className="py-3 flex justify-between text-[14px] items-center">
-                Акушерство и Гинекология
-                <RiArrowRightSLine />
-              </h2>{" "}
-              <h2 className="py-3 flex justify-between text-[14px] items-center">
-                Гистология
-                <RiArrowRightSLine />
-              </h2>{" "}
-              <h2 className="py-3 flex justify-between text-[14px] items-center">
-                Косметология
-                <RiArrowRightSLine />
-              </h2>{" "}
-              <h2 className="py-3 flex justify-between text-[14px] items-center">
-                Оториноларингология
-                <RiArrowRightSLine />
-              </h2>{" "}
-              <h2 className="py-3 flex justify-between text-[14px] items-center">
-                Рентгенология и томография
-                <RiArrowRightSLine />
-              </h2>{" "}
-              <h2 className="py-3 flex justify-between text-[14px] items-center">
-                Стерилизация
-                <RiArrowRightSLine />
-              </h2>{" "}
-              <h2 className="py-3 flex justify-between text-[14px] items-center">
-                Физиотерапия и реабилитация
-                <RiArrowRightSLine />
-              </h2>{" "}
-              <h2 className="py-3 flex justify-between text-[14px] items-center">
-                Функциональная диагностика
-                <RiArrowRightSLine />
-              </h2>{" "}
-              <h2 className="py-3 flex justify-between text-[14px] items-center">
-                Эндоскопия
-                <RiArrowRightSLine />
-              </h2>{" "}
-              <h2 className="py-3 flex justify-between text-[14px] items-center">
-                Новинки
-                <RiArrowRightSLine />
-              </h2>{" "}
-              <h2 className="py-3 flex justify-between text-[14px] items-center">
-                Распродажи
-                <RiArrowRightSLine />
-              </h2>{" "}
-              <h2 className="py-3 flex justify-between text-[14px] items-center">
-                Кабинеты под ключ
-                <RiArrowRightSLine />
-              </h2>
+              {categories.map((item, index) => (
+                <h2
+                  onClick={() => setChangeCategory(item)}
+                  key={index}
+                  className="py-3 cursor-pointer flex justify-between text-[14px] items-center"
+                >
+                  {item}
+                  <RiArrowRightSLine />
+                </h2>
+              ))}
             </div>
           </div>
           <div className="lg:w-[70%] w-full  grid grid-cols-3 gap-5">

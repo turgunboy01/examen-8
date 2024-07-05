@@ -1,12 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const WishlistSlice = createSlice({
-  name: "like",
+const SravSlice = createSlice({
+  name: "srav",
   initialState: {
-    data: JSON.parse(localStorage.getItem("like")) || [],
+    data: JSON.parse(localStorage.getItem("srav")) || [],
   },
   reducers: {
-    setToWishList(state, action) {
+    setTosrav(state, action) {
       const existingItemIndex = state.data.findIndex(
         (item) => item.id === action.payload.id
       );
@@ -17,11 +17,11 @@ const WishlistSlice = createSlice({
         state.data = state.data.filter((item) => item.id !== action.payload.id);
       }
 
-      localStorage.setItem("like", JSON.stringify(state.data));
+      localStorage.setItem("srav", JSON.stringify(state.data));
     },
   },
 });
+export const { setTosrav } = SravSlice.actions;
 
-export const { setToWishList } = WishlistSlice.actions;
-
-export default WishlistSlice.reducer;
+export const SelectSrav = (srav) => srav.srav.data;
+export default SravSlice.reducer;

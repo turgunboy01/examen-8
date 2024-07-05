@@ -1,64 +1,42 @@
-// src/redux/cartSlice.js
 import { createSlice } from "@reduxjs/toolkit";
 
-// Local storage uchun yordamchi funksiyalar
-const storeInLocalStorage = (data) => {
-  localStorage.setItem("cart", JSON.stringify(data));
-};
-
-// Local storage'dan ma'lumotlarni olish
-const getFromLocalStorage = (key, defaultValue) => {
-  try {
-    const item = localStorage.getItem(key);
-    return item ? JSON.parse(item) : defaultValue;
-  } catch (error) {
-    console.error(`Error parsing local storage key “${key}”:`, error);
-    return defaultValue;
-  }
-};
-
-const initialState = {
-  cart: getFromLocalStorage("cart", []),
-};
-
-const cartSlice = createSlice({
+const CardSlice = createSlice({
   name: "cart",
-  initialState,
+  initialState: {
+    data: JSON.parse(localStorage.getItem("data")) || [],
+  },
   reducers: {
-    addToCart: (state, action) => {
-      const { id, title, price, quantity, img, aksiya } = action.payload;
-      const existingItemIndex = state.cart.findIndex((item) => item.id === id);
-
-      if (existingItemIndex !== -1) {
-        // Agar item mavjud bo'lsa, quantity ni oshirish
-        state.cart[existingItemIndex].quantity += quantity;
-      } else {
-        // Agar item mavjud bo'lmasa, yangi item qo'shish
-        state.cart.push({ id, title, price, quantity, img, aksiya });
+    addToCart(state, action) {
+      const existingItem = state.data.findIndex(
+        (item) => item.id == action.payload.id
+      );
+      if (existingItem === -1) {
+        state.data = [...state.data, { ...action.payload, amount: 1 }];
       }
 
-      storeInLocalStorage(state.cart);
+      localStorage.setItem("data", JSON.stringify(state.data));
     },
     removeItem: (state, action) => {
-      state.cart = state.cart.filter((item) => item.id !== action.payload);
-      storeInLocalStorage(state.cart);
+      const tempCart = state.data.filter((item) => item.id !== action.payload);
+      state.data = tempCart;
+      localStorage.setItem("data", JSON.stringify(state.data));
     },
-    updateQuantity: (state, action) => {
-      const { id, quantity } = action.payload;
-      const existingItemIndex = state.cart.findIndex((item) => item.id === id);
-
-      if (existingItemIndex !== -1) {
-        state.cart[existingItemIndex].quantity = quantity;
-        if (quantity <= 0) {
-          // Agar quantity 0 yoki past bo'lsa, item ni olib tashlash
-          state.cart.splice(existingItemIndex, 1);
-        }
-        storeInLocalStorage(state.cart);
+    increment: (state, action) => {
+      const item = state.data.find((item) => item.id === action.payload);
+      if (item) {
+        item.amount += 1;
       }
+      localStorage.setItem("data", JSON.stringify(state.data));
+    },
+    descrement: (state, action) => {
+      const item = state.data.find((item) => item.id === action.payload);
+      if (item && item.amount > 1) {
+        item.amount -= 1;
+      }
+      localStorage.setItem("data", JSON.stringify(state.data));
     },
   },
 });
-
-export const { addToCart, removeItem, updateQuantity } = cartSlice.actions;
-export const selectCart = (state) => state.cart.cart;
-export default cartSlice.reducer;
+export const { addToCart, removeItem, increment, descrement } =
+  CardSlice.actions;
+export default CardSlice.reducer;

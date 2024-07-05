@@ -11,6 +11,7 @@ import Kabinet from "../../components/ui/Kabinet";
 import Accardion from "../../components/ui/Accardion";
 import HomeSlide from "../../components/home/HomeSlide";
 import FooterEmail from "../../components/ui/FooterEmail";
+import Modal from "../../components/modal/Modal";
 
 const Home = () => {
   return (

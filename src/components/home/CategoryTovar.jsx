@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -6,57 +6,28 @@ import { CategoryIcons1, CategoryIcons2 } from "../../assets/HomeSvg";
 import { SettingsSlide } from "../../data/SlidesData";
 import { Products } from "../../data/ProductsData";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../redux/CartSlice";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
-import { addToWishCart, removeWish } from "../../redux/WishlistSlice";
-// import ProductDetails from "../productDetails/ProductDetails";
+import { SelectSrav, setTosrav } from "../../redux/SravSlice";
+import { setToWishList } from "../../redux/WishlistSlice";
 
 const CategoryTovar = () => {
-  const [likeStatus, setLikeStatus] = useState(() => {
-    const storedLikes = localStorage.getItem("like");
-    return storedLikes ? JSON.parse(storedLikes) : {};
-  });
-
   const sliderRef = useRef(null);
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    localStorage.setItem("like", JSON.stringify(likeStatus));
-  }, [likeStatus]);
+  const sravList = useSelector(SelectSrav);
+  const likeList = useSelector((state) => state.like.data);
 
   const handleAddToCart = (product) => {
-    let totalPrice = 1 * product.price;
-    const tempProduct = {
-      ...product,
-      quantity: 1,
-      totalPrice,
-    };
-    dispatch(addToCart(tempProduct));
-    console.log(tempProduct);
+    dispatch(addToCart(product));
   };
 
-  const handleLikeToggle = (product) => {
-    setLikeStatus((prevState) => ({
-      ...prevState,
-      [product.id]: true,
-    }));
-    const tempProduct = {
-      ...product,
-      likeStatus: true,
-    };
-    dispatch(addToWishCart(tempProduct));
+  const handleSravToggle = (product) => {
+    dispatch(setTosrav(product));
   };
 
-  const handleDisLikeToggle = (product) => {
-    setLikeStatus((prevState) => ({
-      ...prevState,
-      [product.id]: false,
-    }));
-    const tempProduct = {
-      ...product,
-    };
-    dispatch(removeWish(tempProduct));
+  const handleWishListToggle = (product) => {
+    dispatch(setToWishList(product));
   };
 
   return (
@@ -90,28 +61,39 @@ const CategoryTovar = () => {
                   <div key={index} className="border rounded-xl bg-[#f8f7f3]">
                     <div className="w-full h-[300px] bg-[#fff] overflow-hidden flex items-center relative justify-center">
                       <img src={slide.img} alt={slide.title} />
-                      <div
-                        className={`absolute top-3 left-3 px-2 py-1 text-[14px] font-semibold border border-[#088269] text-[#088269] bg-[#e1efe6] ${
-                          slide.aksiya === "-30%"
-                            ? "text-[#855E00] bg-[#FFE095] border-[#AD7B00]"
-                            : slide.aksiya === "Хит продаж"
-                            ? "bg-[#E6E6FD] text-[#59599A] border-[#424285]"
-                            : ""
-                        } rounded-full`}
-                      >
-                        {slide.aksiya}
+                      <div className="absolute top-1.5 left-2 px-2 py-1 text-[13px] rounded-full">
+                        <div
+                          className={`px-3 py-1 text-[12px] font-semibold border border-[#088269] text-[#088269] bg-[#e1efe6] ${
+                            slide.aksiya === "-30%"
+                              ? "text-[#855E00] bg-[#ffe095] border-[#AD7B00]"
+                              : slide.aksiya === "Хит продаж"
+                              ? "bg-[#e6e6fd] text-[#59599A] border-[#424285]"
+                              : ""
+                          } rounded-full`}
+                        >
+                          {slide.aksiya}
+                        </div>
                       </div>
                       <div className="absolute right-3 top-3 flex gap-2">
-                        <CategoryIcons1 />
-                        {likeStatus[slide.id] ? (
-                          <button onClick={() => handleDisLikeToggle(slide)}>
+                        <button onClick={() => handleSravToggle(slide)}>
+                          {sravList.some(
+                            (sravItem) => sravItem.id === slide.id
+                          ) ? (
+                            <CategoryIcons2 />
+                          ) : (
+                            <CategoryIcons1 />
+                          )}
+                        </button>
+
+                        <button onClick={() => handleWishListToggle(slide)}>
+                          {likeList.some(
+                            (wishItem) => wishItem.id === slide.id
+                          ) ? (
                             <FaHeart size={20} />
-                          </button>
-                        ) : (
-                          <button onClick={() => handleLikeToggle(slide)}>
+                          ) : (
                             <FaRegHeart size={20} />
-                          </button>
-                        )}
+                          )}
+                        </button>
                       </div>
                     </div>
                     <div className="p-4">
