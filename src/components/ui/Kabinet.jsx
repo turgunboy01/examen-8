@@ -3,10 +3,6 @@ import React, { useRef } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import img1 from "../../assets/home/kabinetImg1.png";
-import img2 from "../../assets/home/kabinetImg2.png";
-import img3 from "../../assets/home/kabinetImg3.png";
-import { BiArrowToLeft, BiArrowToRight } from "react-icons/bi";
 import { KabinetSlides, SettingsSlide } from "../../data/SlidesData";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 const Kabinet = () => {

@@ -26,6 +26,8 @@ import SertifikatPage from "./pages/sertifikat/SertifikatPage";
 import SravneniePage from "./pages/sravnenie/Sravnenie";
 import ScrollToTop from "./components/ScrollToTop";
 import Card from "./pages/cart/Card";
+// import Kabinet from "./components/ui/Kabinet";
+import KabinetPage from "./pages/kabinet/KabinetPage";
 // import Test from "./Test";
 
 const App = () => {
@@ -61,6 +63,7 @@ const App = () => {
           <Route path="/vakansy" element={<VakansyPage />} />
           <Route path="/sravnenie" element={<SravneniePage />} />
           <Route path="/cart" element={<Card />} />
+          <Route path="/profile" element={<KabinetPage />} />
         </Routes>
       </div>
 

@@ -8,11 +8,13 @@ import {
   HeaderLogo,
 } from "../../assets/HeaderSvg";
 import { Link, NavLink } from "react-router-dom";
-import img from "../../assets/header.png";
+// import img from "../../assets/header.png";
 import { IoIosSearch, IoMdArrowDropdown } from "react-icons/io";
 import { Products } from "../../data/ProductsData";
 import { ModalContext } from "../../context/modal/ModalContext";
-import Modal from "../modal/Modal";
+// import Modal from "../modal/auth/Modal";
+// import LoginModal from "../modal/auth/LoginModal";
+// import SbrosModal from "../modal/auth/SbrosModal";
 
 const HeaderCenter = () => {
   const [searchProduct, setSearchProduct] = useState("");
@@ -170,7 +172,9 @@ const HeaderCenter = () => {
             <HeaderIcon1 />
             <p className="text-[#8a8694] text-[14px] hidden lg:block">Войти</p>
           </span>
-          {regModal && <Modal />}
+          {/* {regModal && <Modal />} */}
+          {/* <LoginModal /> */}
+          {/* <SbrosModal /> */}
           {/* <Modal /> */}
           <NavLink
             to={"/wishlist"}

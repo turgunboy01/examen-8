@@ -39,4 +39,6 @@ const CardSlice = createSlice({
 });
 export const { addToCart, removeItem, increment, descrement } =
   CardSlice.actions;
+
+export const selectCard = (state) => state.cart.data;
 export default CardSlice.reducer;

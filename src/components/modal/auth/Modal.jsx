@@ -1,10 +1,9 @@
 import React, { useContext } from "react";
-import { ModalContext } from "../../context/modal/ModalContext";
+import { ModalContext } from "../../../context/modal/ModalContext";
 import { CgClose } from "react-icons/cg";
 
 const Modal = () => {
-  const { loginModal, setLoginModal, regModal, setRegModal } =
-    useContext(ModalContext);
+  const { regModal, setRegModal } = useContext(ModalContext);
   return (
     <div
       className="fixed inset-0 bg-gray-800 bg-opacity-75  z-[999] flex justify-center items-center"
@@ -18,8 +17,11 @@ const Modal = () => {
         className="bg-white p-6 rounded-lg w-[711px] flex flex-col  relative sm:grid-cols-2 gap-7"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className=" absolute right-5 top-5">
-          <CgClose />
+        <div
+          onClick={() => setRegModal(false)}
+          className=" absolute right-3 top-3 cursor-pointer"
+        >
+          <CgClose size={20} />
         </div>
         <h3>Регистрация</h3>{" "}
         <span>
@@ -38,7 +40,7 @@ const Modal = () => {
           Регистрация
         </button>
         <div className="flex gap-4">
-          <input type="checkbox" id="check" className="w-[30px] h-[30px] " />
+          <input type="checkbox" id="check" className="w-[25px] h-[25px] " />
           <label htmlFor="check">
             Я соглашаюсь c обработкой персональных данных на условиях{" "}
             <span className="text-[#088269]">Политики конфиденциальности.</span>
