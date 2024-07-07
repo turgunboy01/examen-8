@@ -1,7 +1,8 @@
 import React from "react";
 import { PenIcon } from "../../assets/ProfileSvg";
 
-const CompanyName = () => {
+const CompanyName = ({ setPlatelModal, platelProfile }) => {
+  console.log(platelProfile, "sa");
   return (
     <div className="flex  md:flex-row flex-col ">
       <div className="md:w-[25%] flex justify-between py-4 gap-[30px] ">
@@ -16,10 +17,12 @@ const CompanyName = () => {
         <div className="border rounded-lg bg-[#fff] p-[30px]">
           <span className="flex justify-between items-center">
             <h2 className="text-[18px]  font-semibold">Название компании</h2>
-            <PenIcon />
+            <button onClick={() => setPlatelModal(true)}>
+              <PenIcon />
+            </button>
           </span>
           <p className="text-[#202020] text-[14px] lg:text-[16px] font-medium pt-2">
-            ИНН 9717039181
+            ИНН {platelProfile ? platelProfile.inn : "9717039181 "}
           </p>
           <div className=" w-[90%] md:w-[80%] mt-[20px] sm:mt-[40px] md:mt-[60px] ">
             <div className="flex justify-between sm:flex-row flex-col sm:gap-10 ">
@@ -28,19 +31,21 @@ const CompanyName = () => {
                   Адрес доставки
                 </h2>
                 <p className="text-[#202020] text-[12px] sm:text-[14px] lg:text-[16px]">
-                  Россия, г. Москва, ул. Докукина, 8, стр. 2
+                  {platelProfile
+                    ? platelProfile.address
+                    : " Россия, г. Москва, ул. Докукина, 8, стр. 2 "}
                 </p>
                 <h2 className="flex text-[#7A7687] text-[12px] sm:text-[14px] pt-2 lg:text-[16px] items-center gap-3">
                   Сайт
                 </h2>
                 <p className="text-[#202020] text-[12px] sm:text-[14px] lg:text-[16px]">
-                  global-mt.ru
+                  {platelProfile ? platelProfile.website : "global-mt.ru"}
                 </p>
                 <h2 className="flex text-[#7A7687] pt-2 text-[12px] sm:text-[14px] lg:text-[16px] items-center gap-3">
                   Email
                 </h2>
                 <p className="text-[#202020]  text-[12px] sm:text-[14px] lg:text-[16px]">
-                  info@mail.ru
+                  {platelProfile ? platelProfile.website : "info@mail.ru email"}
                 </p>
               </div>
               <div className="pt-2  sm:pt-0">
@@ -48,7 +53,9 @@ const CompanyName = () => {
                   Ваша должность
                 </h2>
                 <p className="text-[#202020]  text-[12px] sm:text-[14px] lg:text-[16px]">
-                  Менеджер по закупкам
+                  {platelProfile
+                    ? platelProfile.position
+                    : "Менеджер по закупкам"}
                 </p>
 
                 <div className=" pt-2 ">
@@ -56,7 +63,9 @@ const CompanyName = () => {
                     Тип организации
                   </h2>
                   <p className="text-[#202020] text-[12px] sm:text-[14px] lg:text-[16px]  ">
-                    Юридическое лицо
+                    {platelProfile
+                      ? platelProfile.organizationType
+                      : "  Юридическое лицо"}
                   </p>
                 </div>
               </div>

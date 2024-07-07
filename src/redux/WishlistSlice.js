@@ -23,5 +23,5 @@ const WishlistSlice = createSlice({
 });
 
 export const { setToWishList } = WishlistSlice.actions;
-
+export const SelectWishList = (state) => state.like.data;
 export default WishlistSlice.reducer;

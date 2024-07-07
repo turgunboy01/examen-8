@@ -13,7 +13,7 @@ const KobinetPodKluch = () => {
   return (
     <div className="bg-[#f8f7f3] py-[20px]">
       <div className="max-w-[1350px] mx-auto px-5">
-        <h2 className="text-[48px] leading-[52.6px] py-[20px] pt-[60px]">
+        <h2 className="text-[30px] md:text-[48px] leading-[35px] md:leading-[52.6px] py-[20px] pt-[60px]">
           Комплексное оснащение палаты реанимации и интенсивной терапии
         </h2>
         <img src={product.img} alt="" className="w-full" />

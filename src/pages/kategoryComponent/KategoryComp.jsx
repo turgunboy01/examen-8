@@ -8,10 +8,10 @@ import {
 import React, { useState, useEffect } from "react";
 import { IoIosArrowDown, IoIosSearch } from "react-icons/io";
 import { MdKeyboardArrowDown } from "react-icons/md";
-import Product from "./ui/Product";
-import { FilterSvg1, FilterSvg2 } from "../assets/HomeSvg";
-import Product2 from "./ui/Product2";
-import { Products } from "../data/ProductsData";
+import Product2 from "../../components/ui/Product2";
+import Product from "../../components/ui/Product";
+import { FilterSvg1, FilterSvg2 } from "../../assets/HomeSvg";
+import { Products } from "../../data/ProductsData";
 
 const countries = [
   "Австралия",
@@ -24,11 +24,11 @@ const countries = [
   "Испания",
 ];
 
-const ProductFilterPage = () => {
+const KategoryComp = () => {
   const [value, setValue] = useState([0, 1000]);
   const [price, setPrice] = useState(true);
   const [country, setCountry] = useState(true);
-  const [product, setProduct] = useState(false);
+  const [product, setProduct] = useState(true);
   const [vertical, setVertical] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState("По популярности");
@@ -86,9 +86,7 @@ const ProductFilterPage = () => {
   return (
     <div className="bg-[#f8f7f3] py-[80px] overflow-hidden">
       <div className="max-w-[1350px] mx-auto px-5">
-        <h2 className="text-[30px] leading-[36px] py-5">
-          Оборудование Draeger
-        </h2>
+      
         <div className="flex gap-4 overflow-x-scroll">
           <button className="py-2 px-5 bg-[#fff] border rounded-full">
             Дерматологическое оборудование
@@ -336,4 +334,4 @@ const ProductFilterPage = () => {
   );
 };
 
-export default ProductFilterPage;
+export default KategoryComp;

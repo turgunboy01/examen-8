@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Kabinet from "../../components/ui/Kabinet";
 import Category from "../../components/home/Category";
 import CategoryTovar from "../../components/home/CategoryTovar";
@@ -11,6 +11,8 @@ import KatalogComponent from "../../components/katalog/Katalog";
 import FooterEmail from "../../components/ui/FooterEmail";
 
 const Katalog = () => {
+  
+
   return (
     <div className="">
       <KatalogComponent />

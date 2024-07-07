@@ -12,6 +12,7 @@ import img9 from "../../assets/katalog/katalog9.png";
 import img10 from "../../assets/katalog/katalog10.png";
 import { Settings } from "../../assets/SvgIcons";
 import { Products } from "../../data/ProductsData";
+import { Link } from "react-router-dom";
 
 const KatalogComponent = () => {
   const [catalog, setCatalog] = useState(false);
@@ -46,13 +47,20 @@ const KatalogComponent = () => {
             </h2>
             <div
               className={`${
-                catalog ? "h-[800px] opacity-100" : "h-0 opacity-0"
+                catalog ? "h-[420px] opacity-100" : "h-0 opacity-0"
               }  rounded-lg absolute bg-[#f8f7f3] duration-300 top-[60px] w-[100%] border mt-[10px]  p-[20px]`}
             >
-              <h2 className="py-3 flex justify-between text-[14px] items-center">
-                Реанимация
-                <RiArrowRightSLine />
-              </h2>
+              {categories.map((item, index) => (
+                <Link
+                  to={`/kategory/${item}`}
+                  onClick={() => setChangeCategory(item)}
+                  key={index}
+                  className="py-3 cursor-pointer flex justify-between text-[14px] items-center"
+                >
+                  {item}
+                  <RiArrowRightSLine />
+                </Link>
+              ))}
             </div>
           </div>
         </div>
@@ -61,14 +69,15 @@ const KatalogComponent = () => {
             <div className="">
               <h2 className=" pb-4  border-b">Направления</h2>
               {categories.map((item, index) => (
-                <h2
+                <Link
+                  to={`/kategory/${item}`}
                   onClick={() => setChangeCategory(item)}
                   key={index}
                   className="py-3 cursor-pointer flex justify-between text-[14px] items-center"
                 >
                   {item}
                   <RiArrowRightSLine />
-                </h2>
+                </Link>
               ))}
             </div>
           </div>

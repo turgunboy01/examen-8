@@ -8,31 +8,31 @@ const Statya = () => {
     <div className="bg-[#f8f7f3]">
       <div className="max-w-[1350px] mx-auto px-5 pt-[40px]">
         <div className="p-[30px] border rounded-lg bg-[#fff]">
-          <h2 className="text-[48px] leading-[52px] pb-[10px]">
+          <h2 className="text-[30px] sm:text-[34px]  sm:leading-[38] md:text-[48px] md:leading-[52px] pb-[10px]">
             {" "}
             Информационная статья
           </h2>
           <p className="text-[12px] text-[#7A7687]">Автор: Иванов Р.</p>
           <div className="">
             <h2 className="text-[18px] pt-[20px] pb-[10px]">Содержание:</h2>
-            <p className="text-[12px] text-[#7a7687]">
+            <p className="text-[10px] sm:text-[12px] text-[#7a7687]">
               1. Новая модель организационной деятельности
             </p>
-            <p className="text-[12px] text-[#7A7687]">
+            <p className="text-[10px] sm:text-[12px] text-[#7A7687]">
               2. Мы вынуждены отталкиваться от того, что курс
             </p>
-            <p className="text-[12px] text-[#7A7687]">
+            <p className="text-[10px] sm:text-[12px] text-[#7A7687]">
               3. Новая модель организационной деятельности
             </p>
-            <p className="text-[12px] text-[#7A7687]">
+            <p className="text-[10px] sm:text-[12px] text-[#7A7687]">
               4. Мы вынуждены отталкиваться от того, что курс
             </p>
           </div>
           <div className="">
-            <h2 className="text-[30px] leading-[36px] py-5 pt-[40px]">
+            <h2 className="text-[18px] sm:text-[20px] lg:text-[30px] md:leading-[36px] py-5 pt-[40px]">
               Новая модель организационной деятельности
             </h2>
-            <p className="sm:w-[70%]">
+            <p className="sm:w-[70%] text-[12px] sm:text-[14px] md:text-[16px]">
               Равным образом, внедрение современных методик однозначно фиксирует
               необходимость поэтапного и последовательного развития общества. В
               частности, постоянное информационно-пропагандистское обеспечение
@@ -46,10 +46,10 @@ const Statya = () => {
               <img src={img1} alt="" />
               <img src={img2} alt="" />
             </div>
-            <h2 className="text-[30px] leading-[36px] py-5">
+            <h2 className="text-[18px] sm:text-[20px] lg:text-[30px] md:leading-[36px] py-5 pt-[40px]">
               Новая модель организационной деятельности
             </h2>
-            <p className="sm:w-[70%]">
+            <p className="sm:w-[70%] text-[12px] sm:text-[14px] md:text-[16px]">
               Равным образом, внедрение современных методик однозначно фиксирует
               необходимость поэтапного и последовательного развития общества. В
               частности, постоянное информационно-пропагандистское обеспечение
@@ -62,7 +62,7 @@ const Statya = () => {
           </div>
         </div>
         <div className="p-[30px] bg-[#e1efe6]">
-          <p className="sm:w-[70%]">
+          <p className="sm:w-[70%] text-[12px] sm:text-[14px] md:text-[16px]">
             Равным образом, внедрение современных методик однозначно фиксирует
             необходимость поэтапного и последовательного развития общества. В
             частности, постоянное информационно-пропагандистское обеспечение
@@ -74,10 +74,10 @@ const Statya = () => {
           </p>
         </div>
         <div className="p-[30px] bg-[#fff] py-[50px]">
-          <h2 className="text-[30px] leading-[36px]">
+          <h2 className="text-[18px] sm:text-[20px] lg:text-[30px] md:leading-[36px] py-5 pt-[40px]">
             Новая модель организационной деятельности
           </h2>
-          <p className="sm:w-[70%]">
+          <p className="sm:w-[70%] text-[12px] sm:text-[14px] md:text-[16px]">
             Равным образом, внедрение современных методик однозначно фиксирует
             необходимость поэтапного и последовательного развития общества. В
             частности, постоянное информационно-пропагандистское обеспечение
@@ -91,10 +91,10 @@ const Statya = () => {
             <img src={img3} alt="" />
             <img src={img4} alt="" />
           </div>
-          <h2 className="text-[30px] leading-[36px]">
+          <h2 className="text-[18px] sm:text-[20px] lg:text-[30px] md:leading-[36px] py-5 pt-[40px]1">
             Новая модель организационной деятельности
           </h2>
-          <p className="sm:w-[70%]">
+          <p className="sm:w-[70%] text-[12px] sm:text-[14px] md:text-[16px]">
             Равным образом, внедрение современных методик однозначно фиксирует
             необходимость поэтапного и последовательного развития общества. В
             частности, постоянное информационно-пропагандистское обеспечение

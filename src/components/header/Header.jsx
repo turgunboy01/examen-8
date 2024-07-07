@@ -5,7 +5,7 @@ import HeaderBottom from "./HeaderBottom";
 
 const Header = () => {
   return (
-    <div className="fixed w-full z-[999] bg-[#f8f7f3]">
+    <div className="fixed  w-full z-[999] bg-[#f8f7f3]">
       <div className="border-b">
         <HeaderTop />
       </div>

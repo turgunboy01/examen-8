@@ -39,12 +39,12 @@ const HeaderCenter = () => {
           <Link to={"/"} className="hidden sm:block">
             <HeaderLogo />
           </Link>
-          <div className="w-full lg:w-[500px] relative  h-[40px] flex items-center ">
+          <div className="max-w-[500px] w-full relative  h-[40px] flex items-center ">
             <div className="flex  items-center justify-between  h-[37px] rounded-full  bg-[#d5d1e1]">
               <div className="flex-1 relative flex  bg-white rounded-full">
                 <div
                   onClick={() => setDropdown(!dropdown)}
-                  className="  px-3 w-[210px] flex justify-between items-center   lg:px-4 py-2 bg-[#efefef] rounded-full text-[14px] font-medium"
+                  className="  px-3 w-[260px] flex justify-between items-center   lg:px-4 py-2 bg-[#efefef] rounded-full text-[14px] font-medium"
                 >
                   <p>Все категории </p>
                   <IoMdArrowDropdown
@@ -164,13 +164,13 @@ const HeaderCenter = () => {
           </div>
         </div>
         <div className="hidden sm:flex gap-3 lg:gap-6 items-center">
-          <span
-            onClick={() => setRegModal(!regModal)}
+          <Link
+            to={"/profile"}
             className="flex flex-col gap-1 cursor-pointer items-center"
           >
             <HeaderIcon1 />
             <p className="text-[#8a8694] text-[14px] hidden lg:block">Войти</p>
-          </span>
+          </Link>
           {/* {regModal && <Modal />} */}
           {/* <LoginModal /> */}
           {/* <SbrosModal /> */}

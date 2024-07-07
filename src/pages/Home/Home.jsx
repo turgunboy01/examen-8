@@ -34,7 +34,7 @@ const Home = () => {
       <Accardion />
       <News />
       <Contact />
-      <FooterEmail />
+      {/* <FooterEmail /> */}
     </div>
   );
 };

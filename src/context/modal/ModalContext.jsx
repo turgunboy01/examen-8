@@ -15,6 +15,7 @@ const ModalProvider = ({ children }) => {
   const [profileInfoModal, setProfileInfoModal] = useState(false);
   const [emailModal, setEmailModal] = useState(false);
   const [phoneNumbermodal, setPhoneNumbermodal] = useState(false);
+  const [platelModal, setPlatelModal] = useState(false);
 
   return (
     <ModalContext.Provider
@@ -43,6 +44,8 @@ const ModalProvider = ({ children }) => {
         setEmailModal,
         phoneNumbermodal,
         setPhoneNumbermodal,
+        platelModal,
+        setPlatelModal,
       }}
     >
       {children}

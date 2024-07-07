@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { SelectSrav, setTosrav } from "../../redux/SravSlice";
 import { setToWishList } from "../../redux/WishlistSlice";
 import { addToCart } from "../../redux/CartSlice";
+import { FaHeart, FaRegHeart } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Product2 = ({ slide }) => {
   const dispatch = useDispatch();
@@ -47,9 +49,12 @@ const Product2 = ({ slide }) => {
       </div>
       <div className="p-4 w-[60%] flex justify-between flex-col ">
         <span>
-          <h2 className="text-[#202020] font-semibold w-[70%]">
+          <Link
+            to={`/product/${slide.id}`}
+            className="text-[#202020] font-semibold w-[70%]"
+          >
             {slide.title}
-          </h2>
+          </Link>
           {/* <h3></h3> */}
           <p className="text-[#7a7687] text-[12px] w-[40%] pt-[5px]">
             {slide.artikl}

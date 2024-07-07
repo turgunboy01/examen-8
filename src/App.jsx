@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import Home from "./pages/Home/Home";
@@ -28,11 +28,31 @@ import ScrollToTop from "./components/ScrollToTop";
 import Card from "./pages/cart/Card";
 // import Kabinet from "./components/ui/Kabinet";
 import KabinetPage from "./pages/kabinet/KabinetPage";
+import KategoryPage from "./pages/kategory/KategoryPage";
 // import Test from "./Test";
+import LoadingImg from "./assets/rolling.gif";
 
 const App = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate a network request or some loading process
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 500); // Adjust the time as needed
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return (
+      <div className=" bg-[#f8f7f3] flex justify-center items-center h-screen">
+        <img src={LoadingImg} alt="" />
+      </div>
+    );
+  }
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <Header />
       <ScrollToTop />
       <div className="pt-[140px] sm:pt-[200px]">
@@ -41,7 +61,7 @@ const App = () => {
           <Route path="/katalog" element={<Katalog />} />
           <Route path="/dostavka" element={<DostavkaPage />} />
           <Route path="/about" element={<About />} />
-          <Route path="/product" element={<ProductDetailsPage />} />
+          <Route path="/product/:id" element={<ProductDetailsPage />} />
           <Route path="/uslugi" element={<UslugiPage />} />
           <Route path="/statya" element={<StatyaPage />} />
           <Route path="/oplata" element={<OplataPage />} />
@@ -64,6 +84,7 @@ const App = () => {
           <Route path="/sravnenie" element={<SravneniePage />} />
           <Route path="/cart" element={<Card />} />
           <Route path="/profile" element={<KabinetPage />} />
+          <Route path="/kategory/:caategory" element={<KategoryPage />} />
         </Routes>
       </div>
 

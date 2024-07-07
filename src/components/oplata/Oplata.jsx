@@ -4,8 +4,8 @@ const Oplata = () => {
     <div className="bg-[#f8f7f3]">
       <div className="max-w-[1350px] mx-auto px-5">
         <div className="pt-[40px]">
-          <h1 className="text-[30px] leading-[36px]">Оплата</h1>
-          <p className="py-[20px] sm:w-[70%]">
+          <h1 className="text-[28px] sm:text-[36px] leading-[36px]">Оплата</h1>
+          <p className="py-[20px] text-[12px] sm:text-[14px] md:text-[16px] sm:w-[70%]">
             Учитывая стремительное развитие мировых медицинских технологий,
             врачи в Российской Федерации и соседних странах столкнулись
             с вызовом, требующим обновления приборов в различных направлениях,
@@ -59,10 +59,10 @@ const Oplata = () => {
           </div>
         </div>{" "}
         <div className="pt-[40px]">
-          <h1 className="text-[30px] leading-[36px]">
+          <h1 className="text-[28px] sm:text-[36px] leading-[36px]">
             Порядок возврата денежных средств
           </h1>
-          <p className="py-[20px] sm:w-[70%]">
+          <p className="py-[20px] sm:w-[70%] text-[12px] sm:text-[14px] md:text-[16px]">
             Учитывая стремительное развитие мировых медицинских технологий,
             врачи в Российской Федерации и соседних странах столкнулись
             с вызовом, требующим обновления приборов в различных направлениях,
@@ -98,8 +98,8 @@ const Oplata = () => {
           </div>
         </div>
         <div className="pt-[40px]">
-          <h1 className="text-[30px] leading-[36px]">Условия поставок</h1>
-          <p className="py-[20px] sm:w-[70%]">
+          <h1 className="text-[28px] sm:text-[36px] leading-[36px]">Условия поставок</h1>
+          <p className="py-[20px] sm:w-[70%] text-[12px] sm:text-[14px] md:text-[16px]">
             Учитывая стремительное развитие мировых медицинских технологий,
             врачи в Российской Федерации и соседних странах столкнулись
             с вызовом, требующим обновления приборов в различных направлениях,

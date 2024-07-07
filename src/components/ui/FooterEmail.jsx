@@ -4,9 +4,9 @@ import { EmailIcons } from "../../assets/FooterSvg";
 const FooterEmail = () => {
   return (
     <div className="bg-[#e5e4ed]">
-      <div className="max-w-[1350px] mx-auto px-5 grid grid-cols-2 gap-10">
+      <div className="max-w-[1350px] mx-auto px-5 grid py-[40px] grid-cols-2 gap-10">
         <EmailIcons />
-        <div className="py-[30px]">
+        <div className="py-[30px] absolute sm:relative">
           <h2 className="text-[30px] font-medium leading-[36px]">
             Подпишитесь и будьте в курсе!
           </h2>

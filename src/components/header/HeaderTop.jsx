@@ -84,7 +84,7 @@ const HeaderTop = () => {
           </li>
         </div>
       </div>
-      <div className="flex sm:hidden justify-between py-[10px]">
+      <div className="flex w-full sm:hidden items-center justify-between py-[10px]">
         <div className="">
           <HeaderLogo />
         </div>

@@ -35,6 +35,8 @@ const Profile = () => {
     setEmailModal,
     phoneNumbermodal,
     setPhoneNumbermodal,
+    platelModal,
+    setPlatelModal,
   } = useContext(ModalContext);
   const [infoProfil, setInfoProfil] = useState(() => {
     try {
@@ -48,6 +50,15 @@ const Profile = () => {
 
   const [emailProfile, setEmailProfile] = useState("");
   const [phoneNumberProfile, setPhoneNumberProfile] = useState("");
+  const [platelProfile, setPlatelProfile] = useState({
+    inn: "",
+    name: "",
+    address: "",
+    website: "",
+    email: "",
+    position: "",
+    organizationType: "",
+  });
 
   const getEmail = () => {
     const userEmail = localStorage.getItem("userEmailProfile");
@@ -57,6 +68,11 @@ const Profile = () => {
   const getPhoneNumber = () => {
     const userPhoneNumber = localStorage.getItem("userPhoneNumberProfile");
     return userPhoneNumber;
+  };
+
+  const getPlatel = () => {
+    const userPlatel = localStorage.getItem("userPlatel");
+    return userPlatel ? JSON.parse(userPlatel) : null;
   };
 
   useEffect(() => {
@@ -80,6 +96,13 @@ const Profile = () => {
     }
   }, [phoneNumbermodal]);
 
+  useEffect(() => {
+    const savedProfile = getPlatel();
+    if (savedProfile) {
+      setPlatelProfile(savedProfile); // profile state-ga saqlash uchun
+    }
+  }, [platelModal]);
+
   const handleRemove = () => {
     localStorage.removeItem("profileImage");
     setPreview(null);
@@ -99,7 +122,7 @@ const Profile = () => {
         {profileInfoModal && <ProfileInfo />}
         {emailModal && <EmailModal />}
         {phoneNumbermodal && <PasswordModal />}
-        <EditProfileModal />
+        {platelModal && <EditProfileModal />}
         <div className="w-full flex lg:flex-row flex-col gap-6 md:gap-0 lg:items-center">
           <div className="w-[25%]">
             <span className="w-[210px] group h-[210px] relative font-medium text-[#23473b] text-[120px] flex justify-center items-center rounded-full bg-[#e1efe6]">
@@ -214,7 +237,10 @@ const Profile = () => {
           </div>
         </div>
       </div>
-      <CompanyName />
+      <CompanyName
+        setPlatelModal={setPlatelModal}
+        platelProfile={platelProfile}
+      />
       <div className="flex  md:flex-row flex-col  pt-[100px] ">
         <div className=" md:w-[25%]">
           <h3 className="text-[18px] pb-[20px] text-[#202020] font-semibold">
