@@ -571,7 +571,6 @@ export const Products = [
     desc: "",
     ves: 70,
     aksiya: "Хит продаж",
-   
     quantity: 0,
     scanDate: 10,
     otziv: 3,

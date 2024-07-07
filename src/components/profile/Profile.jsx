@@ -1,41 +1,176 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
   FaceBook,
   Instagram,
   Odno,
   PenIcon,
+  PenIcon2,
   Twitter,
   Vkontakt,
 } from "../../assets/ProfileSvg";
 import { MdKeyboardArrowUp } from "react-icons/md";
 import { selectCard } from "../../redux/CartSlice";
 import { useSelector } from "react-redux";
+import ProfileModal from "../modal/profile/ProfileModal";
+import { ModalContext } from "../../context/modal/ModalContext";
+import ProfileInfo from "../modal/profile/ProfileInfo";
+import CompanyName from "./CompanyName";
+import EmailModal from "../modal/profile/EmailModal";
+import PasswordModal from "../modal/profile/PasswordModal";
+import EditProfileModal from "../modal/profile/EditProfileModal";
 
 const Profile = () => {
+  const [profileClick, setProfileClick] = useState(false);
+  const [preview, setPreview] = useState(
+    localStorage.getItem("profileImage") || ""
+  );
+  const [localPreview, setLocalPreview] = useState(preview);
   const data = useSelector(selectCard);
+  const {
+    setProfileImgModal,
+    profileImgModal,
+    profileInfoModal,
+    setProfileInfoModal,
+    emailModal,
+    setEmailModal,
+    phoneNumbermodal,
+    setPhoneNumbermodal,
+  } = useContext(ModalContext);
+  const [infoProfil, setInfoProfil] = useState(() => {
+    try {
+      const savedInfo = localStorage.getItem("profileInfo");
+      return savedInfo ? JSON.parse(savedInfo) : { name: "", surname: "" };
+    } catch (e) {
+      console.error("Error parsing profileInfo:", e);
+      return { name: "", surname: "" };
+    }
+  });
+
+  const [emailProfile, setEmailProfile] = useState("");
+  const [phoneNumberProfile, setPhoneNumberProfile] = useState("");
+
+  const getEmail = () => {
+    const userEmail = localStorage.getItem("userEmailProfile");
+    return userEmail;
+  };
+
+  const getPhoneNumber = () => {
+    const userPhoneNumber = localStorage.getItem("userPhoneNumberProfile");
+    return userPhoneNumber;
+  };
+
+  useEffect(() => {
+    const savedInfo = localStorage.getItem("profileInfo");
+    if (savedInfo) {
+      setInfoProfil(JSON.parse(savedInfo));
+    }
+  }, [profileInfoModal]);
+
+  useEffect(() => {
+    const savedEmail = getEmail();
+    if (savedEmail) {
+      setEmailProfile(savedEmail); // email state-ga saqlash uchun
+    }
+  }, [emailModal]);
+
+  useEffect(() => {
+    const savedEmail = getPhoneNumber();
+    if (savedEmail) {
+      setPhoneNumberProfile(savedEmail); // email state-ga saqlash uchun
+    }
+  }, [phoneNumbermodal]);
+
+  const handleRemove = () => {
+    localStorage.removeItem("profileImage");
+    setPreview(null);
+  };
+
+  console.log(emailProfile);
   return (
     <div className="max-w-[1350px] py-[60px] mx-auto px-5 ">
       <div className="flex flex-col gap-[40px] pb-[100px]">
-        <div className="w-full flex lg:flex-row flex-col gap-6 lg:items-center">
+        {profileImgModal && (
+          <ProfileModal
+            localPreview={localPreview}
+            setLocalPreview={setLocalPreview}
+            setPreview={setPreview}
+          />
+        )}
+        {profileInfoModal && <ProfileInfo />}
+        {emailModal && <EmailModal />}
+        {phoneNumbermodal && <PasswordModal />}
+        <EditProfileModal />
+        <div className="w-full flex lg:flex-row flex-col gap-6 md:gap-0 lg:items-center">
           <div className="w-[25%]">
-            <span className="w-[210px] h-[210px] font-medium  text-[#23473b] text-[120px]  flex justify-center items-center rounded-full bg-[#e1efe6] ">
-              T
+            <span className="w-[210px] group h-[210px] relative font-medium text-[#23473b] text-[120px] flex justify-center items-center rounded-full bg-[#e1efe6]">
+              {preview ? (
+                <img
+                  src={preview}
+                  alt=""
+                  className="w-full h-full rounded-full p-1"
+                />
+              ) : (
+                <img
+                  src="https://cdn-icons-png.freepik.com/512/3682/3682323.png"
+                  className="w-full h-full rounded-full p-1"
+                  alt=""
+                />
+              )}
+              <div className="group-hover:block hidden p-1 absolute bottom-3">
+                <div
+                  onClick={() => setProfileClick(!profileClick)}
+                  className="w-[30px] h-[30px] rounded-full cursor-pointer flex justify-center items-center bg-[#07745E]"
+                >
+                  <PenIcon2 />
+                  {profileClick && (
+                    <div className="absolute -bottom-[40px] bg-[#fff] p-2">
+                      <h2
+                        onClick={() => setProfileImgModal(true)}
+                        className="text-[12px] hover:underline cursor-pointer"
+                      >
+                        Редактировать
+                      </h2>
+                      <h2
+                        onClick={handleRemove}
+                        className="text-[12px] text-[#C13515] hover:underline cursor-pointer"
+                      >
+                        Удалить фото
+                      </h2>
+                    </div>
+                  )}
+                </div>
+              </div>
             </span>
           </div>
           <div className="">
-            <h2 className="text-[18px] sm:text-[20px] md:text-[30px] text-[#202020] leading-[24px] md:leading-[36px]">
-              Константин Константинопольский
+            <h2 className="text-[18px] sm:text-[20px] md:text-[30px] text-[#202020] capitalize leading-[24px] md:leading-[36px]">
+              {infoProfil
+                ? `${infoProfil.name + " " + infoProfil.surname}`
+                : "Константин Константинопольский"}
             </h2>
             <div className="flex gap-2 pt-[15px] pb-[30px]">
-              <Vkontakt />
-              <FaceBook />
-              <Instagram />
-              <Twitter />
-              <Odno />
+              <a href={`${infoProfil.vk}`} target="_blank">
+                <Vkontakt />
+              </a>
+              <a href={`${infoProfil.facebook}`} target="_blank">
+                <FaceBook />
+              </a>
+              <a href={`${infoProfil.instagram}`} target="_blank">
+                <Instagram />
+              </a>
+              <a href={`${infoProfil.twitter}`} target="_blank">
+                <Twitter />
+              </a>
+              <a href={`${infoProfil.ok}`} target="_blank">
+                <Odno />
+              </a>
             </div>
             <div className="flex sm:flex-row flex-col gap-5">
               <span>
-                <button className="px-5 hover:border-[#07745E] text-[12px]  md:text-[14px] py-2 border rounded-full">
+                <button
+                  onClick={() => setProfileInfoModal(true)}
+                  className="px-5 hover:border-[#07745E] text-[12px] md:text-[14px] py-2 border rounded-full"
+                >
                   Изменить персональную информацию
                 </button>
               </span>
@@ -49,12 +184,16 @@ const Profile = () => {
         </div>
         <div className="w-full flex lg:flex-row flex-col items-center">
           <div className="hidden lg:block w-[25%]"></div>
-          <div className="w-full lg:w-[75%] ">
-            <div className=" sm:w-[70%] lg:w-[50%] flex justify-between gap-[30px]  py-[20px] ">
+          <div className="w-full lg:w-[75%]">
+            <div className="sm:w-[70%] lg:w-[50%] flex justify-between gap-[30px] py-[20px]">
               <span>
                 <h2 className="flex text-[#202020] text-[12px] sm:text-[14px] md:text-[16px] items-center gap-3">
-                  +7 911 564–86–86
-                  <PenIcon />
+                  {phoneNumberProfile
+                    ? phoneNumberProfile
+                    : "  +7 911 564–86–86"}
+                  <button onClick={() => setPhoneNumbermodal(true)}>
+                    <PenIcon />
+                  </button>
                 </h2>
                 <p className="text-[#7A7687] pt-1 text-[12px] sm:text-[14px] md:text-[16px]">
                   Телефон
@@ -62,10 +201,12 @@ const Profile = () => {
               </span>
               <span>
                 <h2 className="flex text-[#202020] text-[12px] sm:text-[14px] md:text-[16px] items-center gap-3">
-                  person@mail.ru
-                  <PenIcon />
+                  {emailProfile ? emailProfile : "person@mail.ru "}
+                  <button onClick={() => setEmailModal(true)}>
+                    <PenIcon />
+                  </button>
                 </h2>
-                <p className="text-[#7A7687] text-[12px] sm:text-[14px] md:text-[16px]  pt-1">
+                <p className="text-[#7A7687] text-[12px] sm:text-[14px] md:text-[16px] pt-1">
                   Email
                 </p>
               </span>
@@ -73,73 +214,7 @@ const Profile = () => {
           </div>
         </div>
       </div>
-      <div className="flex  md:flex-row flex-col ">
-        <div className="md:w-[25%] flex justify-between py-4 gap-[30px] ">
-          <h3 className="text-[18px] text-[#202020] font-semibold">
-            Данные о плательщике
-          </h3>
-          <button className="px-6 py-2 hidden sm:block md:hidden rounded-full border hover:bg-[#07745e] bg-[#088269] text-[#fff] text-[12px] md:text-[14px] font-semibold">
-            Добавить плательщика
-          </button>
-        </div>
-        <div className="md:w-[75%] ">
-          <div className="border rounded-lg bg-[#fff] p-[30px]">
-            <span className="flex justify-between items-center">
-              <h2 className="text-[18px]  font-semibold">Название компании</h2>
-              <PenIcon />
-            </span>
-            <p className="text-[#202020] text-[14px] lg:text-[16px] font-medium pt-2">
-              ИНН 9717039181
-            </p>
-            <div className=" w-[90%] md:w-[80%] mt-[20px] sm:mt-[40px] md:mt-[60px] ">
-              <div className="flex justify-between sm:flex-row flex-col sm:gap-10 ">
-                <div className="">
-                  <h2 className="flex text-[#7A7687] text-[12px] sm:text-[14px] lg:text-[16px] items-center gap-3">
-                    Адрес доставки
-                  </h2>
-                  <p className="text-[#202020] text-[12px] sm:text-[14px] lg:text-[16px]">
-                    Россия, г. Москва, ул. Докукина, 8, стр. 2
-                  </p>
-                  <h2 className="flex text-[#7A7687] text-[12px] sm:text-[14px] pt-2 lg:text-[16px] items-center gap-3">
-                    Сайт
-                  </h2>
-                  <p className="text-[#202020] text-[12px] sm:text-[14px] lg:text-[16px]">
-                    global-mt.ru
-                  </p>
-                  <h2 className="flex text-[#7A7687] pt-2 text-[12px] sm:text-[14px] lg:text-[16px] items-center gap-3">
-                    Email
-                  </h2>
-                  <p className="text-[#202020]  text-[12px] sm:text-[14px] lg:text-[16px]">
-                    info@mail.ru
-                  </p>
-                </div>
-                <div className="pt-2  sm:pt-0">
-                  <h2 className="flex text-[#7A7687] text-[12px] sm:text-[14px] lg:text-[16px] items-center gap-3">
-                    Ваша должность
-                  </h2>
-                  <p className="text-[#202020]  text-[12px] sm:text-[14px] lg:text-[16px]">
-                    Менеджер по закупкам
-                  </p>
-
-                  <div className=" pt-2 ">
-                    <h2 className="flex text-[#7A7687] items-center text-[12px] sm:text-[14px] lg:text-[16px] gap-3">
-                      Тип организации
-                    </h2>
-                    <p className="text-[#202020] text-[12px] sm:text-[14px] lg:text-[16px]  ">
-                      Юридическое лицо
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="flex justify-center sm:justify-end pt-3">
-            <button className="sm:hidden md:block px-6 py-2 rounded-full border hover:bg-[#07745e] bg-[#088269] text-[#fff] text-[12px] md:text-[14px] font-semibold">
-              Добавить плательщика
-            </button>
-          </div>
-        </div>
-      </div>
+      <CompanyName />
       <div className="flex  md:flex-row flex-col  pt-[100px] ">
         <div className=" md:w-[25%]">
           <h3 className="text-[18px] pb-[20px] text-[#202020] font-semibold">

@@ -11,6 +11,11 @@ const ModalProvider = ({ children }) => {
   const [konsultatsiyaModal, setKonsultatsiyaModal] = useState(false);
   const [zamenaModal, setZamenaModal] = useState(false);
   const [garantyModal, setGarantyModal] = useState(false);
+  const [profileImgModal, setProfileImgModal] = useState(false);
+  const [profileInfoModal, setProfileInfoModal] = useState(false);
+  const [emailModal, setEmailModal] = useState(false);
+  const [phoneNumbermodal, setPhoneNumbermodal] = useState(false);
+
   return (
     <ModalContext.Provider
       value={{
@@ -18,18 +23,26 @@ const ModalProvider = ({ children }) => {
         setLoginModal,
         regModal,
         setRegModal,
-        setSborModal,
         sborModal,
+        setSborModal,
         requestModal,
         setRequestModal,
         helpModal,
         setHelpModal,
         konsultatsiyaModal,
         setKonsultatsiyaModal,
-        garantyModal,
-        setGarantyModal,
         zamenaModal,
         setZamenaModal,
+        garantyModal,
+        setGarantyModal,
+        profileImgModal,
+        setProfileImgModal,
+        profileInfoModal,
+        setProfileInfoModal,
+        emailModal,
+        setEmailModal,
+        phoneNumbermodal,
+        setPhoneNumbermodal,
       }}
     >
       {children}

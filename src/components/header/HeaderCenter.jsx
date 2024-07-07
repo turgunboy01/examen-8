@@ -30,8 +30,7 @@ const HeaderCenter = () => {
   );
   console.log(searchProducts);
 
-  const { loginModal, setLoginModal, regModal, setRegModal } =
-    useContext(ModalContext);
+  // const { regModal, setRegModal } = useContext(ModalContext);
 
   return (
     <div className="max-w-[1350px] w-full mx-auto px-5">
