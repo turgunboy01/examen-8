@@ -14,12 +14,10 @@ import FooterEmail from "../../components/ui/FooterEmail";
 // import GarantyModal from "../../components/modal/homeModal/GarantyModal";
 // import Konsultatsiya from "../../components/modal/homeModal/Konsultatsiya";
 // import HelpModal from "../../components/modal/homeModal/HelpModal";
-// import RequesModal from "../../components/modal/homeModal/RequesModal";
 
 const Home = () => {
   return (
     <div>
-      {/* <RequesModal /> */}
       {/* <HelpModal /> */}
       {/* <Konsultatsiya /> */}
       {/* <GarantyModal /> */}

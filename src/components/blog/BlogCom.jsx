@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { MdKeyboardArrowRight } from "react-icons/md";
-import img1 from "../../assets/blog.png";
-import img2 from "../../assets/blog2.png";
-import img3 from "../../assets/blog3.png";
-import img4 from "../../assets/blog4.png";
+import img1 from "../../assets/blog/blog.png";
+import img2 from "../../assets/blog/blog2.png";
+import img3 from "../../assets/blog/blog3.png";
+import img4 from "../../assets/blog/blog4.png";
 import { Link } from "react-router-dom";
 import { Settings } from "../../assets/SvgIcons";
 import { RiArrowRightSLine } from "react-icons/ri";

@@ -1,12 +1,16 @@
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
 import { BiArrowToLeft, BiArrowToRight } from "react-icons/bi";
 import Slider from "react-slick";
 import img1 from "../../assets/Banner.png";
 import img2 from "../../assets/home/slide.png";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
+import { Link } from "react-router-dom";
+import RequesModal from "../modal/homeModal/RequesModal";
+import { ModalContext } from "../../context/modal/ModalContext";
 
 const HomeSlide = () => {
   const sliderRef = useRef(null);
+  const { requestModal, setRequestModal } = useContext(ModalContext);
 
   const settings = {
     dots: true,
@@ -20,6 +24,7 @@ const HomeSlide = () => {
       <div className="max-w-[1350px] mx-auto px-5 relative">
         <div className="h-full md:h-[368px] w-full flex flex-col gap-[40px]">
           <div>
+            {requestModal && <RequesModal />}
             <Slider ref={sliderRef} {...settings}>
               <div className="w-[100%] border h-[100%] md:h-[350px] home  grid-cols-1 md:grid-cols-2 justify-between bg-[#e5e4ed] rounded-xl overflow-hidden">
                 <div className="p-[30px] ">
@@ -31,12 +36,18 @@ const HomeSlide = () => {
                     do eiusmod tempor{" "}
                   </p>
                   <div className="flex gap-2 sm:pt-[40px]">
-                    <button className=" px-4 sm:px-6 py-2 text-[13px]  sm:text-[16px] bg-[#088269] border rounded-full text-[#fff]">
+                    <button
+                      onClick={() => setRequestModal(true)}
+                      className=" px-4 sm:px-6 py-2 text-[13px]  sm:text-[16px] bg-[#088269] border rounded-full text-[#fff]"
+                    >
                       Запросить цену
                     </button>
-                    <button className=" px-4 sm:px-6 py-2 text-[13px]  sm:text-[16px] border rounded-full border-[#088269] text-[#088269]">
+                    <Link
+                      to={"/katalog"}
+                      className=" px-4 sm:px-6 py-2 text-[13px]  sm:text-[16px] border rounded-full border-[#088269] text-[#088269]"
+                    >
                       В каталог
-                    </button>
+                    </Link>
                   </div>
                 </div>
                 <div className="w-[100%]  h-[350px] hidden md:flex items-center justify-center">
@@ -56,12 +67,18 @@ const HomeSlide = () => {
                     do eiusmod tempor{" "}
                   </p>
                   <div className="flex gap-2 sm:pt-[40px]">
-                    <button className=" px-4 sm:px-6 py-2 text-[13px]  sm:text-[16px] bg-[#088269] border rounded-full text-[#fff]">
+                    <button
+                      onClick={() => setRequestModal(true)}
+                      className=" px-4 sm:px-6 py-2 text-[13px]  sm:text-[16px] bg-[#088269] border rounded-full text-[#fff]"
+                    >
                       Запросить цену
                     </button>
-                    <button className=" px-4 sm:px-6 py-2 text-[13px]  sm:text-[16px] border rounded-full border-[#088269] text-[#088269]">
+                    <Link
+                      to={"/katalog"}
+                      className=" px-4 sm:px-6 py-2 text-[13px]  sm:text-[16px] border rounded-full border-[#088269] text-[#088269]"
+                    >
                       В каталог
-                    </button>
+                    </Link>
                   </div>
                 </div>
                 <div className="w-[100%]  h-[350px] hidden md:flex items-center justify-center">
@@ -81,12 +98,18 @@ const HomeSlide = () => {
                     do eiusmod tempor{" "}
                   </p>
                   <div className="flex gap-2 sm:pt-[40px]">
-                    <button className=" px-4 sm:px-6 py-2 text-[13px]  sm:text-[16px] bg-[#088269] border rounded-full text-[#fff]">
+                    <button
+                      onClick={() => setRequestModal(true)}
+                      className=" px-4 sm:px-6 py-2 text-[13px]  sm:text-[16px] bg-[#088269] border rounded-full text-[#fff]"
+                    >
                       Запросить цену
                     </button>
-                    <button className=" px-4 sm:px-6 py-2 text-[13px]  sm:text-[16px] border rounded-full border-[#088269] text-[#088269]">
+                    <Link
+                      to={"/katalog"}
+                      className=" px-4 sm:px-6 py-2 text-[13px]  sm:text-[16px] border rounded-full border-[#088269] text-[#088269]"
+                    >
                       В каталог
-                    </button>
+                    </Link>
                   </div>
                 </div>
                 <div className="w-[100%]  h-[350px] hidden md:flex items-center justify-center">

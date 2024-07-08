@@ -2,10 +2,8 @@ import React, { useContext, useState } from "react";
 import { ModalContext } from "../../../context/modal/ModalContext";
 import { CgClose } from "react-icons/cg";
 import img from "../../../assets/konsultatsiyaModal.png";
-
-const Konsultatsiya = () => {
-  const { konsultatsiyaModal, setKonsultatsiyaModal } =
-    useContext(ModalContext);
+const ZakazatTovar = () => {
+  const { zakazModal, setZakazModal } = useContext(ModalContext);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -55,8 +53,8 @@ const Konsultatsiya = () => {
 
     // Handle form submission
     console.log(formData);
-    localStorage.setItem("konsultatsiyaFormData", JSON.stringify(formData));
-    setKonsultatsiyaModal(false);
+    localStorage.setItem("viewFormData", JSON.stringify(formData));
+    setZakazModal(false);
   };
 
   return (
@@ -64,7 +62,7 @@ const Konsultatsiya = () => {
       className="fixed inset-0 bg-gray-800 bg-opacity-75 z-[999] flex justify-center items-center"
       onClick={(e) => {
         if (e.target === e.currentTarget) {
-          setKonsultatsiyaModal(false);
+          setZakazModal(false);
         }
       }}
     >
@@ -73,12 +71,12 @@ const Konsultatsiya = () => {
         onClick={(e) => e.stopPropagation()}
       >
         <div
-          onClick={() => setKonsultatsiyaModal(false)}
+          onClick={() => setZakazModal(false)}
           className="absolute right-3 top-3 cursor-pointer"
         >
           <CgClose size={20} />
         </div>
-        <h3 className="text-[18px] font-semibold">Получить консультацию</h3>
+        <h3 className="text-[18px] font-semibold">Рассчитать стоимость</h3>
         <div className="flex items-center gap-3">
           <div className="relative">
             <img src={img} className="w-[50px] h-[50px] rounded-full " alt="" />
@@ -90,54 +88,22 @@ const Konsultatsiya = () => {
           </span>
         </div>
         <span>
-          <div className="grid grid-cols-2 gap-5">
-            <div className="relative">
-              <input
-                type="text"
-                name="name"
-                placeholder="Ваше имя*"
-                className="border-b py-2 outline-none w-full"
-                value={formData.name}
-                onChange={handleChange}
-              />
-              {errors.name && (
-                <span className="text-red-500 text-[12px] absolute -top-3 left-0">
-                  {errors.name}
-                </span>
-              )}
-            </div>
-            <div className="relative">
-              <input
-                type="text"
-                name="phone"
-                placeholder="Ваш телефон *"
-                className="border-b py-2 outline-none w-full"
-                value={formData.phone}
-                onChange={handleChange}
-              />
-              {errors.phone && (
-                <span className="text-red-500 text-[12px] absolute -top-3 left-0">
-                  {errors.phone}
-                </span>
-              )}
-            </div>
-          </div>
-          <div className="relative pt-5">
+          <div className="relative">
             <input
-              type="email"
-              name="email"
-              required
-              placeholder="Название вашей организации*"
+              type="text"
+              name="phone"
+              placeholder="Ваш телефон *"
               className="border-b py-2 outline-none w-full"
-              value={formData.email}
+              value={formData.phone}
               onChange={handleChange}
             />
-            {errors.email && (
-              <span className="text-red-500 text-[12px] absolute top-2 left-0">
-                {errors.email}
+            {errors.phone && (
+              <span className="text-red-500 text-[12px] absolute -top-3 left-0">
+                {errors.phone}
               </span>
             )}
           </div>
+
           <div className="relative pt-5">
             <textarea
               type="text"
@@ -160,7 +126,7 @@ const Konsultatsiya = () => {
             className="w-[130px] px-5 text-[14px] py-3 bg-[#088269] text-[#fff] rounded-full"
             onClick={handleSubmit}
           >
-            Отправить
+            Оставить
           </button>
           <p className="text-[12px] text-[#7A7687]">
             Нажимая «Отправить», я соглашаюсь c обработкой персональных данных
@@ -173,4 +139,4 @@ const Konsultatsiya = () => {
   );
 };
 
-export default Konsultatsiya;
+export default ZakazatTovar;

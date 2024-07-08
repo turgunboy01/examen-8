@@ -94,7 +94,7 @@ const Proizvaditel = () => {
               <h2 className="flex justify-between py-2">
                 Направления
                 <MdKeyboardArrowDown className={`duration-300 rotate-0`} />
-              </h2>
+              </h2>10.07.2024 23:59
             </div>
             <div className="border rounded-lg py-[10px] my-[10px] px-[20px]">
               <h2

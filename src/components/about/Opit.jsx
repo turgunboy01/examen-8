@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
-import img1 from "../../assets/opit1.png";
-import img2 from "../../assets/opit2.png";
-import img3 from "../../assets/opit3.png";
+import img1 from "../../assets/opit/opit1.png";
+import img2 from "../../assets/opit/opit2.png";
+import img3 from "../../assets/opit/opit3.png";
 
 import Slider from "react-slick";
 import { BiArrowToLeft, BiArrowToRight } from "react-icons/bi";

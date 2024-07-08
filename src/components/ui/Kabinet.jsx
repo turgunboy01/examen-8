@@ -1,19 +1,25 @@
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { KabinetSlides, SettingsSlide } from "../../data/SlidesData";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
+import { ModalContext } from "../../context/modal/ModalContext";
+import Konsultatsiya from "../modal/homeModal/Konsultatsiya";
+import ViewModal from "../modal/homeModal/ViewModal";
 const Kabinet = () => {
   const sliderRef = useRef(null);
-
+  const { konsultatsiyaModal, setKonsultatsiyaModal, viewModal, setViewModal } =
+    useContext(ModalContext);
   return (
     <div className="bg-[#f8f7f3]">
       <div className="max-w-[1350px] mx-auto px-5 py-[20px] ">
         <h2 className=" text-[20px] md:text-[30px] leading-[24px] py-[30px] md:leading-[36px]">
           Комплексное оснащение кабинетов
         </h2>
+        {konsultatsiyaModal && <Konsultatsiya />}
+        {viewModal && <ViewModal />}
         <div className=" w-full flex flex-col gap-[40px]">
           <div>
             <Slider ref={sliderRef} {...SettingsSlide}>
@@ -48,10 +54,16 @@ const Kabinet = () => {
               </button>
             </div>
             <div className="flex gap-2 sm:flex-row flex-col ">
-              <button className=" px-4 md:px-6 py-2 text-[12px]  md:text-[16px] border rounded-full border-[#088269] text-[#088269]">
+              <button
+                onClick={() => setKonsultatsiyaModal(true)}
+                className=" px-4 md:px-6 py-2 text-[12px]  md:text-[16px] border rounded-full border-[#088269] text-[#088269]"
+              >
                 Бесплатная консультация
               </button>
-              <button className=" px-4 md:px-6 py-2 text-[13px]  md:text-[16px] bg-[#088269] border rounded-full text-[#fff]">
+              <button
+                onClick={() => setViewModal(true)}
+                className=" px-4 md:px-6 py-2 text-[13px]  md:text-[16px] bg-[#088269] border rounded-full text-[#fff]"
+              >
                 Рассчитать стоимость
               </button>
             </div>

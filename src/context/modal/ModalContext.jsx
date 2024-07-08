@@ -16,6 +16,8 @@ const ModalProvider = ({ children }) => {
   const [emailModal, setEmailModal] = useState(false);
   const [phoneNumbermodal, setPhoneNumbermodal] = useState(false);
   const [platelModal, setPlatelModal] = useState(false);
+  const [viewModal, setViewModal] = useState(false);
+  const [zakazModal, setZakazModal] = useState(false);
 
   return (
     <ModalContext.Provider
@@ -46,6 +48,10 @@ const ModalProvider = ({ children }) => {
         setPhoneNumbermodal,
         platelModal,
         setPlatelModal,
+        viewModal,
+        setViewModal,
+        zakazModal,
+        setZakazModal,
       }}
     >
       {children}

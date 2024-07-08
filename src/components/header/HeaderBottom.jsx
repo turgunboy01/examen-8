@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   HederCatalog,
   HederLocation,
@@ -10,11 +10,16 @@ import {
 } from "../../assets/HeaderSvg";
 import { IoCallOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
+// import RequesModal from "../modal/homeModal/RequesModal";
+import { ModalContext } from "../../context/modal/ModalContext";
+import ZakazatTovar from "../modal/homeModal/ZakazatTovar";
 
 const HeaderBottom = () => {
+  const { zakazModal, setZakazModal } = useContext(ModalContext);
   return (
     <div className=" ">
       <div className="max-w-[1350px] w-full mx-auto px-5">
+        {zakazModal && <ZakazatTovar />}
         <div className="hidden sm:flex justify-between items-center py-4 ">
           <div className="flex items-center gap-[10px] md:gap-[20px] xl:gap-[30px]">
             <li className="group relative">
@@ -126,7 +131,10 @@ const HeaderBottom = () => {
               </button>
             </div>
             <div className="hidden lg:block">
-              <button className="px-5 bg-[#088269] text-[12px] text-[#fff] py-2 border rounded-full">
+              <button
+                onClick={() => setZakazModal(true)}
+                className="px-5 bg-[#088269] text-[12px] text-[#fff] py-2 border rounded-full"
+              >
                 Заказать звонок
               </button>
             </div>
@@ -141,13 +149,13 @@ const HeaderBottom = () => {
       <div className="fixed  sm:hidden block bottom-0 bg-[#fff] border-t w-full  px-[20px] py-3  z-[999]">
         <ul className="flex justify-between gap-4">
           <li>
-            <a
-              href="#"
+            <Link
+              to="/"
               className="flex flex-col text-[12px] items-center justify-center"
             >
               <MenuIcon1 />
               Главная
-            </a>
+            </Link>
           </li>
           <li>
             <Link
@@ -159,31 +167,31 @@ const HeaderBottom = () => {
             </Link>
           </li>
           <li>
-            <a
-              href="#"
+            <Link
+              to="/cart"
               className="flex flex-col text-[12px] items-center justify-center"
             >
               <MenuIcon3 />
               Корзина
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#"
+            <Link
+              to="/wishlist"
               className="flex flex-col text-[12px] items-center justify-center"
             >
               <MenuIcon4 />
               Избранное
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#"
+            <Link
+              to="/profile"
               className="flex flex-col text-[12px] items-center justify-center"
             >
               <MenuIcon5 />
               Войти
-            </a>
+            </Link>
           </li>
         </ul>
       </div>

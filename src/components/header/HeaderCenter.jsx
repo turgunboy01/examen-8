@@ -11,7 +11,6 @@ import { Link, NavLink } from "react-router-dom";
 // import img from "../../assets/header.png";
 import { IoIosSearch, IoMdArrowDropdown } from "react-icons/io";
 import { Products } from "../../data/ProductsData";
-import { ModalContext } from "../../context/modal/ModalContext";
 
 const HeaderCenter = () => {
   const [searchProduct, setSearchProduct] = useState("");
@@ -25,8 +24,6 @@ const HeaderCenter = () => {
   const searchProducts = Products.filter((fil) =>
     fil?.title.toLocaleLowerCase().includes(searchProduct.toLocaleLowerCase())
   );
-  console.log(searchProducts);
-
 
   return (
     <div className="max-w-[1350px] w-full mx-auto px-5">

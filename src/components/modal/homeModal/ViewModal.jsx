@@ -3,9 +3,8 @@ import { ModalContext } from "../../../context/modal/ModalContext";
 import { CgClose } from "react-icons/cg";
 import img from "../../../assets/konsultatsiyaModal.png";
 
-const Konsultatsiya = () => {
-  const { konsultatsiyaModal, setKonsultatsiyaModal } =
-    useContext(ModalContext);
+const ViewModal = () => {
+  const { viewModal, setViewModal } = useContext(ModalContext);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -55,8 +54,8 @@ const Konsultatsiya = () => {
 
     // Handle form submission
     console.log(formData);
-    localStorage.setItem("konsultatsiyaFormData", JSON.stringify(formData));
-    setKonsultatsiyaModal(false);
+    localStorage.setItem("viewFormData", JSON.stringify(formData));
+    setViewModal(false);
   };
 
   return (
@@ -64,7 +63,7 @@ const Konsultatsiya = () => {
       className="fixed inset-0 bg-gray-800 bg-opacity-75 z-[999] flex justify-center items-center"
       onClick={(e) => {
         if (e.target === e.currentTarget) {
-          setKonsultatsiyaModal(false);
+          setViewModal(false);
         }
       }}
     >
@@ -73,12 +72,12 @@ const Konsultatsiya = () => {
         onClick={(e) => e.stopPropagation()}
       >
         <div
-          onClick={() => setKonsultatsiyaModal(false)}
+          onClick={() => setViewModal(false)}
           className="absolute right-3 top-3 cursor-pointer"
         >
           <CgClose size={20} />
         </div>
-        <h3 className="text-[18px] font-semibold">Получить консультацию</h3>
+        <h3 className="text-[18px] font-semibold">Рассчитать стоимость</h3>
         <div className="flex items-center gap-3">
           <div className="relative">
             <img src={img} className="w-[50px] h-[50px] rounded-full " alt="" />
@@ -173,4 +172,4 @@ const Konsultatsiya = () => {
   );
 };
 
-export default Konsultatsiya;
+export default ViewModal;

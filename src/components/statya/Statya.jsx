@@ -1,8 +1,8 @@
 import React from "react";
-import img1 from "../../assets/statya1.png";
-import img2 from "../../assets/statya2.png";
-import img3 from "../../assets/statya3.png";
-import img4 from "../../assets/statya4.png";
+import img1 from "../../assets/statya/statya1.png";
+import img2 from "../../assets/statya/statya2.png";
+import img3 from "../../assets/statya/statya3.png";
+import img4 from "../../assets/statya/statya4.png";
 const Statya = () => {
   return (
     <div className="bg-[#f8f7f3]">

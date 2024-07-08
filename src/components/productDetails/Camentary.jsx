@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import img1 from "../../assets/uslugi.png";
-import img2 from "../../assets/uslugi2.png";
-import img3 from "../../assets/uslugi3.png";
-import img4 from "../../assets/uslugi4.png";
+import img1 from "../../assets/uslugi/uslugi9.png";
+
+import img2 from "../../assets/uslugi/uslugi10.png";
+import img3 from "../../assets/uslugi/uslugi11.png";
+import img4 from "../../assets/uslugi/uslugi12.png";
 const Camentary = () => {
   const [state, setState] = useState("1");
   return (

@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -11,13 +11,16 @@ import { addToCart } from "../../redux/CartSlice";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 import { SelectSrav, setTosrav } from "../../redux/SravSlice";
 import { setToWishList } from "../../redux/WishlistSlice";
+import { ModalContext } from "../../context/modal/ModalContext";
+import Konsultatsiya from "../modal/homeModal/Konsultatsiya";
 
 const CategoryTovar = () => {
   const sliderRef = useRef(null);
   const dispatch = useDispatch();
   const sravList = useSelector(SelectSrav);
   const likeList = useSelector((state) => state.like.data);
-
+  const { konsultatsiyaModal, setKonsultatsiyaModal } =
+    useContext(ModalContext);
   const handleAddToCart = (product) => {
     dispatch(addToCart(product));
   };
@@ -33,6 +36,7 @@ const CategoryTovar = () => {
   return (
     <div className="bg-[#f8f7f3] py-[80px]">
       <div className="max-w-[1350px] mx-auto px-5">
+        {konsultatsiyaModal && <Konsultatsiya />}
         <div className="flex md:flex-row flex-col w-full gap-[20px] lg:gap-[30px]">
           <div className="w-full md:w-[30%]">
             <div className="flex justify-between items-center">
@@ -133,7 +137,10 @@ const CategoryTovar = () => {
                 </button>
               </div>
               <div className="flex gap-2">
-                <button className="px-4 md:px-6 py-2 text-[12px] md:text-[16px] border rounded-full border-[#088269] text-[#088269]">
+                <button
+                  onClick={() => setKonsultatsiyaModal(true)}
+                  className="px-4 md:px-6 py-2 text-[12px] md:text-[16px] border rounded-full border-[#088269] text-[#088269]"
+                >
                   Бесплатная консультация
                 </button>
                 <button className="px-4 md:px-6 py-2 text-[13px] md:text-[16px] bg-[#088269] border rounded-full text-[#fff]">
