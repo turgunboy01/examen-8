@@ -12,9 +12,6 @@ import { Link, NavLink } from "react-router-dom";
 import { IoIosSearch, IoMdArrowDropdown } from "react-icons/io";
 import { Products } from "../../data/ProductsData";
 import { ModalContext } from "../../context/modal/ModalContext";
-// import Modal from "../modal/auth/Modal";
-// import LoginModal from "../modal/auth/LoginModal";
-// import SbrosModal from "../modal/auth/SbrosModal";
 
 const HeaderCenter = () => {
   const [searchProduct, setSearchProduct] = useState("");
@@ -30,7 +27,6 @@ const HeaderCenter = () => {
   );
   console.log(searchProducts);
 
-  // const { regModal, setRegModal } = useContext(ModalContext);
 
   return (
     <div className="max-w-[1350px] w-full mx-auto px-5">

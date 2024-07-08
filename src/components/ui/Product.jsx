@@ -34,7 +34,7 @@ const Product = ({ slide }) => {
         />
         <div className="absolute top-1.5 left-2 px-2 py-1 text-[13px] rounded-full">
           <div
-            className={`px-3 py-1 text-[12px] font-semibold border border-[#088269] text-[#088269] bg-[#e1efe6] ${
+            className={` px-1 sm:px-4 py-1 text-[12px] font-semibold border border-[#088269] text-[#088269] bg-[#e1efe6] ${
               slide.aksiya === "-30%"
                 ? "text-[#855E00] bg-[#ffe095] border-[#AD7B00]"
                 : slide.aksiya === "Хит продаж"

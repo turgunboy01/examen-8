@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import Home from "./pages/Home/Home";
@@ -31,30 +31,37 @@ import KabinetPage from "./pages/kabinet/KabinetPage";
 import KategoryPage from "./pages/kategory/KategoryPage";
 // import Test from "./Test";
 import LoadingImg from "./assets/rolling.gif";
+import Modal from "./components/modal/auth/Modal";
+import { ModalContext } from "./context/modal/ModalContext";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
+  const { regModal, setRegModal } = useContext(ModalContext);
 
   useEffect(() => {
-    // Simulate a network request or some loading process
+    const registrationData = localStorage.getItem("registrationData");
+    setRegModal(!registrationData);
+
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 500); // Adjust the time as needed
+    }, 500);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [setRegModal]);
 
   if (loading) {
     return (
-      <div className=" bg-[#f8f7f3] flex justify-center items-center h-screen">
+      <div className="bg-[#f8f7f3] flex justify-center items-center h-screen">
         <img src={LoadingImg} alt="" />
       </div>
     );
   }
+
   return (
     <div className="overflow-x-hidden">
       <Header />
       <ScrollToTop />
+      {regModal && <Modal />}
       <div className="pt-[140px] sm:pt-[200px]">
         <Routes>
           <Route path="/" element={<Home />} />
@@ -87,7 +94,6 @@ const App = () => {
           <Route path="/kategory/:caategory" element={<KategoryPage />} />
         </Routes>
       </div>
-
       <Footer />
       {/* <Test /> */}
     </div>

@@ -7,13 +7,17 @@ const CardSlice = createSlice({
   },
   reducers: {
     addToCart(state, action) {
-      const existingItem = state.data.findIndex(
-        (item) => item.id == action.payload.id
+      const existingItemIndex = state.data.findIndex(
+        (item) => item.id === action.payload.id
       );
-      if (existingItem === -1) {
-        state.data = [...state.data, { ...action.payload, amount: 1 }];
-      }
 
+      if (existingItemIndex !== -1) {
+        // If the item already exists, update its amount
+        state.data[existingItemIndex].amount = action.payload.amount;
+      } else {
+        // If the item doesn't exist, add it to the cart with the specified amount
+        state.data.push({ ...action.payload, amount: action.payload.amount });
+      }
       localStorage.setItem("data", JSON.stringify(state.data));
     },
     removeItem: (state, action) => {

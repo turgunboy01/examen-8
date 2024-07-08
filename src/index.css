@@ -45,8 +45,11 @@ input[type="number"] {
 .pagination li > button {
   border-radius: 10px !important;
 }
-/* .MuiPaginationItem-root{} */
 
 .home {
   display: grid !important;
+}
+
+.css-15befwp-MuiRating-root {
+  font-size: 15px !important;
 }
