@@ -7,7 +7,7 @@ import {
   HeaderIcon4,
   HeaderLogo,
 } from "../../assets/HeaderSvg";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 // import img from "../../assets/header.png";
 import { IoIosSearch, IoMdArrowDropdown } from "react-icons/io";
 import { Products } from "../../data/ProductsData";
@@ -15,7 +15,7 @@ import { Products } from "../../data/ProductsData";
 const HeaderCenter = () => {
   const [searchProduct, setSearchProduct] = useState("");
   const [dropdown, setDropdown] = useState(false);
-
+  const navigate = useNavigate();
   const handleInputChange = (e) => {
     setSearchProduct(e.target.value);
     setDropdown(false); // input o'zgarganda dropdown yopiladi
@@ -24,6 +24,11 @@ const HeaderCenter = () => {
   const searchProducts = Products.filter((fil) =>
     fil?.title.toLocaleLowerCase().includes(searchProduct.toLocaleLowerCase())
   );
+
+  const handleClickProduct = (id) => {
+    navigate(`/product/${id}`);
+    setSearchProduct("");
+  };
 
   return (
     <div className="max-w-[1350px] w-full mx-auto px-5">
@@ -100,7 +105,10 @@ const HeaderCenter = () => {
                   <div className="py-[10px] flex flex-col gap-2">
                     {searchProducts.length > 0 ? (
                       searchProducts.map((item) => (
-                        <div className="flex gap-2 items-center">
+                        <div
+                          onClick={() => handleClickProduct(item.id)}
+                          className="cursor-pointer flex gap-2 items-center"
+                        >
                           <img
                             src={item.img}
                             className="w-[50px] object-contain h-[50px]"

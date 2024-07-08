@@ -94,7 +94,7 @@ const Proizvaditel = () => {
               <h2 className="flex justify-between py-2">
                 Направления
                 <MdKeyboardArrowDown className={`duration-300 rotate-0`} />
-              </h2>10.07.2024 23:59
+              </h2>
             </div>
             <div className="border rounded-lg py-[10px] my-[10px] px-[20px]">
               <h2
@@ -150,8 +150,8 @@ const Proizvaditel = () => {
           </div>
         </div>
 
-        <div className=" hidden sm:flex gap-[30px]">
-          <div className="w-[30%]">
+        <div className=" flex gap-[30px]">
+          <div className="w-[30%] hidden sm:block">
             <div className="border rounded-lg py-[10px] px-[20px]">
               <h2 className="flex justify-between py-2">
                 Направления
@@ -210,7 +210,7 @@ const Proizvaditel = () => {
               </button>
             </div>
           </div>
-          <div className="sm:w-[70%]">
+          <div className="w-full sm:w-[70%]">
             <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 pt-3">
               {currentItems.map((item) => (
                 <Link

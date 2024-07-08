@@ -48,7 +48,7 @@ const KatalogComponent = () => {
             <div
               className={`${
                 catalog ? "h-[420px] opacity-100" : "h-0 opacity-0"
-              }  rounded-lg absolute bg-[#f8f7f3] duration-300 top-[60px] w-[100%] border mt-[10px]  p-[20px]`}
+              }  rounded-lg absolute bg-[#f8f7f3] duration-300 overflow-hidden top-[60px] w-[100%] border mt-[10px]  p-[20px]`}
             >
               {categories.map((item, index) => (
                 <Link

@@ -59,7 +59,7 @@ const Sravnenie = () => {
                 Флюорографы
               </h2>{" "}
             </div>
-            <div className="md:w-[70%] h-[800px] p-[30px] overflow-y-scroll">
+            <div className="md:w-[70%] h-[800px] p-[30px] ">
               <div className={`grid  grid-cols-2  md:grid-cols-3 gap-4 pt-3`}>
                 {sravList.map((slide, index) => (
                   <div>
