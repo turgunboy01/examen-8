@@ -11,7 +11,7 @@ const KobinetPodKluchPage = () => {
     <div>
       <PodKluch />
       <HomeCards />
-    <PodkluchCom/>
+      <PodkluchCom />
       <Accardion />
       <Contact />
       <FooterEmail />

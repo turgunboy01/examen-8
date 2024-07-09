@@ -1,13 +1,28 @@
 import React from "react";
 import img1 from "../../assets/countryBrend.png";
 import img2 from "../../assets/countryBrend2.png";
+import { Link } from "react-router-dom";
+import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 // import img2 from "../../assets/statya2.png";
 
 const CountryBrend = () => {
   return (
     <div className="bg-[#f8f7f3]">
       <div className="max-w-[1350px] mx-auto px-5">
-        <h2 className="text-[48px] leading-[52.8px] pt-[30px]">
+        <div className="flex gap-2 items-center  py-5 ">
+          <Link to={"/"} className="text-[#7A7687] text-[14px]">
+            Главная
+          </Link>
+          <MdOutlineKeyboardArrowRight />
+          <Link to={"/proizvaditel"} className="text-[#7A7687] text-[14px]">
+            Производители
+          </Link>
+          <MdOutlineKeyboardArrowRight />
+          <Link className="text-[14px]" to={"/countryBrend"}>
+            Медецинское оборудование Draeger
+          </Link>
+        </div>
+        <h2 className="text-[48px] leading-[52.8px] pt-[20px]">
           Медецинское оборудование Draeger
         </h2>
 

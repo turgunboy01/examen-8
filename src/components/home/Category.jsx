@@ -6,6 +6,7 @@ import img4 from "../../assets/home/category4.png";
 import img5 from "../../assets/home/category5.png";
 import img6 from "../../assets/home/category6.png";
 import img7 from "../../assets/home/category7.png";
+import { Link } from "react-router-dom";
 
 const Category = () => {
   return (
@@ -15,17 +16,23 @@ const Category = () => {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
           <div className="flex flex-col gap-3">
             <div className="   border-[1px] overflow-hidden rounded-lg ">
-              <div className="h-[220px] bg-white  flex  items-center flex-col justify-center">
+              <Link
+                to={"/kategory/Офтальмология"}
+                className="h-[220px] bg-white  flex  items-center flex-col justify-center"
+              >
                 <img src={img1} alt="s" />
-              </div>
+              </Link>
               <h2 className="p-[20px] text-[#202020] text-[14px] lg:text-[16px] xl:text-[18px]">
                 Дерматологическое оборудование
               </h2>
             </div>
             <div className="   border-[1px] overflow-hidden rounded-lg ">
-              <div className="h-[220px] bg-white  flex  items-center flex-col justify-center">
+              <Link
+                to={"/kategory/Лабораторная диагностика"}
+                className="h-[220px] bg-white  flex  items-center flex-col justify-center"
+              >
                 <img src={img2} alt="s" />
-              </div>
+              </Link>
               <h2 className="p-[20px] text-[#202020] text-[14px] lg:text-[16px] xl:text-[18px]">
                 Ветеринарное оборудование
               </h2>
@@ -33,9 +40,12 @@ const Category = () => {
           </div>
           <div className="">
             <div className="  border-[1px] overflow-hidden rounded-lg ">
-              <div className="h-[550px] bg-white  flex  items-center flex-col justify-center">
+              <Link
+                to={"/kategory/Хирургия"}
+                className="h-[550px] bg-white  flex  items-center flex-col justify-center"
+              >
                 <img src={img7} alt="s" />
-              </div>
+              </Link>
               <h2 className="p-[20px] text-[#202020] text-[14px]   lg:text-[16px] xl:text-[18px]">
                 Дерматологическое оборудование
               </h2>
@@ -43,17 +53,23 @@ const Category = () => {
           </div>
           <div className="flex flex-col gap-3">
             <div className="   border-[1px] overflow-hidden rounded-lg ">
-              <div className="h-[220px] bg-white  flex  items-center flex-col justify-center">
+              <Link
+                to={"/kategory/Офтальмология"}
+                className="h-[220px] bg-white  flex  items-center flex-col justify-center"
+              >
                 <img src={img3} alt="s" />
-              </div>
+              </Link>
               <h2 className="p-[20px] text-[#202020] text-[14px] lg:text-[16px] xl:text-[18px]">
                 Оборудование для анастезиологии
               </h2>
             </div>
             <div className="   border-[1px] overflow-hidden rounded-lg ">
-              <div className="h-[220px] bg-white  flex  items-center flex-col justify-center">
+              <Link
+                to={"/kategory/Эндоскопия"}
+                className="h-[220px] bg-white  flex  items-center flex-col justify-center"
+              >
                 <img src={img4} alt="s" />
-              </div>
+              </Link>
               <h2 className="p-[20px] text-[#202020] text-[14px] lg:text-[16px] xl:text-[18px]">
                 Оборудование для анастезиологии
               </h2>
@@ -61,17 +77,23 @@ const Category = () => {
           </div>{" "}
           <div className="flex flex-col gap-3">
             <div className="   border-[1px] overflow-hidden rounded-lg ">
-              <div className="h-[220px] bg-white  flex  items-center flex-col justify-center">
+              <Link
+                to={"/kategory"}
+                className="h-[220px] bg-white  flex  items-center flex-col justify-center"
+              >
                 <img src={img5} alt="s" />
-              </div>
+              </Link>
               <h2 className="p-[20px] text-[#202020] text-[14px] lg:text-[16px] xl:text-[18px]">
                 Мебель для медецинских целей
               </h2>
             </div>
             <div className="   border-[1px] overflow-hidden rounded-lg ">
-              <div className="h-[220px] bg-white  flex  items-center flex-col justify-center">
+              <Link
+                to={"/kategory/Физиотерапия и реабилитация"}
+                className="h-[220px] bg-white  flex  items-center flex-col justify-center"
+              >
                 <img src={img6} alt="s" />
-              </div>
+              </Link>
               <h2 className="p-[20px] text-[#202020] text-[14px] lg:text-[16px] xl:text-[18px]">
                 Дерматологическое оборудование
               </h2>

@@ -2,9 +2,13 @@ import React, { useState } from "react";
 import { Products } from "../../data/ProductsData";
 import { BsArrowBarRight } from "react-icons/bs";
 import Product from "../ui/Product";
-import { MdKeyboardArrowRight } from "react-icons/md";
+import {
+  MdKeyboardArrowRight,
+  MdOutlineKeyboardArrowRight,
+} from "react-icons/md";
 import { RiArrowRightSLine } from "react-icons/ri";
 import { Settings } from "../../assets/SvgIcons";
+import { Link } from "react-router-dom";
 
 const Aksiya = () => {
   const [catalog, setCatalog] = useState(false);
@@ -12,7 +16,16 @@ const Aksiya = () => {
   const fill = Products.filter((fil) => fil.aksiya == "-30%");
 
   return (
-    <div className="max-w-[1350px] mx-auto px-5 py-[30px] ">
+    <div className="max-w-[1350px] mx-auto px-5 py-[10px] ">
+      <div className="flex gap-2 items-center ">
+        <Link to={"/"} className="text-[#7A7687] text-[14px] py-[20px]">
+          Главная
+        </Link>
+        <MdOutlineKeyboardArrowRight />
+        <Link className="text-[14px]" to={"/aksiya"}>
+          Акции
+        </Link>
+      </div>
       <div className=" w-full sm:hidden block   sm:w-[300px] relative  ">
         <h2
           onClick={() => setCatalog(!catalog)}

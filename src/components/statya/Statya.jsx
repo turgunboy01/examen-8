@@ -3,10 +3,25 @@ import img1 from "../../assets/statya/statya1.png";
 import img2 from "../../assets/statya/statya2.png";
 import img3 from "../../assets/statya/statya3.png";
 import img4 from "../../assets/statya/statya4.png";
+import { Link } from "react-router-dom";
+import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 const Statya = () => {
   return (
     <div className="bg-[#f8f7f3]">
-      <div className="max-w-[1350px] mx-auto px-5 pt-[40px]">
+      <div className="max-w-[1350px] mx-auto px-5 pt-[20px]">
+        <div className="flex gap-2 items-center ">
+          <Link to={"/"} className="text-[#7A7687] text-[14px] py-4 ">
+            Главная
+          </Link>
+          <MdOutlineKeyboardArrowRight />
+          <Link className="text-[14px] text-[#7a7687]" to={"/blog"}>
+            Блог
+          </Link>{" "}
+          <MdOutlineKeyboardArrowRight />
+          <Link className="text-[14px]" to={"/statya"}>
+            Каталог
+          </Link>
+        </div>
         <div className="p-[30px] border rounded-lg bg-[#fff]">
           <h2 className="text-[30px] sm:text-[34px]  sm:leading-[38] md:text-[48px] md:leading-[52px] pb-[10px]">
             {" "}

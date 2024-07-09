@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-import { MdKeyboardArrowRight } from "react-icons/md";
+import {
+  MdKeyboardArrowRight,
+  MdOutlineKeyboardArrowRight,
+} from "react-icons/md";
 import img1 from "../../assets/blog/blog.png";
 import img2 from "../../assets/blog/blog2.png";
 import img3 from "../../assets/blog/blog3.png";
@@ -11,9 +14,19 @@ const BlogCom = () => {
   const [catalog, setCatalog] = useState(false);
 
   return (
-    <div className="bg-[#f8f7f3] py-[70px]">
+    <div className="bg-[#f8f7f3] py-[30px]">
       <div className="max-w-[1350px] mx-auto px-5 ">
-        <div className="flex justify-end py-[20px]">
+        <div className="flex gap-2 items-center ">
+          <Link to={"/"} className="text-[#7A7687] text-[14px]">
+            Главная
+          </Link>
+          <MdOutlineKeyboardArrowRight />
+          <Link className="text-[14px]" to={"/blog"}>
+            Блог
+          </Link>
+        </div>
+        <h2 className="text-[28px] sm:text-[34px] md:text-[48px] pt-[30px]  "> Блог</h2>
+        <div className="flex justify-end py-[10px]">
           <div className=" w-full lg:hidden block  sm:w-[300px] relative  ">
             <h2
               onClick={() => setCatalog(!catalog)}

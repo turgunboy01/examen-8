@@ -1,9 +1,20 @@
 import React from "react";
+import { MdOutlineKeyboardArrowRight } from "react-icons/md";
+import { Link } from "react-router-dom";
 const Oplata = () => {
   return (
     <div className="bg-[#f8f7f3]">
       <div className="max-w-[1350px] mx-auto px-5">
-        <div className="pt-[40px]">
+        <div className="flex gap-2 items-center py-5 ">
+          <Link to={"/"} className="text-[#7A7687] text-[14px]">
+            Главная
+          </Link>
+          <MdOutlineKeyboardArrowRight />
+          <Link className="text-[14px]" to={"/oplata"}>
+            Оплата
+          </Link>
+        </div>
+        <div className="pt-[20px]">
           <h1 className="text-[28px] sm:text-[36px] leading-[36px]">Оплата</h1>
           <p className="py-[20px] text-[12px] sm:text-[14px] md:text-[16px] sm:w-[70%]">
             Учитывая стремительное развитие мировых медицинских технологий,
@@ -98,7 +109,9 @@ const Oplata = () => {
           </div>
         </div>
         <div className="pt-[40px]">
-          <h1 className="text-[28px] sm:text-[36px] leading-[36px]">Условия поставок</h1>
+          <h1 className="text-[28px] sm:text-[36px] leading-[36px]">
+            Условия поставок
+          </h1>
           <p className="py-[20px] sm:w-[70%] text-[12px] sm:text-[14px] md:text-[16px]">
             Учитывая стремительное развитие мировых медицинских технологий,
             врачи в Российской Федерации и соседних странах столкнулись

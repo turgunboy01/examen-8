@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import { IoIosArrowDown } from "react-icons/io";
 import { SelectWishList } from "../../redux/WishlistSlice";
 import { Link } from "react-router-dom";
+import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
 const Wishlist = () => {
   const [vertical, setVertical] = useState(false);
@@ -56,8 +57,17 @@ const Wishlist = () => {
   }, [selectedOption, likeList]);
 
   return (
-    <div className="bg-[#f8f7f3] py-[80px]">
-      <div className="max-w-[1350px] mx-auto px-5 py-[30px] ">
+    <div className="bg-[#f8f7f3] py-[10px]">
+      <div className="max-w-[1350px] mx-auto px-5 py-[20px] ">
+        <div className="flex gap-2 items-center pb-[100px] ">
+          <Link to={"/"} className="text-[#7A7687] text-[14px]">
+            Главная
+          </Link>
+          <MdOutlineKeyboardArrowRight />
+          <Link className="text-[14px]" to={"/wishlist"}>
+            Избранное
+          </Link>
+        </div>
         <div className="w-full flex flex-col md:flex-row  justify-between  md:gap-[50px] ">
           <h2 className="text-[20px] sm:text-[30px] md:text-[48px] leading-[52px] py-[20px]">
             Избранное

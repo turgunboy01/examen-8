@@ -11,12 +11,23 @@ import {
   CardIcon7,
   CardIcon6,
 } from "../../assets/HomeSvg";
+import { Link } from "react-router-dom";
+import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
 const Garanty = () => {
   return (
-    <div className="bg-[#f8f7f3] py-[30px]">
+    <div className="bg-[#f8f7f3] py-[20px]">
       <div className="max-w-[1350px] mx-auto px-5">
-        <h2 className="text-[28px] sm:text-[34px] md:text-[48px] leading-3 md::leading-[52px]">
+        <div className="flex gap-2 items-center py-4  pb-[50px]">
+          <Link to={"/"} className="text-[#7A7687] text-[14px]">
+            Главная
+          </Link>
+          <MdOutlineKeyboardArrowRight />
+          <Link className="text-[14px]" to={"/garanty"}>
+            Гарантии
+          </Link>
+        </div>
+        <h2 className="text-[28px] sm:text-[34px] pt-5 pb-3  md:text-[48px] leading-3 md::leading-[52px]">
           Гарантии
         </h2>
         <p className="w-full sm:w-[70%] md:w-[50%] text-[12px] sm:text-[14px] md:text-[16px] pt-[20px] sm:pt-[30px]">
@@ -62,11 +73,15 @@ const Garanty = () => {
         <div className=" grid grid-cols-2 justify-center items-center gap-2 ">
           <div className="h-[180px]  md:h-[320px] border rounded-lg flex-col gap-2  flex justify-center items-center">
             <CartIcon9 />
-            <h2 className="text-[#202020] text-[12px] sm:text-[14px] pt-[10px] md:text-[16px]">Быстрая доставка</h2>
+            <h2 className="text-[#202020] text-[12px] sm:text-[14px] pt-[10px] md:text-[16px]">
+              Быстрая доставка
+            </h2>
           </div>
           <div className=" h-[180px] md:h-[320px] rounded-lg border flex-col flex gap-2 justify-center items-center">
             <CardIcon6 />
-            <h2 className="text-[#202020] text-[12px] sm:text-[14px] pt-[10px] md:text-[16px]">Весь товар сертифицирован</h2>
+            <h2 className="text-[#202020] text-[12px] sm:text-[14px] pt-[10px] md:text-[16px]">
+              Весь товар сертифицирован
+            </h2>
           </div>
           <div className=" h-[180px] md:h-[320px] rounded-lg border flex-col flex gap-2 justify-center items-center">
             <CardIcon8 />
@@ -76,7 +91,9 @@ const Garanty = () => {
           </div>
           <div className=" h-[180px] md:h-[320px] rounded-lg border flex flex-col  gap-2 justify-center items-center">
             <CardIcon3 />
-            <h2 className="text-[#202020] text-[12px] sm:text-[14px] md:text-[16px] pt-[10px]">Лет на рынке</h2>
+            <h2 className="text-[#202020] text-[12px] sm:text-[14px] md:text-[16px] pt-[10px]">
+              Лет на рынке
+            </h2>
           </div>
         </div>
       </div>

@@ -12,6 +12,7 @@ import Product2 from "../../components/ui/Product2";
 import Product from "../../components/ui/Product";
 import { FilterSvg1, FilterSvg2 } from "../../assets/HomeSvg";
 import { Products } from "../../data/ProductsData";
+import { useParams } from "react-router-dom";
 
 const countries = [
   "Австралия",
@@ -25,7 +26,7 @@ const countries = [
 ];
 
 const KategoryComp = () => {
-  const [value, setValue] = useState([0, 1000]);
+  const [value, setValue] = useState([0, 10000]);
   const [price, setPrice] = useState(true);
   const [country, setCountry] = useState(true);
   const [product, setProduct] = useState(true);
@@ -33,6 +34,9 @@ const KategoryComp = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState("По популярности");
   const [sortedProducts, setSortedProducts] = useState(Products);
+
+  const { caategory: category } = useParams();
+  console.log(category);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -51,6 +55,13 @@ const KategoryComp = () => {
     setIsOpen(false);
   };
 
+  const filteredData = Products.filter(
+    (item) =>
+      item.category === category &&
+      item.price >= value[0] &&
+      item.price <= value[1]
+  );
+
   const options = [
     "По популярности",
     "По цене",
@@ -60,7 +71,7 @@ const KategoryComp = () => {
   ];
 
   useEffect(() => {
-    let sortedArray = [...Products];
+    let sortedArray = [...filteredData];
     switch (selectedOption) {
       case "По цене":
         sortedArray.sort((a, b) => a.price - b.price);
@@ -77,16 +88,15 @@ const KategoryComp = () => {
         sortedArray.sort((a, b) => b.sales - a.sales);
         break;
       default:
-        sortedArray = Products;
+        sortedArray = filteredData;
         break;
     }
     setSortedProducts(sortedArray);
-  }, [selectedOption]);
+  }, [selectedOption, value, category]);
 
   return (
     <div className="bg-[#f8f7f3] py-[80px] overflow-hidden">
       <div className="max-w-[1350px] mx-auto px-5">
-      
         <div className="flex gap-4 overflow-x-scroll">
           <button className="py-2 px-5 bg-[#fff] border rounded-full">
             Дерматологическое оборудование
@@ -154,7 +164,7 @@ const KategoryComp = () => {
                       <p> ${value[1]}</p>
                     </span>
                   </div>
-                  <Box sx={{ width: 300, padding: "10px " }}>
+                  <Box sx={{ padding: "10px " }}>
                     <Slider
                       getAriaLabel={() => "Price range"}
                       value={value}
@@ -163,7 +173,7 @@ const KategoryComp = () => {
                       className="text-[red]"
                       getAriaValueText={valuetext}
                       min={0}
-                      max={1000}
+                      max={500000}
                     />
                   </Box>
                 </div>

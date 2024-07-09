@@ -8,12 +8,26 @@ import {
   KontactIcon6,
   KontactIcon7,
 } from "../../assets/Contact";
+import { Link } from "react-router-dom";
+import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 const Contact = () => {
   return (
     <div>
       <div className="bg-[#f8f7f3]">
         <div className="max-w-[1350px] mx-auto px-5">
-          <div className="grid md:grid-cols-2 gap-[20px]">
+          <div className="flex gap-2 items-center py-[25px] ">
+            <Link to={"/"} className="text-[#7A7687] text-[14px]">
+              Главная
+            </Link>
+            <MdOutlineKeyboardArrowRight />
+            <Link className="text-[14px]" to={"/contact"}>
+              Каталог
+            </Link>
+          </div>
+          <h2 className="text-[28px] sm:text-[34px] md:trxt-[48px] pt-[20px] ">
+            Контакты
+          </h2>
+          <div className="grid md:grid-cols-2 gap-[20px] ">
             <div className="bg-[#fff] p-[30px]  rounded-lg">
               <h3 className="text-[30px] leading-[36px] pb-2">
                 ООО Глобал Медикал Трейд
@@ -71,7 +85,9 @@ const Contact = () => {
                   <KontactIcon4 />
                 </div>
                 <div className="">
-                  <h3 className="text-[#7A7687] text-[16px]">Пишиовые знания JavaScript и React;те:</h3>
+                  <h3 className="text-[#7A7687] text-[16px]">
+                    Пишиовые знания JavaScript и React;те:
+                  </h3>
                   <p>info@mail.ru</p>
                 </div>
               </span>

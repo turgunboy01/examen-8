@@ -13,6 +13,7 @@ import img10 from "../../assets/katalog/katalog10.png";
 import { Settings } from "../../assets/SvgIcons";
 import { Products } from "../../data/ProductsData";
 import { Link } from "react-router-dom";
+import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
 const KatalogComponent = () => {
   const [catalog, setCatalog] = useState(false);
@@ -33,6 +34,15 @@ const KatalogComponent = () => {
   return (
     <div className="bg-[#f8f7f3]">
       <div className="max-w-[1350px] mx-auto px-5 py-[30px]">
+        <div className="flex gap-2 items-center ">
+          <Link to={"/"} className="text-[#7A7687] text-[14px]">
+            Главная
+          </Link>
+          <MdOutlineKeyboardArrowRight />
+          <Link className="text-[14px]" to={"/katalog"}>
+            Каталог
+          </Link>
+        </div>
         <div className="flex justify-between py-[20px] flex-wrap">
           <h2 className="text-[20px]  py-[20px]"> Популярные категории</h2>
           <div className=" w-full lg:hidden block  sm:w-[300px] relative  ">

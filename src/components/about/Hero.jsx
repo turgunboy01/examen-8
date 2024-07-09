@@ -1,9 +1,20 @@
 import React from "react";
 import img from "../../assets/about.png";
+import { MdOutlineKeyboardArrowRight } from "react-icons/md";
+import { Link } from "react-router-dom";
 const Hero = () => {
   return (
     <div className="bg-[#f8f7f3]">
       <div className="max-w-[1350px] mx-auto px-5 ">
+        <div className="flex gap-1 items-center pt-[20px] ">
+          <Link to={"/"} className="text-[#7A7687] text-[14px]">
+            Главная
+          </Link>
+          <MdOutlineKeyboardArrowRight />
+          <Link className="text-[14px]" to={"/katalog"}>
+            Каталог
+          </Link>
+        </div>
         <div className="py-[30px]">
           <img src={img} alt="" />
         </div>

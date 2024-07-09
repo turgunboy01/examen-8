@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import img from "../../assets/podKluch.png";
 import Standart from "./Standart";
 import ProductArray from "./ProductArray";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { PodKluchData } from "../../data/SlidesData";
+import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 const KobinetPodKluch = () => {
   const { id } = useParams();
   const product = PodKluchData.find((item) => item.id == id);
@@ -13,6 +14,19 @@ const KobinetPodKluch = () => {
   return (
     <div className="bg-[#f8f7f3] py-[20px]">
       <div className="max-w-[1350px] mx-auto px-5">
+        <div className="flex gap-2 items-center ">
+          <Link to={"/"} className="text-[#7A7687] text-[14px]">
+            Главная
+          </Link>
+          <MdOutlineKeyboardArrowRight />
+          <Link to={"/podkluch"} className="text-[#7A7687] text-[14px]">
+            Кабинет под ключ
+          </Link>
+          <MdOutlineKeyboardArrowRight />
+          <Link className="text-[14px]" to={`/kabinetPodKluch/${id}`}>
+            Палата реанимации и интенсивной терапии
+          </Link>
+        </div>
         <h2 className="text-[30px] md:text-[48px] leading-[35px] md:leading-[52.6px] py-[20px] pt-[60px]">
           Комплексное оснащение палаты реанимации и интенсивной терапии
         </h2>

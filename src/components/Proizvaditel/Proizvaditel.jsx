@@ -10,7 +10,10 @@ import {
 } from "@mui/material";
 import React, { useState } from "react";
 import { IoIosSearch } from "react-icons/io";
-import { MdKeyboardArrowDown } from "react-icons/md";
+import {
+  MdKeyboardArrowDown,
+  MdOutlineKeyboardArrowRight,
+} from "react-icons/md";
 import img from "../../assets/proizvaditel.png";
 import { Link } from "react-router-dom";
 import { Settings } from "../../assets/SvgIcons";
@@ -70,7 +73,16 @@ const Proizvaditel = () => {
 
   return (
     <div className="bg-[#f8f7f3]">
-      <div className="max-w-[1350px] py-[20px] mx-auto px-5 ">
+      <div className="max-w-[1350px] py-[10px] mx-auto px-5 ">
+        <div className="flex gap-2 items-center ">
+          <Link to={"/"} className="text-[#7A7687] py-[20px] text-[14px]">
+            Главная
+          </Link>
+          <MdOutlineKeyboardArrowRight />
+          <Link className="text-[14px]" to={"/proizvaditel"}>
+            Производители
+          </Link>
+        </div>
         <div className=" w-full sm:hidden block   sm:w-[300px] relative  ">
           <h2
             onClick={() => setCatalog(!catalog)}

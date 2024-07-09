@@ -1,9 +1,20 @@
 import React from "react";
+import { MdOutlineKeyboardArrowRight } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
     <div className="bg-[#f8f7f3]">
       <div className="max-w-[1350px] mx-auto px-5">
+        <div className="flex gap-2 items-center pt-[20px] ">
+          <Link to={"/"} className="text-[#7A7687] text-[14px]">
+            Главная
+          </Link>
+          <MdOutlineKeyboardArrowRight />
+          <Link className="text-[14px]" to={"/dostavka"}>
+            Доставка
+          </Link>
+        </div>
         <h2 className="text-[38px] leading-[52.8px] py-7 pt-[40px]">
           Информация о доставке
         </h2>
