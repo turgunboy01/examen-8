@@ -143,7 +143,7 @@ const Camentary = () => {
                 <h1 className="text-[18px] text-[#202020] pb-5">
                   Услуги и сервис
                 </h1>
-                <div className="overflow-x-scroll">
+                <div className="overflow-x-scroll scrollNotFound">
                   <div className="grid grid-cols-4 gap-4 min-w-max">
                     <div className="border rounded-md overflow-hidden">
                       <img src={img1} alt="" className="w-full" />
@@ -238,48 +238,51 @@ const Camentary = () => {
             <h2 className=" border-b py-[10px] px-5">
               Технические характеристики
             </h2>
-            <div className="grid grid-cols-2 px-5 py-[10px]">
+            <div className="grid md:grid-cols-2 px-5 py-[10px]">
               <div className="">
-                <p className="text-[12px] pb-1 pt-[10px]  text-[#7A7687]">
-                  Вес оборудования . . . . . . . . . . .{" "}
+                <p className="text-[12px] flex flex-col sm:flex-row  pb-1 pt-[10px]  text-[#7A7687]">
+                  Вес оборудования <p className="hidden md:block">. . . . . . . . . . .</p>
                   <span className="text-[#000] pl-1">90 кг</span>
                 </p>{" "}
-                <p className="text-[12px] py-1 text-[#7A7687]">
-                  Детектор . . . . . . . . . . . . . . . . . . . .{" "}
+                <p className="text-[12px] flex flex-col sm:flex-row py-1 text-[#7A7687]">
+                  Детектор <p className="hidden md:block">. . . . . . . . . . . . . . . . . . . .</p>
                   <span className="text-[#000] pl-1">
                     CsI - на основе аморфного кремния
                   </span>
                 </p>{" "}
-                <p className="text-[12px] py-1 text-[#7A7687]">
-                  Время сканирования . . . . . . . . .{" "}
+                <p className="text-[12px] flex flex-col sm:flex-row  py-1 text-[#7A7687]">
+                  Время сканирования <p className="hidden md:block">. . . . . . . . .</p>
                   <span className="text-[#000] pl-1">
                     PAN стандарт - 12 сек
                   </span>
                 </p>{" "}
-                <p className="text-[12px] py-1 text-[#7A7687]">
-                  Размер фокусного пятна . . . . . .
+                <p className="text-[12px] flex flex-col sm:flex-row  py-1 text-[#7A7687]">
+                  Размер фокусного пятна <p className="hidden md:block">. . . . . .</p>
                   <span className="text-[#000] pl-1">0.6</span>
                 </p>{" "}
-                <p className="text-[12px] py-1 text-[#7A7687]">
-                  Динамический диапазон . . . . . .
+                <p className="text-[12px] py-1 flex flex-col sm:flex-row  text-[#7A7687]">
+                  Динамический диапазон <p className="hidden md:block">. . . . . .</p>
                   <span className="text-[#000] pl-1">
                     16 бит (65 536 градации серого)
                   </span>
                 </p>
               </div>
               <div className="">
-                <p className="text-[12px] py-1 text-[#7A7687]">
-                  Рабочее напряжение . . . . . . . . .
+                <p className="text-[12px] flex flex-col sm:flex-row  py-1 text-[#7A7687]">
+                  Рабочее напряжение <p className="hidden md:block">. . . . . . . . .</p>
                   <span className="text-[#000] pl-1">90 кг</span>
                 </p>{" "}
-                <p className="text-[12px] py-1  text-[#7A7687]">
-                  Максимальный ток . . . . . . . . . . .
+                <p className="text-[12px] py-1 flex  flex-col sm:flex-row   text-[#7A7687]">
+                  Максимальный ток <p className="hidden md:block">. . . . . . . . . . .</p>
                   <span className="text-[#000] pl-1">
                     CsI - на основе аморфного кремния
                   </span>
                 </p>{" "}
-                <p className="text-[12px] py-1  text-[#7A7687]">
-                  Гарантия . . . . . . . . . . . . . . . . . . . . .
+                <p className="text-[12px] py-1 flex  flex-col sm:flex-row  text-[#7A7687]">
+                  Гарантия{" "}
+                  <p className="hidden md:block">
+                    . . . . . . . . . . . . . . . . . . . . .
+                  </p>
                   <span className="text-[#000] pl-1">
                     PAN стандарт - 12 сек
                   </span>
@@ -292,7 +295,7 @@ const Camentary = () => {
           <h1 className="text-[18px] text-[#202020] py-[10px] border-b px-5">
             Услуги и сервис
           </h1>
-          <div className="py-[10px] pb-5 px-5 overflow-x-scroll">
+          <div className="py-[10px] pb-5 px-5 scrollNotFound overflow-x-scroll">
             <div className="flex gap-4">
               <div className="border rounded-md overflow-hidden flex-shrink-0">
                 <img src={img1} alt="" className="w-full" />
