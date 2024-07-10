@@ -12,13 +12,8 @@ const CardSlice = createSlice({
       );
 
       if (existingItemIndex !== -1) {
-        // If the item already exists and its amount is greater than 1, decrement it to 1
-        if (state.data[existingItemIndex].amount > 1) {
-          state.data[existingItemIndex].amount = 1;
-        } else {
-          // If the amount is already 1, remove the item from the cart
-          state.data.splice(existingItemIndex, 1);
-        }
+        // If the item already exists, increment its amount
+        state.data[existingItemIndex].amount += 1;
       } else {
         // If the item doesn't exist, add it to the cart with the specified amount
         state.data.push({ ...action.payload, amount: 1 });

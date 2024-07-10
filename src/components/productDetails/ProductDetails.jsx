@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { Rating } from "@mui/material";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
-// import img from "../../assets/Photo.png";
 import { CategoryIcons1, CategoryIcons2 } from "../../assets/HomeSvg";
 import { SelectSrav, setTosrav } from "../../redux/SravSlice";
 import { setToWishList } from "../../redux/WishlistSlice";
@@ -22,12 +21,12 @@ const ProductDetails = () => {
   const sravList = useSelector(SelectSrav);
   const likeList = useSelector((state) => state.like.data);
   const cart = useSelector(selectCard);
-  const [clickedAdd, setClickedAdd] = useState(false);
+
+  if (!product) {
+    return <div>Product not found</div>; // Handle product not found
+  }
 
   const cartItem = cart.find((item) => item.id === product.id);
-  console.log(cartItem);
-  const initialAmount = cartItem ? cartItem.amount : 0;
-  const [amount, setAmount] = useState(initialAmount);
   const [imgChange, setImgChange] = useState("");
 
   const handleSravToggle = (product) => {
@@ -40,8 +39,8 @@ const ProductDetails = () => {
 
   const handleAddToCart = (product) => {
     dispatch(addToCart(product));
-    setClickedAdd(true);
   };
+
   const increaseQty = (productId) => {
     dispatch(increment(productId));
   };
@@ -106,20 +105,21 @@ const ProductDetails = () => {
               {product.price} руб.
             </p>
             <div className="flex gap-3 py-[20px]">
-              {clickedAdd && (
-                <span className="hidden md:flex items-center px-2 lg:px-6 rounded-full gap-3 lg:gap-4 border">
-                  <button onClick={() => decreaseQty(product.id)}>-</button>
-                  <p className="text-[13px] lg:text-[14px] text-[#088269]">
-                    {amount}
-                  </p>
-                  <button
-                    onClick={() => increaseQty(product.id)}
-                    className="text-[#088269]"
-                  >
-                    +
-                  </button>
-                </span>
-              )}
+              {cartItem &&
+                cartItem.amount > 0 && ( // Check if cartItem exists
+                  <span className="hidden md:flex items-center px-2 lg:px-6 rounded-full gap-3 lg:gap-4 border">
+                    <button onClick={() => decreaseQty(product.id)}>-</button>
+                    <p className="text-[13px] lg:text-[14px] text-[#088269]">
+                      {cartItem.amount}
+                    </p>
+                    <button
+                      onClick={() => increaseQty(product.id)}
+                      className="text-[#088269]"
+                    >
+                      +
+                    </button>
+                  </span>
+                )}
               <button className="w-full py-2 border text-[13px] lg:text-[14px] text-[#088269] rounded-full">
                 Задать вопрос
               </button>

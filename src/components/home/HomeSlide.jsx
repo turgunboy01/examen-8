@@ -57,7 +57,7 @@ const HomeSlide = () => {
                   <img src={img2} alt={"title"} className="w-full h-full" />
                 </div>
               </div>
-              <div className="w-[100%] border h-[100%] md:h-[350px] home  grid-cols-1 md:grid-cols-2 justify-between bg-[#e5e4ed]">
+              <div className="w-[100%] border h-[100%] md:h-[350px] home  grid-cols-1 md:grid-cols-2 justify-between bg-[#e5e4ed] rounded-xl overflow-hidden">
                 <div className="p-[30px] ">
                   <h2 className=" text-[#202020] text-[32px] lg:text-[45px] w-[100%] 2xl:w-[90%] leading-[37px] lg:leading-[52px] border-t">
                     Заголовок баннера в пару строк
@@ -88,7 +88,7 @@ const HomeSlide = () => {
                   <img src={img2} alt={"title"} className="w-full h-full" />
                 </div>
               </div>{" "}
-              <div className="w-[100%] border h-[100%] md:h-[350px] home  grid-cols-1 md:grid-cols-2 justify-between bg-[#e5e4ed]">
+              <div className="w-[100%] border h-[100%] md:h-[350px] home  grid-cols-1 md:grid-cols-2 justify-between bg-[#e5e4ed] rounded-xl overflow-hidden">
                 <div className="p-[30px] ">
                   <h2 className=" text-[#202020] text-[32px] lg:text-[45px] w-[100%] 2xl:w-[90%] leading-[37px] lg:leading-[52px] border-t">
                     Заголовок баннера в пару строк

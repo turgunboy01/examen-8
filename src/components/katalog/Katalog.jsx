@@ -28,7 +28,8 @@ const KatalogComponent = () => {
     listUniqueCategories();
   }, []);
 
- 
+  console.log(categories);
+
   return (
     <div className="bg-[#f8f7f3]">
       <div className="max-w-[1350px] mx-auto px-5 py-[30px]">
@@ -61,7 +62,6 @@ const KatalogComponent = () => {
               {categories.map((item, index) => (
                 <Link
                   to={`/kategory/${item}`}
-                  onClick={() => setChangeCategory(item)}
                   key={index}
                   className="py-3 cursor-pointer flex justify-between text-[14px] items-center"
                 >
@@ -79,7 +79,6 @@ const KatalogComponent = () => {
               {categories.map((item, index) => (
                 <Link
                   to={`/kategory/${item}`}
-                  onClick={() => setChangeCategory(item)}
                   key={index}
                   className="py-3 cursor-pointer flex justify-between text-[14px] items-center"
                 >
@@ -91,92 +90,122 @@ const KatalogComponent = () => {
           </div>
           <div className="lg:w-[70%] w-full  grid grid-cols-3 gap-5">
             <div className="flex gap-5 flex-col">
-              <div className="border-[1px] overflow-hidden rounded-lg ">
+              <Link
+                to={`/kategory/Офтальмология`}
+                className="border-[1px] overflow-hidden rounded-lg "
+              >
                 <div className=" p-[20px] h-[220px] bg-white  flex  items-center flex-col justify-center">
                   <img src={img1} alt="s" />
                 </div>
                 <h2 className="p-[20px] text-[#202020] text-[14px] lg:text-[16px] xl:text-[18px]">
-                  Дерматологическое оборудование
+                  Офтальмология
                 </h2>
-              </div>
-              <div className="border-[1px] overflow-hidden rounded-lg ">
+              </Link>
+              <Link
+                to={`/kategory/Лабораторная диагностика`}
+                className="border-[1px] overflow-hidden rounded-lg "
+              >
                 <div className=" p-[20px] h-[220px] bg-white  flex  items-center flex-col justify-center">
                   <img src={img2} alt="s" />
                 </div>
                 <h2 className="p-[20px] text-[#202020] text-[14px] lg:text-[16px] xl:text-[18px]">
-                  Дерматологическое оборудование
+                  Лабораторная диагностика
                 </h2>
-              </div>
+              </Link>
             </div>
             <div className="flex gap-5 flex-col">
-              <div className="border-[1px] overflow-hidden rounded-lg ">
+              <Link
+                to={`/kategory/Хирургия`}
+                className="border-[1px] overflow-hidden rounded-lg "
+              >
                 <div className=" p-[20px] h-[220px] bg-white  flex  items-center flex-col justify-center">
                   <img src={img3} alt="s" />
                 </div>
                 <h2 className="p-[20px] text-[#202020] text-[14px] lg:text-[16px] xl:text-[18px]">
-                  Дерматологическое оборудование
+                  Хирургия
                 </h2>
-              </div>
-              <div className="border-[1px] overflow-hidden rounded-lg ">
+              </Link>
+              <Link
+                to={`/kategory/Физиотерапия и реабилитация`}
+                className="border-[1px] overflow-hidden rounded-lg "
+              >
                 <div className=" p-[20px] h-[220px] bg-white  flex  items-center flex-col justify-center">
                   <img src={img4} alt="s" />
                 </div>
                 <h2 className="p-[20px] text-[#202020] text-[14px] lg:text-[16px] xl:text-[18px]">
-                  Дерматологическое оборудование
+                  Физиотерапия и реабилитация
                 </h2>
-              </div>
+              </Link>
             </div>
-            <div className="border-[1px] h-[100%] overflow-hidden rounded-lg ">
+            <Link
+              to={`/kategory/Оборудование для медицинской метрологии`}
+              className="border-[1px] h-[100%] overflow-hidden rounded-lg "
+            >
               <div className="  h-[560px] bg-white  flex  items-center flex-col justify-center">
                 <img src={img5} alt="s" />
               </div>
               <h2 className="p-[20px] text-[#202020] text-[14px] lg:text-[16px] xl:text-[18px]">
-                Дерматологическое оборудование
+                Оборудование для медицинской метрологии
               </h2>
-            </div>
-            <div className="border-[1px] h-[100%] overflow-hidden rounded-lg ">
+            </Link>
+            <Link
+              to={`/kategory/Эндоскопия`}
+              className="border-[1px] h-[100%] overflow-hidden rounded-lg "
+            >
               <div className="  h-[560px] bg-white  flex  items-center flex-col justify-center">
                 <img src={img6} alt="s" />
               </div>
               <h2 className="p-[20px] text-[#202020] text-[14px] lg:text-[16px] xl:text-[18px]">
-                Дерматологическое оборудование
+                Эндоскопия
               </h2>
-            </div>
+            </Link>
             <div className="flex gap-5 flex-col">
-              <div className="border-[1px] overflow-hidden rounded-lg ">
+              <Link
+                to={`/kategory/Функциональная диагностика`}
+                className="border-[1px] overflow-hidden rounded-lg "
+              >
                 <div className=" p-[20px] h-[220px] bg-white  flex  items-center flex-col justify-center">
                   <img src={img7} alt="s" />
                 </div>
                 <h2 className="p-[20px] text-[#202020] text-[14px] lg:text-[16px] xl:text-[18px]">
-                  Дерматологическое оборудование
+                  Функциональная диагностика
                 </h2>
-              </div>
-              <div className="border-[1px] overflow-hidden rounded-lg ">
+              </Link>
+              <Link
+                to={`/kategory/Косметология`}
+                className="border-[1px] overflow-hidden rounded-lg "
+              >
                 <div className=" p-[20px] h-[220px] bg-white  flex  items-center flex-col justify-center">
                   <img src={img8} alt="s" />
                 </div>
                 <h2 className="p-[20px] text-[#202020] text-[14px] lg:text-[16px] xl:text-[18px]">
-                  Дерматологическое оборудование
+                  Косметология
                 </h2>
-              </div>
+              </Link>
             </div>
             <div className="flex gap-5 flex-col">
-              <div className="border-[1px] overflow-hidden rounded-lg ">
+              <Link
+                to={`/kategory/Стерилизация`}
+                className="border-[1px] overflow-hidden rounded-lg "
+              >
                 <div className=" p-[20px] h-[220px] bg-white  flex  items-center flex-col justify-center">
                   <img src={img9} alt="s" />
                 </div>
                 <h2 className="p-[20px] text-[#202020] text-[14px] lg:text-[16px] xl:text-[18px]">
-                  Дерматологическое оборудование
+                  Стерилизация
                 </h2>
-              </div>
-              <div className="border-[1px] overflow-hidden rounded-lg ">
+              </Link>
+              <Link
+                to={"/kategory/Распродажи"}
+                className="border-[1px] overflow-hidden rounded-lg "
+              >
                 <div className=" p-[20px] h-[220px] bg-white  flex  items-center flex-col justify-center">
                   <img src={img10} alt="s" />
                 </div>
                 <h2 className="p-[20px] text-[#202020] text-[14px] lg:text-[16px] xl:text-[18px]">
-                  Дерматологическое оборудование
+                  Распродажи
                 </h2>
-              </div>
+              </Link>
             </div>
           </div>
         </div>

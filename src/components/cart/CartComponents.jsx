@@ -8,11 +8,12 @@ import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
 const CartComponents = () => {
   const data = useSelector(selectCard);
-
-  const subtotal = data.reduce(
-    (sum, product) => sum + product.price * product.quantity,
-    0
-  );
+  const cart = useSelector(selectCard);
+  const subtotal = cart.reduce((sum, product) => {
+    const price = parseFloat(product.price) || 0;
+    const quantity = parseInt(product.amount, 10) || 0;
+    return sum + price * quantity;
+  }, 0);
 
   return (
     <div className="max-w-[1350px] mx-auto pt-[30px] pb-[100px] px-5">
@@ -25,7 +26,7 @@ const CartComponents = () => {
           Корзина ()
         </Link>
       </div>
-      <div className="flex justify-between flex-col sm:flex-row gap-[30px]">
+      <div className="flex justify-between flex-col sm:flex-row py-[50px] gap-[30px]">
         <div className="sm:w-[75%] flex flex-col gap-3">
           {data.length > 0 ? (
             data.map((item) => <CardProduct slide={item} key={item.id} />)
@@ -48,7 +49,7 @@ const CartComponents = () => {
             <h2 className="text-[12px]">
               Товары ({data.length > 0 ? data.length : 0} шт)
             </h2>
-            {/* <p className="text-[12px] ">{subtotal} руб.</p> */}
+            <p className="text-[12px] ">{subtotal} руб.</p>
           </span>
           <span className="flex py-1 justify-between">
             <h2 className="text-[12px]">Скидка</h2>

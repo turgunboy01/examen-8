@@ -25,7 +25,9 @@ const Profile = () => {
     localStorage.getItem("profileImage") || ""
   );
   const [localPreview, setLocalPreview] = useState(preview);
+
   const data = useSelector(selectCard);
+
   const {
     setProfileImgModal,
     profileImgModal,
@@ -38,13 +40,16 @@ const Profile = () => {
     platelModal,
     setPlatelModal,
   } = useContext(ModalContext);
+
   const [infoProfil, setInfoProfil] = useState(() => {
     try {
       const savedInfo = localStorage.getItem("profileInfo");
-      return savedInfo ? JSON.parse(savedInfo) : { name: "", surname: "" };
+      return savedInfo
+        ? JSON.parse(savedInfo)
+        : { name: "Константин", surname: "Константинопольский" };
     } catch (e) {
       console.error("Error parsing profileInfo:", e);
-      return { name: "", surname: "" };
+      return { name: "Константин", surname: "Константинопольский" };
     }
   });
 
@@ -62,17 +67,27 @@ const Profile = () => {
 
   const getEmail = () => {
     const userEmail = localStorage.getItem("userEmailProfile");
-    return userEmail;
+    return userEmail || "person@mail.ru";
   };
 
   const getPhoneNumber = () => {
     const userPhoneNumber = localStorage.getItem("userPhoneNumberProfile");
-    return userPhoneNumber;
+    return userPhoneNumber || "+7 911 564–86–86";
   };
 
   const getPlatel = () => {
     const userPlatel = localStorage.getItem("userPlatel");
-    return userPlatel ? JSON.parse(userPlatel) : null;
+    return userPlatel
+      ? JSON.parse(userPlatel)
+      : {
+          inn: "",
+          name: "",
+          address: "",
+          website: "",
+          email: "",
+          position: "",
+          organizationType: "",
+        };
   };
 
   useEffect(() => {
@@ -85,21 +100,21 @@ const Profile = () => {
   useEffect(() => {
     const savedEmail = getEmail();
     if (savedEmail) {
-      setEmailProfile(savedEmail); // email state-ga saqlash uchun
+      setEmailProfile(savedEmail);
     }
   }, [emailModal]);
 
   useEffect(() => {
-    const savedEmail = getPhoneNumber();
-    if (savedEmail) {
-      setPhoneNumberProfile(savedEmail); // email state-ga saqlash uchun
+    const savedPhoneNumber = getPhoneNumber();
+    if (savedPhoneNumber) {
+      setPhoneNumberProfile(savedPhoneNumber);
     }
   }, [phoneNumbermodal]);
 
   useEffect(() => {
     const savedProfile = getPlatel();
     if (savedProfile) {
-      setPlatelProfile(savedProfile); // profile state-ga saqlash uchun
+      setPlatelProfile(savedProfile);
     }
   }, [platelModal]);
 
@@ -167,24 +182,42 @@ const Profile = () => {
           </div>
           <div className="">
             <h2 className="text-[18px] sm:text-[20px] md:text-[30px] text-[#202020] capitalize leading-[24px] md:leading-[36px]">
-              {infoProfil
-                ? `${infoProfil.name + " " + infoProfil.surname}`
-                : "Константин Константинопольский"}
+              {infoProfil.name} {infoProfil.surname}
             </h2>
             <div className="flex gap-2 pt-[15px] pb-[30px]">
-              <a href={`${infoProfil.vk}`} target="_blank">
+              <a
+                href={infoProfil.vk || "#"}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Vkontakt />
               </a>
-              <a href={`${infoProfil.facebook}`} target="_blank">
+              <a
+                href={infoProfil.facebook || "#"}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <FaceBook />
               </a>
-              <a href={`${infoProfil.instagram}`} target="_blank">
+              <a
+                href={infoProfil.instagram || "#"}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Instagram />
               </a>
-              <a href={`${infoProfil.twitter}`} target="_blank">
+              <a
+                href={infoProfil.twitter || "#"}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Twitter />
               </a>
-              <a href={`${infoProfil.ok}`} target="_blank">
+              <a
+                href={infoProfil.ok || "#"}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Odno />
               </a>
             </div>
@@ -198,13 +231,17 @@ const Profile = () => {
                 </button>
               </span>
               <span>
-                <button className="px-5 py-2 hover:border-[#07745E] text-[12px] md:text-[14px] border rounded-full">
+                <button
+                  onClick={() => setPhoneNumbermodal(true)}
+                  className="px-5 py-2 hover:border-[#07745E] text-[12px] md:text-[14px] border rounded-full"
+                >
                   Изменить пароль
                 </button>
               </span>
             </div>
           </div>
         </div>
+
         <div className="w-full flex lg:flex-row flex-col items-center">
           <div className="hidden lg:block w-[25%]"></div>
           <div className="w-full lg:w-[75%]">

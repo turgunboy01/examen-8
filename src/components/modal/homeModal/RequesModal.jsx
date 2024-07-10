@@ -83,13 +83,13 @@ const RequesModal = () => {
               <input
                 type="text"
                 name="name"
-                placeholder="Ваше имя**"
-                className="border-b p-2 outline-none w-full"
+                placeholder="Ваше имя*"
+                className="border-b py-2 text-[14px] outline-none w-full"
                 value={formData.name}
                 onChange={handleChange}
               />
               {errors.name && (
-                <span className="text-red-500 text-sm absolute bottom-0 left-0">
+                <span className="text-red-500  absolute bottom-8 text-[12px] left-0">
                   {errors.name}
                 </span>
               )}
@@ -99,12 +99,12 @@ const RequesModal = () => {
                 type="text"
                 name="phone"
                 placeholder="Ваш телефон *"
-                className="border-b p-2 outline-none w-full"
+                className="border-b py-2 text-[14px] outline-none w-full"
                 value={formData.phone}
                 onChange={handleChange}
               />
               {errors.phone && (
-                <span className="text-red-500 text-sm absolute bottom-0 left-0">
+                <span className="text-red-500 text-[12px] absolute bottom-8 left-0">
                   {errors.phone}
                 </span>
               )}
@@ -116,12 +116,12 @@ const RequesModal = () => {
               name="email"
               required
               placeholder="Ваш email*"
-              className="border-b p-2 outline-none w-full"
+              className="border-b py-2 outline-none text-[14px] w-full"
               value={formData.email}
               onChange={handleChange}
             />
             {errors.email && (
-              <span className="text-red-500 text-sm absolute bottom-0 left-0">
+              <span className="text-red-500 text-[12px] absolute bottom-8 left-0">
                 {errors.email}
               </span>
             )}
@@ -132,12 +132,12 @@ const RequesModal = () => {
               name="organization"
               required
               placeholder="Название вашей организации**"
-              className="border-b p-2 outline-none w-full"
+              className="border-b py-2 text-[14px] outline-none w-full"
               value={formData.organization}
               onChange={handleChange}
             />
             {errors.organization && (
-              <span className="text-red-500 text-sm absolute bottom-0 left-0">
+              <span className="text-red-500 text-[12px] absolute bottom-8 left-0">
                 {errors.organization}
               </span>
             )}
@@ -148,12 +148,12 @@ const RequesModal = () => {
               name="message"
               required
               placeholder="Ваше сообщение*"
-              className="border-b h-[150px] p-2 outline-none resize-none w-full"
+              className="border-b h-[150px] py-2 text-[14px] outline-none resize-none w-full"
               value={formData.message}
               onChange={handleChange}
             />
             {errors.message && (
-              <span className="text-red-500 text-sm absolute bottom-0 left-0">
+              <span className="text-red-500 text-[12px] absolute top-2 left-0">
                 {errors.message}
               </span>
             )}

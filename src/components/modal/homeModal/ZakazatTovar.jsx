@@ -50,10 +50,9 @@ const ZakazatTovar = () => {
       setErrors(newErrors);
       return;
     }
-
     // Handle form submission
     console.log(formData);
-    localStorage.setItem("viewFormData", JSON.stringify(formData));
+    localStorage.setItem("ZakazatData", JSON.stringify(formData));
     setZakazModal(false);
   };
 
@@ -76,7 +75,7 @@ const ZakazatTovar = () => {
         >
           <CgClose size={20} />
         </div>
-        <h3 className="text-[18px] font-semibold">Рассчитать стоимость</h3>
+        <h3 className="text-[18px] font-semibold">Заказать звонок</h3>
         <div className="flex items-center gap-3">
           <div className="relative">
             <img src={img} className="w-[50px] h-[50px] rounded-full " alt="" />
@@ -123,10 +122,10 @@ const ZakazatTovar = () => {
         </span>
         <span className="flex gap-3">
           <button
-            className="w-[130px] px-5 text-[14px] py-3 bg-[#088269] text-[#fff] rounded-full"
+            className="w-[200px] px-5 text-[14px] py-3 bg-[#088269] text-[#fff] rounded-full"
             onClick={handleSubmit}
           >
-            Оставить
+            Оставить заявку
           </button>
           <p className="text-[12px] text-[#7A7687]">
             Нажимая «Отправить», я соглашаюсь c обработкой персональных данных

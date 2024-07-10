@@ -51,7 +51,7 @@ const Modal = () => {
     if (Object.keys(validationErrors).length === 0) {
       localStorage.setItem("registrationData", JSON.stringify(formData));
       // Handle successful registration logic here
-      setRegModal(false); 
+      setRegModal(false);
     } else {
       setErrors(validationErrors);
     }
@@ -79,16 +79,20 @@ const Modal = () => {
         <h3>Регистрация</h3>
         <form onSubmit={handleSubmit}>
           <span>
+            {errors.email && (
+              <p className="text-red-500 text-[12px] ">{errors.email}</p>
+            )}
             <input
               type="text"
               name="email"
               value={formData.email}
               onChange={handleChange}
               placeholder="Ваш email*"
-              className="border-b p-2 outline-none w-full"
+              className="border-b py-2 outline-none w-full"
             />
-            {errors.email && (
-              <p className="text-red-500 text-xs mt-1">{errors.email}</p>
+
+            {errors.password && (
+              <p className="text-red-500 text-[12px] ">{errors.password}</p>
             )}
             <input
               type="password"
@@ -96,29 +100,26 @@ const Modal = () => {
               value={formData.password}
               onChange={handleChange}
               placeholder="Пароль*"
-              className="border-b pt-5 p-2 outline-none w-full"
+              className="border-b  py-2 outline-none w-full"
             />
-            {errors.password && (
-              <p className="text-red-500 text-xs mt-1">{errors.password}</p>
-            )}
           </span>
           <button
             type="submit"
-            className="w-full py-3 bg-[#088269] text-[#fff] rounded-full"
+            className="w-full mt-[20px] py-3 bg-[#088269] text-[#fff] rounded-full"
           >
             Регистрация
           </button>
         </form>
-        <div className="flex gap-4">
+        <div className="flex items-center gap-4">
           <input
             type="checkbox"
             name="isChecked"
             checked={formData.isChecked}
             onChange={handleChange}
             id="check"
-            className="w-[25px] h-[25px]"
+            className="w-[20px] h-[20px]"
           />
-          <label htmlFor="check">
+          <label htmlFor="check" className="text-[13px]">
             Я соглашаюсь c обработкой персональных данных на условиях{" "}
             <span className="text-[#088269]">Политики конфиденциальности.</span>
           </label>
