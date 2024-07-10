@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { IoCallOutline, IoClose, IoMenuOutline } from "react-icons/io5";
 import { HeaderLogo, HederLocation } from "../../assets/HeaderSvg";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { MdKeyboardArrowRight } from "react-icons/md";
+import { ModalContext } from "../../context/modal/ModalContext";
+import ZakazatTovar from "../modal/homeModal/ZakazatTovar";
 
 const HeaderTop = () => {
   const navigate = useNavigate();
   const [menu, setMenu] = useState(false);
+  const { zakazModal, setZakazModal } = useContext(ModalContext);
 
   const handleMenuClick = (type) => {
     navigate(`/${type}`);
@@ -17,6 +20,7 @@ const HeaderTop = () => {
     <>
       <div className="max-w-[1350px] w-full mx-auto px-5">
         <div className="hidden sm:flex justify-between py-3 items-center">
+          {zakazModal && <ZakazatTovar />}
           <div className="flex gap-4 md:gap-[30px]">
             <li className="group relative">
               <NavLink to="/about" className="text-[#827e8e] text-[12px]  ">
@@ -102,7 +106,7 @@ const HeaderTop = () => {
             <HeaderLogo />
           </div>
           <div className="flex gap-5">
-            <button>
+            <button onClick={() => setZakazModal(true)}>
               <IoCallOutline size={24} />
             </button>
             <button onClick={() => setMenu(!menu)}>
@@ -136,35 +140,37 @@ const HeaderTop = () => {
           <div className="py-2 px-5">
             <span
               onClick={() => handleMenuClick("katalog")}
-              className="flex justify-between items-center border-t border-b py-3"
+              className="flex cursor-pointer justify-between items-center border-t border-b py-3"
             >
               <h2 className="text-[14px] font-medium">Каталог товаров</h2>{" "}
               <MdKeyboardArrowRight />
             </span>{" "}
             <span
               onClick={() => handleMenuClick("/")}
-              className="flex justify-between items-center border-b py-3"
+              className="flex cursor-pointer justify-between items-center border-b py-3"
             >
               <h2 className="text-[14px] font-medium">Информация</h2>{" "}
               <MdKeyboardArrowRight />
             </span>{" "}
             <span
               onClick={() => handleMenuClick("contact")}
-              className="flex justify-between items-center border-b py-3"
+              className="flex cursor-pointer justify-between items-center border-b py-3"
             >
-              <h2 className="text-[14px] font-medium">Контакты</h2>{" "}
+              <h2 className="text-[14px] cursor-pointer font-medium">
+                Контакты
+              </h2>{" "}
               <MdKeyboardArrowRight />
             </span>{" "}
             <span
               onClick={() => handleMenuClick("about")}
-              className="flex justify-between items-center border-b py-3"
+              className="flex cursor-pointer justify-between  items-center border-b py-3"
             >
-              <h2 className="text-[14px] font-medium">О нас</h2>{" "}
+              <h2 className="text-[14px]  font-medium">О нас</h2>{" "}
               <MdKeyboardArrowRight />
             </span>{" "}
             <span
               onClick={() => handleMenuClick("sravnenie")}
-              className="flex justify-between items-center border-b py-3"
+              className="flex cursor-pointer justify-between items-center border-b py-3"
             >
               <h2 className="text-[14px] font-medium">Сравнение</h2>{" "}
               <MdKeyboardArrowRight />

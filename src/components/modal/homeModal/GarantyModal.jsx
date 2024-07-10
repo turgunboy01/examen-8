@@ -7,7 +7,7 @@ const GarantyModal = () => {
   const { garantyModal, setGarantyModal } = useContext(ModalContext);
   return (
     <div
-      className="fixed inset-0 bg-gray-800 bg-opacity-75  z-[999] flex justify-center items-center"
+      className="fixed inset-0 bg-gray-800 bg-opacity-75 px-5 z-[999] flex justify-center items-center"
       onClick={(e) => {
         if (e.target === e.currentTarget) {
           setGarantyModal(false);

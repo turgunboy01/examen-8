@@ -28,16 +28,6 @@ const HeaderBottom = () => {
               >
                 <HederCatalog className="w-[10px]" /> Каталог
               </NavLink>
-              {/* Uncomment and correct the code if needed */}
-              {/* <div className="absolute top-[20px] w-[200px] hidden group-hover:flex -left-3 flex-col gap-2 p-3 bg-[#fff]">
-                <NavLink to="/vakansy" className="text-[12px] cursor-pointer">
-                  Вакансии
-                </NavLink>
-                <p className="text-[12px] cursor-pointer">Отзывы Сертификаты</p>
-                <p className="text-[12px] cursor-pointer">Партнерские программы</p>
-                <p className="text-[12px] cursor-pointer">Оптовые</p>
-                <p className="text-[12px] cursor-pointer">Продажи Лизинг</p>
-              </div> */}
             </li>
             <li className="group relative">
               <NavLink
@@ -137,7 +127,10 @@ const HeaderBottom = () => {
               </button>
             </div>
             <div className="block lg:hidden">
-              <button className="bg-[#088269] h-[32px] w-[32px] flex justify-center items-center text-[12px] text-[#fff] p-1.5 border rounded-full">
+              <button
+                onClick={() => setZakazModal(true)}
+                className="bg-[#088269] h-[32px] w-[32px] flex justify-center items-center text-[12px] text-[#fff] p-1.5 border rounded-full"
+              >
                 <IoCallOutline size={20} />
               </button>
             </div>

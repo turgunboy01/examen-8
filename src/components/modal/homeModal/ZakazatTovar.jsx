@@ -58,7 +58,7 @@ const ZakazatTovar = () => {
 
   return (
     <div
-      className="fixed inset-0 bg-gray-800 bg-opacity-75 z-[999] flex justify-center items-center"
+      className="fixed inset-0 px-5 bg-gray-800 px-5 bg-opacity-75 z-[999] flex justify-center items-center"
       onClick={(e) => {
         if (e.target === e.currentTarget) {
           setZakazModal(false);
@@ -122,7 +122,7 @@ const ZakazatTovar = () => {
         </span>
         <span className="flex gap-3">
           <button
-            className="w-[200px] px-5 text-[14px] py-3 hover:bg-[#07745E] bg-[#088269] text-[#fff] rounded-full"
+            className=" min-w-[150px] h-[50px] px-5 text-[14px] py-3 hover:bg-[#07745E] bg-[#088269] text-[#fff] rounded-full"
             onClick={handleSubmit}
           >
             Оставить заявку

@@ -73,9 +73,9 @@ const CartItem = ({ slide }) => {
           </div>
         </div>
       </div>
-      <div className="w-[60%] p-5 grid md:grid-cols-2">
+      <div className="w-[60%]  md:w-[70%] p-5 grid md:grid-cols-2">
         <div className="">
-          <h2 className="w-[80%] text-[16px] lg:text-[18px] font-semibold">
+          <h2 className="w-[80%] text-[15px] lg:text-[18px] font-semibold">
             {slide.title}
           </h2>
           <p className="text-[#7A7687] text-[12px] pt-2 ">
@@ -85,7 +85,7 @@ const CartItem = ({ slide }) => {
         </div>
         <div className="flex justify-between items-start">
           <div className="">
-            <p className="lg:text-[18px] text-[16px] font-semibold">
+            <p className="lg:text-[18px] text-[15px] font-semibold">
               {slide.price} руб.
             </p>
             <div className="">

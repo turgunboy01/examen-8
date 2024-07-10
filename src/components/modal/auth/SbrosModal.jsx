@@ -14,7 +14,7 @@ const SbrosModal = () => {
       }}
     >
       <div
-        className="bg-white p-6 rounded-lg w-[711px] flex flex-col  relative sm:grid-cols-2 gap-2"
+        className="bg-white p-6 rounded-lg w-[711px] px-5 flex flex-col  relative sm:grid-cols-2 gap-2"
         onClick={(e) => e.stopPropagation()}
       >
         <div

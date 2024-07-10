@@ -42,7 +42,7 @@ const ProfileInfo = ({}) => {
 
   return (
     <div
-      className="fixed inset-0 bg-gray-800 bg-opacity-75 z-[999] flex justify-center items-center"
+      className="fixed px-5 inset-0 bg-gray-800 bg-opacity-75 z-[999] flex justify-center items-center"
       onClick={(e) => {
         if (e.target === e.currentTarget) {
           setProfileInfoModal(false);

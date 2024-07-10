@@ -107,14 +107,19 @@ const ProductDetails = () => {
             <div className="flex gap-3 py-[20px]">
               {cartItem &&
                 cartItem.amount > 0 && ( // Check if cartItem exists
-                  <span className="flex items-center px-2 lg:px-6 rounded-full gap-3 lg:gap-4 border">
-                    <button onClick={() => decreaseQty(product.id)}>-</button>
-                    <p className="text-[13px] lg:text-[14px] text-[#088269]">
+                  <span className="flex items-center px-2  rounded-full gap-3 lg:gap-4 border">
+                    <button
+                      onClick={() => decreaseQty(product.id)}
+                      className="px-1 text-[#088269]"
+                    >
+                      -
+                    </button>
+                    <p className="text-[13px] lg:text-[14px] text-[#088269] ">
                       {cartItem.amount}
                     </p>
                     <button
                       onClick={() => increaseQty(product.id)}
-                      className="text-[#088269]"
+                      className="px-1 text-[#088269]"
                     >
                       +
                     </button>

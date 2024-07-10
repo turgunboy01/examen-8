@@ -23,7 +23,7 @@ const EmailModal = () => {
 
   return (
     <div
-      className="fixed inset-0 bg-gray-800 bg-opacity-75 z-[999] flex justify-center items-center"
+      className="fixed inset-0 px-5 bg-gray-800 bg-opacity-75 z-[999] flex justify-center items-center"
       onClick={(e) => {
         if (e.target === e.currentTarget) {
           setEmailModal(false);

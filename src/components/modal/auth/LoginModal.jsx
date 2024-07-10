@@ -7,7 +7,7 @@ const LoginModal = () => {
     useContext(ModalContext);
   return (
     <div
-      className="fixed inset-0 bg-gray-800 bg-opacity-75  z-[999] flex justify-center items-center"
+      className="fixed inset-0 bg-gray-800 bg-opacity-75 px-5  z-[999] flex justify-center items-center"
       onClick={(e) => {
         if (e.target === e.currentTarget) {
           setLoginModal(false);
@@ -43,9 +43,13 @@ const LoginModal = () => {
         <div className="flex justify-between gap-4">
           <span className="flex gap-3 items-center">
             <input type="checkbox" id="check" className="w-[20px] h-[20px] " />
-            <label className="text-[12px] text-[#2020208c]" htmlFor="check">Запомнить</label>
+            <label className="text-[12px] text-[#2020208c]" htmlFor="check">
+              Запомнить
+            </label>
           </span>
-          <a href="#" className="text-[13px] font-semibold">Забыли пароль?</a>
+          <a href="#" className="text-[13px] font-semibold">
+            Забыли пароль?
+          </a>
         </div>
       </div>
     </div>
