@@ -28,9 +28,7 @@ const KatalogComponent = () => {
     listUniqueCategories();
   }, []);
 
-  const fill = Products.filter((fil) => fil.category == changeCategory);
-
-  console.log(fill);
+ 
   return (
     <div className="bg-[#f8f7f3]">
       <div className="max-w-[1350px] mx-auto px-5 py-[30px]">

@@ -36,18 +36,14 @@ import { ModalContext } from "./context/modal/ModalContext";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
-  const { regModal, setRegModal } = useContext(ModalContext);
 
   useEffect(() => {
-    const registrationData = localStorage.getItem("registrationData");
-    setRegModal(!registrationData);
-
     const timer = setTimeout(() => {
       setLoading(false);
     }, 500);
 
     return () => clearTimeout(timer);
-  }, [setRegModal]);
+  }, []);
 
   if (loading) {
     return (
@@ -61,7 +57,6 @@ const App = () => {
     <div className="overflow-x-hidden">
       <Header />
       <ScrollToTop />
-      {regModal && <Modal />}
       <div className="pt-[140px] sm:pt-[200px]">
         <Routes>
           <Route path="/" element={<Home />} />
