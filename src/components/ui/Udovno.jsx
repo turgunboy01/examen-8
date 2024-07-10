@@ -14,7 +14,7 @@ const Udovno = () => {
             <h2 className="text-[30px] text-[#202020] pb-[30px]">
               С нами выгодно и удобно
             </h2>
-            <button className="lg:hidden sm:block hidden px-5 py-3 rounded-full border text-[14px] text-[#fff] bg-[#088269]">
+            <button className="lg:hidden sm:block hidden px-5 py-3 rounded-full border hover:bg-[#07745E] text-[14px] text-[#fff] bg-[#088269]">
               Проверить статус доставки
             </button>
           </div>
@@ -45,7 +45,7 @@ const Udovno = () => {
             </div>
           </div>
           <div className="flex sm:hidden lg:flex justify-center sm:justify-end mt-6">
-            <button className="px-5 py-3 rounded-full border text-[14px] text-[#fff] bg-[#088269]">
+            <button className="px-5 py-3 rounded-full border hover:bg-[#07745E] text-[14px] text-[#fff] bg-[#088269]">
               Проверить статус доставки
             </button>
           </div>

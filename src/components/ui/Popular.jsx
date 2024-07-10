@@ -50,7 +50,7 @@ const Popular = () => {
                 <GoArrowRight />
               </button>
             </div>
-            <button className="px-5 py-3 rounded-full border text-[14px] text-[#fff] bg-[#088269]">
+            <button className="px-5 py-3 rounded-full border text-[14px] hover:bg-[#07745E] text-[#fff] bg-[#088269]">
               Сертификаты
             </button>
           </div>

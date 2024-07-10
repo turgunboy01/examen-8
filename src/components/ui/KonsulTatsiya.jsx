@@ -48,7 +48,7 @@ const KonsulTatsiya = () => {
             placeholder="Ваш вопрос"
           />
           <div className="flex gap-5 sm:flex-row flex-col  pt-5">
-            <button className="px-3 text-[14px] py-1 h-[40px] w-[105px]  rounded-full bg-[#088269] text-[#fff]">
+            <button className="px-3 text-[14px] py-1 h-[40px] w-[105px]  rounded-full hover:bg-[#07745E] bg-[#088269] text-[#fff]">
               Отправить
             </button>{" "}
             <p className="text-[12px] md:text-[13px]">

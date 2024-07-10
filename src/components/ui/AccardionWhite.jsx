@@ -53,7 +53,7 @@ const AccardionWhite = () => {
                   <button
                     className={`w-[40px] h-[40px] ${
                       activeIndex === index
-                        ? "bg-[#088269] text-[#fff] rotate-45"
+                        ? "bg-[#088269] hover:bg-[#07745E] text-[#fff] rotate-45"
                         : "text-[#333] bg-transparent rotate-0"
                     } rounded-full border flex justify-center duration-300 items-center`}
                   >

@@ -39,7 +39,7 @@ const PasswordModal = () => {
           />
         </span>
         <button
-          className="w-full capitalize py-3 bg-[#088269] text-[#fff] rounded-full"
+          className="w-full capitalize py-3 hover:bg-[#07745E] bg-[#088269] text-[#fff] rounded-full"
           onClick={handleSave}
         >
           сохранять

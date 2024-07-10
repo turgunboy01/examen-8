@@ -14,7 +14,7 @@ const Brend = () => {
         <div className=" md:w-1/3 w-full">
           <div className="flex justify-between">
             <h1 className="text-[30px] font-medium">Бренды</h1>
-            <button className="px-5 py-3 hidden sm:block md:hidden  rounded-full border text-[14px] text-[#fff] bg-[#088269]">
+            <button className="px-5 py-3 hidden sm:block md:hidden  rounded-full border hover:bg-[#07745E] text-[14px] text-[#fff] bg-[#088269]">
               Сертификаты
             </button>
           </div>
@@ -52,7 +52,7 @@ const Brend = () => {
                 <GoArrowRight />
               </button>
             </div>
-            <button className="px-5 py-3  rounded-full border text-[14px] text-[#fff] bg-[#088269]">
+            <button className="px-5 py-3  rounded-full border hover:bg-[#07745E] text-[14px] text-[#fff] bg-[#088269]">
               Сертификаты
             </button>
           </div>

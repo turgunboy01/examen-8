@@ -49,7 +49,7 @@ const HelpModal = () => {
           />
         </span>
         <span className="flex gap-3">
-          <button className="w-[130px] px-5 text-[14px] py-3 bg-[#088269] text-[#fff] rounded-full ">
+          <button className="w-[130px] px-5 text-[14px] py-3 hover:bg-[#07745E] bg-[#088269] text-[#fff] rounded-full ">
             Отправить
           </button>
           <p className="text-[12px] text-[#7A7687]">

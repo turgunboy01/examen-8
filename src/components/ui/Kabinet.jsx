@@ -62,7 +62,7 @@ const Kabinet = () => {
               </button>
               <button
                 onClick={() => setViewModal(true)}
-                className=" px-4 md:px-6 py-2 text-[13px]  md:text-[16px] bg-[#088269] border rounded-full text-[#fff]"
+                className=" px-4 md:px-6 py-2 text-[13px]  md:text-[16px] hover:bg-[#07745E] bg-[#088269] border rounded-full text-[#fff]"
               >
                 Рассчитать стоимость
               </button>

@@ -124,14 +124,14 @@ const HeaderBottom = () => {
               </a>
             </li>
             <div className="hidden lg:block">
-              <button className="px-5 py-2 border pt-1 text-[12px] rounded-full">
+              <button className="px-5 py-2 border pt-1 hover:border-[#07745E] hover:text-[#07745E] text-[12px] rounded-full">
                 +7(495)000-00-00
               </button>
             </div>
             <div className="hidden lg:block">
               <button
                 onClick={() => setZakazModal(true)}
-                className="px-5 bg-[#088269] text-[12px] text-[#fff] py-2 border rounded-full"
+                className="px-5 bg-[#088269] text-[12px] hover:bg-[#07745E] text-[#fff] py-2 border rounded-full"
               >
                 Заказать звонок
               </button>
