@@ -41,18 +41,6 @@ const Profile = () => {
     setPlatelModal,
   } = useContext(ModalContext);
 
-  const [infoProfil, setInfoProfil] = useState(() => {
-    try {
-      const savedInfo = localStorage.getItem("profileInfo");
-      return savedInfo
-        ? JSON.parse(savedInfo)
-        : { name: "Константин", surname: "Константинопольский" };
-    } catch (e) {
-      console.error("Error parsing profileInfo:", e);
-      return { name: "Константин", surname: "Константинопольский" };
-    }
-  });
-
   const [emailProfile, setEmailProfile] = useState("");
   const [phoneNumberProfile, setPhoneNumberProfile] = useState("");
   const [platelProfile, setPlatelProfile] = useState({
@@ -63,6 +51,24 @@ const Profile = () => {
     email: "",
     position: "",
     organizationType: "",
+  });
+
+  const subtotal = data.reduce((sum, product) => {
+    const price = parseFloat(product.price) || 0;
+    const quantity = parseInt(product.amount, 10) || 0;
+    return sum + price * quantity;
+  }, 0);
+
+  const [infoProfil, setInfoProfil] = useState(() => {
+    try {
+      const savedInfo = localStorage.getItem("profileInfo");
+      return savedInfo
+        ? JSON.parse(savedInfo)
+        : { name: "Константин", surname: "Константинопольский" };
+    } catch (e) {
+      console.error("Error parsing profileInfo:", e);
+      return { name: "Константин", surname: "Константинопольский" };
+    }
   });
 
   const getEmail = () => {
@@ -339,7 +345,7 @@ const Profile = () => {
                     Товаров на сумму:
                   </h3>
                   <p className="text-[15px] sm:text-[16px] md:text-[18px]  font-semibold tracking-wider">
-                    900 000 руб.
+                    {subtotal} руб.
                   </p>
                 </div>
               </div>
