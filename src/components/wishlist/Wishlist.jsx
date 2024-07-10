@@ -59,7 +59,7 @@ const Wishlist = () => {
   return (
     <div className="bg-[#f8f7f3] py-[10px]">
       <div className="max-w-[1350px] mx-auto px-5 py-[20px] ">
-        <div className="flex gap-2 items-center pb-[100px] ">
+        <div className="flex gap-2 items-center ">
           <Link to={"/"} className="text-[#7A7687] text-[14px]">
             Главная
           </Link>
@@ -68,7 +68,7 @@ const Wishlist = () => {
             Избранное
           </Link>
         </div>
-        <div className="w-full flex flex-col md:flex-row  justify-between  md:gap-[50px] ">
+        <div className="w-full flex flex-col md:flex-row py-[50px]  justify-between  md:gap-[50px] ">
           <h2 className="text-[20px] sm:text-[30px] md:text-[48px] leading-[52px] py-[20px]">
             Избранное
           </h2>

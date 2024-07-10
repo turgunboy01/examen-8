@@ -27,11 +27,13 @@ const Product = ({ slide }) => {
   return (
     <div className=" border rounded-xl   overflow-hidden  bg-[#f8f7f3]">
       <div className="w-full h-[300px] bg-[#fff] flex items-center relative justify-center">
-        <img
-          src={slide.img}
-          alt={slide.title}
-          className="w-full object-contain h-full"
-        />
+        <Link to={`/product/${slide.id}`}>
+          <img
+            src={slide.img}
+            alt={slide.title}
+            className="w-full object-contain h-full"
+          />
+        </Link>
         <div className="absolute top-1.5 left-2 px-2 py-1 text-[13px] rounded-full">
           <div
             className={` px-1 sm:px-4 py-1 text-[12px] font-semibold border border-[#088269] text-[#088269] bg-[#e1efe6] ${
@@ -74,7 +76,7 @@ const Product = ({ slide }) => {
           <p className="text-[#7a7687]  text-[10px] lg:text-[12px] xl:w-[40%] pt-[5px]">
             {slide.artikl}
           </p>
-          <p className=" font-semibold pt-[15px]">{slide.price}</p>
+          <p className=" font-semibold pt-[15px]">{slide.price} руб.</p>
         </div>
         <button
           onClick={() => handleAddToCart(slide)}

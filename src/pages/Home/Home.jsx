@@ -9,19 +9,10 @@ import CategoryTovar from "../../components/home/CategoryTovar";
 import Kabinet from "../../components/ui/Kabinet";
 import Accardion from "../../components/ui/Accardion";
 import HomeSlide from "../../components/home/HomeSlide";
-import FooterEmail from "../../components/ui/FooterEmail";
-// import ZamenaModal from "../../components/modal/homeModal/ZamenaModal";
-// import GarantyModal from "../../components/modal/homeModal/GarantyModal";
-// import Konsultatsiya from "../../components/modal/homeModal/Konsultatsiya";
-// import HelpModal from "../../components/modal/homeModal/HelpModal";
 
 const Home = () => {
   return (
     <div>
-      {/* <HelpModal /> */}
-      {/* <Konsultatsiya /> */}
-      {/* <GarantyModal /> */}
-      {/* <ZamenaModal /> */}
       <HomeSlide />
       <Category />
       <Kabinet />
@@ -32,7 +23,6 @@ const Home = () => {
       <Accardion />
       <News />
       <Contact />
-      {/* <FooterEmail /> */}
     </div>
   );
 };

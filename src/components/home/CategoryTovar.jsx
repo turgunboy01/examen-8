@@ -13,6 +13,7 @@ import { SelectSrav, setTosrav } from "../../redux/SravSlice";
 import { setToWishList } from "../../redux/WishlistSlice";
 import { ModalContext } from "../../context/modal/ModalContext";
 import Konsultatsiya from "../modal/homeModal/Konsultatsiya";
+import { Link } from "react-router-dom";
 
 const CategoryTovar = () => {
   const sliderRef = useRef(null);
@@ -64,7 +65,9 @@ const CategoryTovar = () => {
                 {Products.map((slide, index) => (
                   <div key={index} className="border rounded-xl bg-[#f8f7f3]">
                     <div className="w-full h-[300px] bg-[#fff] overflow-hidden flex items-center relative justify-center">
-                      <img src={slide.img} alt={slide.title} />
+                      <Link to={`/product/${slide.id}`} className="">
+                        <img src={slide.img} alt={slide.title} />
+                      </Link>
                       <div className="absolute top-1.5 left-2 px-2 py-1 text-[13px] rounded-full">
                         <div
                           className={`px-3 py-1 text-[12px] font-semibold border border-[#088269] text-[#088269] bg-[#e1efe6] ${
@@ -101,9 +104,12 @@ const CategoryTovar = () => {
                       </div>
                     </div>
                     <div className="p-4">
-                      <h2 className="text-[#202020] font-semibold border-t w-[70%]">
+                      <Link
+                        to={`/product/${slide.id}`}
+                        className="text-[#202020] font-semibold border-t w-[70%]"
+                      >
                         {slide.title}
-                      </h2>
+                      </Link>
                       <p className="text-[#7a7687] text-[12px] w-[40%] pt-[5px]">
                         {slide.artikl}
                       </p>

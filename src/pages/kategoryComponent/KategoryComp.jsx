@@ -26,7 +26,7 @@ const countries = [
 ];
 
 const KategoryComp = () => {
-  const [value, setValue] = useState([0, 10000]);
+  const [value, setValue] = useState([0, 500000]);
   const [price, setPrice] = useState(true);
   const [country, setCountry] = useState(true);
   const [product, setProduct] = useState(true);
@@ -315,10 +315,10 @@ const KategoryComp = () => {
                   </span>
                 </div>
                 <div className="flex items-center gap-1">
-                  <div className="" onClick={() => setVertical(true)}>
+                  <div className="cursor-pointer" onClick={() => setVertical(true)}>
                     <FilterSvg1 color={vertical ? "#088269" : "#7a7687"} />
                   </div>
-                  <div className="" onClick={() => setVertical(false)}>
+                  <div className="cursor-pointer" onClick={() => setVertical(false)}>
                     <FilterSvg2 color={vertical ? "#7a7687" : "#088269"} />
                   </div>
                 </div>

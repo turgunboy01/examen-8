@@ -46,6 +46,22 @@ const Product2 = ({ slide }) => {
             {slide.aksiya}
           </div>
         </div>
+        <div className="absolute right-3 top-3 flex sm:hidden gap-2">
+          <button onClick={() => handleSravToggle(slide)}>
+            {sravList.some((sravItem) => sravItem.id === slide.id) ? (
+              <CategoryIcons2 />
+            ) : (
+              <CategoryIcons1 />
+            )}
+          </button>
+          <button onClick={() => handleWishListToggle(slide)}>
+            {likeList.some((wishItem) => wishItem.id === slide.id) ? (
+              <FaHeart size={20} />
+            ) : (
+              <FaRegHeart className="text-[#088269]" size={20} />
+            )}
+          </button>
+        </div>
       </div>
       <div className="p-4 w-[60%] flex justify-between flex-col ">
         <span>
@@ -60,8 +76,8 @@ const Product2 = ({ slide }) => {
             {slide.artikl}
           </p>
         </span>
-        <div className="flex justify-between w-full">
-          <p className=" font-semibold pt-[15px]">{slide.price}</p>
+        <div className="flex justify-between sm:flex-row flex-col w-full">
+          <p className=" font-semibold pt-[15px]">{slide.price} руб.</p>
           <button
             onClick={() => handleAddToCart(slide)}
             className="py-2 px-5 border w-[250px] text-[14px] h-[41px] hover:text-[#fff] hover:bg-[#088269] border-[#80808035]  mt-[20px] text-[#088269] rounded-full"
@@ -69,7 +85,7 @@ const Product2 = ({ slide }) => {
             Добавить в корзину
           </button>
         </div>
-        <div className="absolute right-3 top-3 flex gap-2">
+        <div className="absolute right-3 top-3 sm:flex hidden gap-2">
           <button onClick={() => handleSravToggle(slide)}>
             {sravList.some((sravItem) => sravItem.id === slide.id) ? (
               <CategoryIcons2 />

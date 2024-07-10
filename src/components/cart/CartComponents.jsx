@@ -2,10 +2,12 @@ import React from "react";
 import CardProduct from "./CardProduct";
 import { useSelector } from "react-redux";
 import { selectCard } from "../../redux/CartSlice";
+import { Link } from "react-router-dom";
+import { MdOutlineKeyboardArrowRight } from "react-icons/md";
+// import { MdOutlineKeyboardArrowRight } from "react-icons";
 
 const CartComponents = () => {
   const data = useSelector(selectCard);
-  console.log(data);
 
   const subtotal = data.reduce(
     (sum, product) => sum + product.price * product.quantity,
@@ -14,6 +16,15 @@ const CartComponents = () => {
 
   return (
     <div className="max-w-[1350px] mx-auto pt-[30px] pb-[100px] px-5">
+      <div className="flex gap-2 items-center ">
+        <Link to={"/"} className="text-[#7A7687] text-[14px]">
+          Главная
+        </Link>
+        <MdOutlineKeyboardArrowRight />
+        <Link className="text-[14px]" to={"/cart"}>
+          Корзина ()
+        </Link>
+      </div>
       <div className="flex justify-between flex-col sm:flex-row gap-[30px]">
         <div className="sm:w-[75%] flex flex-col gap-3">
           {data.length > 0 ? (

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { AiOutlinePlus } from "react-icons/ai";
-
+import { MdOutlineKeyboardArrowRight } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const Vakansy = () => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -62,11 +63,20 @@ const Vakansy = () => {
     },
   ];
   return (
-    <div className="bg-[#f8f7f3] py-[80px]">
+    <div className="bg-[#f8f7f3] py-[30px]">
       <div className="max-w-[1350px] mx-auto px-5">
-        <div className="grid md:grid-cols-2 gap-[30px]">
+        <div className="flex gap-2 items-center ">
+          <Link to={"/"} className="text-[#7A7687] text-[14px]">
+            Главная
+          </Link>
+          <MdOutlineKeyboardArrowRight />
+          <Link className="text-[14px]" to={"/vakansy"}>
+            Вакансии
+          </Link>
+        </div>
+        <div className="grid md:grid-cols-2 pt-[70px] gap-[30px]">
           <div className="">
-        <h2 className="text-[48px] leading-[52px] md:w-[80%] py-[30px]">
+            <h2 className="text-[48px] leading-[52px] md:w-[80%] py-[30px]">
               Вакансии
             </h2>
             <p>

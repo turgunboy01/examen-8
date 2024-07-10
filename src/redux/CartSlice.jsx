@@ -12,11 +12,16 @@ const CardSlice = createSlice({
       );
 
       if (existingItemIndex !== -1) {
-        // If the item already exists, update its amount
-        state.data[existingItemIndex].amount = action.payload.amount;
+        // If the item already exists and its amount is greater than 1, decrement it to 1
+        if (state.data[existingItemIndex].amount > 1) {
+          state.data[existingItemIndex].amount = 1;
+        } else {
+          // If the amount is already 1, remove the item from the cart
+          state.data.splice(existingItemIndex, 1);
+        }
       } else {
         // If the item doesn't exist, add it to the cart with the specified amount
-        state.data.push({ ...action.payload, amount: action.payload.amount });
+        state.data.push({ ...action.payload, amount: 1 });
       }
       localStorage.setItem("data", JSON.stringify(state.data));
     },
