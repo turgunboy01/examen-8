@@ -72,9 +72,9 @@ const ProductDetails = () => {
               </button>
               <button onClick={() => handleWishListToggle(product)}>
                 {likeList.some((wishItem) => wishItem.id === product.id) ? (
-                  <FaHeart size={20} />
+                  <FaHeart size={20} className="bg-[#088269]" />
                 ) : (
-                  <FaRegHeart className="text-[#088269]" size={20} />
+                  <FaRegHeart size={20} />
                 )}
               </button>
             </div>

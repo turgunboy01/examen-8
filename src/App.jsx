@@ -1,38 +1,37 @@
 import React, { useContext, useEffect, useState } from "react";
-import Header from "./components/header/Header";
-import Footer from "./components/footer/Footer";
-import Home from "./pages/Home/Home";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Katalog from "./pages/katalog/Katalog";
-import ProductDetailsPage from "./pages/productDetails/ProductDetails";
-import About from "./pages/about/About";
-import DostavkaPage from "./pages/dostavka/DostavkaPage";
-import UslugiPage from "./pages/uslugi/Uslugi";
-import StatyaPage from "./pages/statya/Statya";
-import OplataPage from "./pages/oplata/OplataPage";
-import CountryBrendPage from "./pages/countryBrend/CountryBrendPage";
-import GarantyPage from "./pages/garanty/GarantyPage";
-import OtzivPage from "./pages/otzivi/OtzivPage";
-import BlogPage from "./pages/blog/BlogPage";
-import AksiyaPage from "./pages/aksiya/Aksiya";
-import CountryKabinetPodKluch from "./pages/cobinetPodKluch/KobinetPodKluch";
-import KobinetPodKluchPage from "./pages/KobinetPobKluch/KobinetPobKluchPage";
-import ProizvaditelPage from "./pages/proizvaditel/Proizvaditel";
-import ContactPage from "./pages/Contact/ContactPage";
-import WishlistPage from "./pages/wishlist/WishlistPage";
-import FaqPage from "./pages/faq/Faq";
-import VakansyPage from "./pages/vakansy/Vakansy";
-import SertifikatPage from "./pages/sertifikat/SertifikatPage";
+
 import SravneniePage from "./pages/sravnenie/Sravnenie";
 import ScrollToTop from "./components/ScrollToTop";
-import Card from "./pages/cart/Card";
-// import Kabinet from "./components/ui/Kabinet";
-import KabinetPage from "./pages/kabinet/KabinetPage";
-import KategoryPage from "./pages/kategory/KategoryPage";
-// import Test from "./Test";
 import LoadingImg from "./assets/rolling.gif";
-import Modal from "./components/modal/auth/Modal";
-import { ModalContext } from "./context/modal/ModalContext";
+import {
+  About,
+  AksiyaPage,
+  BlogPage,
+  Card,
+  ContactPage,
+  CountryBrendPage,
+  CountryKabinetPodKluch,
+  DostavkaPage,
+  FaqPage,
+  Footer,
+  GarantyPage,
+  Header,
+  Home,
+  KabinetPage,
+  Katalog,
+  KategoryPage,
+  KobinetPodKluchPage,
+  OplataPage,
+  OtzivPage,
+  ProductDetailsPage,
+  ProizvaditelPage,
+  SertifikatPage,
+  StatyaPage,
+  UslugiPage,
+  VakansyPage,
+  WishlistPage,
+} from "./pages";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
