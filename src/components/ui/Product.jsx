@@ -26,7 +26,7 @@ const Product = ({ slide }) => {
   };
   return (
     <div className=" border rounded-xl   overflow-hidden  bg-[#f8f7f3]">
-      <div className="w-full h-[300px] overflow-hidden  bg-[#fff] flex items-center relative justify-center">
+      <div className="w-full h-[200px] sm:h-[300px] overflow-hidden  bg-[#fff] flex items-center relative justify-center">
         <Link to={`/product/${slide.id}`}>
           <img
             src={slide.img}

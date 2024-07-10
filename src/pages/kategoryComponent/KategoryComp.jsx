@@ -349,7 +349,7 @@ const KategoryComp = () => {
             <div
               className={`grid ${
                 vertical ? "grid-cols-1" : " grid-cols-2 lg:grid-cols-3"
-              } gap-4 pt-3`}
+              } gap-3 sm:gap-4 pt-3`}
             >
               {sortedProducts.map((slide, index) =>
                 vertical ? (
