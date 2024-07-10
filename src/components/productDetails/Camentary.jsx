@@ -201,7 +201,7 @@ const Camentary = () => {
           </div>
         </div>
       </div>
-      <div className="max-w-[1350px] mx-auto px-5  ">
+      <div className="max-w-[1350px] block lg:hidden  mx-auto px-5  ">
         <div className="bg-[#fff]  mt-[30px] border rounded-xl ">
           <h1 className="border-b px-[20px] py-[10px] w-full border-b-[#E5E2EE]">
             Описание оборудования
@@ -241,27 +241,34 @@ const Camentary = () => {
             <div className="grid md:grid-cols-2 px-5 py-[10px]">
               <div className="">
                 <p className="text-[12px] flex flex-col sm:flex-row  pb-1 pt-[10px]  text-[#7A7687]">
-                  Вес оборудования <p className="hidden md:block">. . . . . . . . . . .</p>
+                  Вес оборудования{" "}
+                  <p className="hidden md:block">. . . . . . . . . . .</p>
                   <span className="text-[#000] pl-1">90 кг</span>
                 </p>{" "}
                 <p className="text-[12px] flex flex-col sm:flex-row py-1 text-[#7A7687]">
-                  Детектор <p className="hidden md:block">. . . . . . . . . . . . . . . . . . . .</p>
+                  Детектор{" "}
+                  <p className="hidden md:block">
+                    . . . . . . . . . . . . . . . . . . . .
+                  </p>
                   <span className="text-[#000] pl-1">
                     CsI - на основе аморфного кремния
                   </span>
                 </p>{" "}
                 <p className="text-[12px] flex flex-col sm:flex-row  py-1 text-[#7A7687]">
-                  Время сканирования <p className="hidden md:block">. . . . . . . . .</p>
+                  Время сканирования{" "}
+                  <p className="hidden md:block">. . . . . . . . .</p>
                   <span className="text-[#000] pl-1">
                     PAN стандарт - 12 сек
                   </span>
                 </p>{" "}
                 <p className="text-[12px] flex flex-col sm:flex-row  py-1 text-[#7A7687]">
-                  Размер фокусного пятна <p className="hidden md:block">. . . . . .</p>
+                  Размер фокусного пятна{" "}
+                  <p className="hidden md:block">. . . . . .</p>
                   <span className="text-[#000] pl-1">0.6</span>
                 </p>{" "}
                 <p className="text-[12px] py-1 flex flex-col sm:flex-row  text-[#7A7687]">
-                  Динамический диапазон <p className="hidden md:block">. . . . . .</p>
+                  Динамический диапазон{" "}
+                  <p className="hidden md:block">. . . . . .</p>
                   <span className="text-[#000] pl-1">
                     16 бит (65 536 градации серого)
                   </span>
@@ -269,11 +276,13 @@ const Camentary = () => {
               </div>
               <div className="">
                 <p className="text-[12px] flex flex-col sm:flex-row  py-1 text-[#7A7687]">
-                  Рабочее напряжение <p className="hidden md:block">. . . . . . . . .</p>
+                  Рабочее напряжение{" "}
+                  <p className="hidden md:block">. . . . . . . . .</p>
                   <span className="text-[#000] pl-1">90 кг</span>
                 </p>{" "}
                 <p className="text-[12px] py-1 flex  flex-col sm:flex-row   text-[#7A7687]">
-                  Максимальный ток <p className="hidden md:block">. . . . . . . . . . .</p>
+                  Максимальный ток{" "}
+                  <p className="hidden md:block">. . . . . . . . . . .</p>
                   <span className="text-[#000] pl-1">
                     CsI - на основе аморфного кремния
                   </span>

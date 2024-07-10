@@ -157,7 +157,7 @@ const Konsultatsiya = () => {
         </span>
         <span className="flex gap-3">
           <button
-            className="w-[130px] px-5 text-[14px] py-3 hover:bg-[#07745E] bg-[#088269] text-[#fff] rounded-full"
+            className="w-[130px] h-[50px] px-5 text-[14px] py-3 hover:bg-[#07745E] bg-[#088269] text-[#fff] rounded-full"
             onClick={handleSubmit}
           >
             Отправить

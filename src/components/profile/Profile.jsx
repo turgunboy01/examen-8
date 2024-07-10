@@ -253,7 +253,7 @@ const Profile = () => {
           <div className="w-full lg:w-[75%]">
             <div className="sm:w-[70%] lg:w-[50%] flex justify-between gap-[30px] py-[20px]">
               <span>
-                <h2 className="flex text-[#202020] text-[12px] sm:text-[14px] md:text-[16px] items-center gap-3">
+                <h2 className="flex   text-[#202020] text-[12px] sm:text-[14px] md:text-[16px] items-center gap-5">
                   {phoneNumberProfile
                     ? phoneNumberProfile
                     : "  +7 911 564–86–86"}
