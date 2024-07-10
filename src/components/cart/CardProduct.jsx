@@ -65,9 +65,9 @@ const CartItem = ({ slide }) => {
             </button>
             <button onClick={() => handleWishListToggle(slide)}>
               {likeList.some((wishItem) => wishItem.id === slide.id) ? (
-                <FaHeart size={20} />
+                <FaHeart size={20} className="text-[#088269]" />
               ) : (
-                <FaRegHeart size={20} />
+                <FaRegHeart className="text-[#088269]" size={20} />
               )}
             </button>
           </div>
@@ -111,7 +111,7 @@ const CartItem = ({ slide }) => {
               </button>
               <button onClick={() => handleWishListToggle(slide)}>
                 {likeList.some((wishItem) => wishItem.id === slide.id) ? (
-                  <FaHeart size={20} />
+                  <FaHeart size={20} className="text-[#088269]" />
                 ) : (
                   <FaRegHeart size={20} />
                 )}

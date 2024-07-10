@@ -57,7 +57,7 @@ const Product = ({ slide }) => {
           </button>
           <button onClick={() => handleWishListToggle(slide)}>
             {likeList.some((wishItem) => wishItem.id === slide.id) ? (
-              <FaHeart size={20} />
+              <FaHeart size={20} className="text-[#088269]" />
             ) : (
               <FaRegHeart size={20} />
             )}
@@ -72,7 +72,6 @@ const Product = ({ slide }) => {
           >
             {slide.title}
           </Link>
-          {/* <h3></h3> */}
           <p className="text-[#7a7687]  text-[10px] lg:text-[12px] xl:w-[40%] pt-[5px]">
             {slide.artikl}
           </p>

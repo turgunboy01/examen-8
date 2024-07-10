@@ -23,7 +23,7 @@ const CartComponents = () => {
         </Link>
         <MdOutlineKeyboardArrowRight />
         <Link className="text-[14px]" to={"/cart"}>
-          Корзина ()
+          Корзина ({cart.length})
         </Link>
       </div>
       <div className="flex justify-between flex-col sm:flex-row py-[50px] gap-[30px]">

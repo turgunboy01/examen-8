@@ -25,7 +25,7 @@ const countries = [
 ];
 
 const ProductFilterPage = () => {
-  const [value, setValue] = useState([0, 1000]);
+  const [value, setValue] = useState([0, 10000]);
   const [price, setPrice] = useState(true);
   const [country, setCountry] = useState(true);
   const [product, setProduct] = useState(false);
@@ -165,7 +165,7 @@ const ProductFilterPage = () => {
                       className="text-[red]"
                       getAriaValueText={valuetext}
                       min={0}
-                      max={1000}
+                      max={50000}
                     />
                   </Box>
                 </div>

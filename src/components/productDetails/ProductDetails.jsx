@@ -52,8 +52,8 @@ const ProductDetails = () => {
   return (
     <div className="bg-[#f8f7f3] py-5">
       <div className="max-w-[1350px] mx-auto px-5">
-        <div className="flex flex-col sm:flex-row gap-[30px] items-center">
-          <div className="w-full sm:w-[50%] h-[510px] relative rounded-lg flex justify-center items-center bg-[#fff] border">
+        <div className="flex flex-col md:flex-row gap-[30px] items-center">
+          <div className="w-full md:w-[50%] h-[510px] relative rounded-lg flex justify-center items-center bg-[#fff] border">
             {imgChange.length == 0 ? (
               <img src={product.img} alt="imgs" />
             ) : (
@@ -74,7 +74,7 @@ const ProductDetails = () => {
                 {likeList.some((wishItem) => wishItem.id === product.id) ? (
                   <FaHeart size={20} />
                 ) : (
-                  <FaRegHeart size={20} />
+                  <FaRegHeart className="text-[#088269]" size={20} />
                 )}
               </button>
             </div>
@@ -90,7 +90,7 @@ const ProductDetails = () => {
               ))}
             </div>
           </div>
-          <div className="w-full sm:w-[50%]">
+          <div className="w-full md:w-[50%]">
             <h2 className="text-[30px] leading-[36px]">{product.title}</h2>
             <span className="py-[10px]">
               <Rating name="read-only" value={product.rating} readOnly />
@@ -107,7 +107,7 @@ const ProductDetails = () => {
             <div className="flex gap-3 py-[20px]">
               {cartItem &&
                 cartItem.amount > 0 && ( // Check if cartItem exists
-                  <span className="hidden md:flex items-center px-2 lg:px-6 rounded-full gap-3 lg:gap-4 border">
+                  <span className="flex items-center px-2 lg:px-6 rounded-full gap-3 lg:gap-4 border">
                     <button onClick={() => decreaseQty(product.id)}>-</button>
                     <p className="text-[13px] lg:text-[14px] text-[#088269]">
                       {cartItem.amount}
@@ -120,12 +120,12 @@ const ProductDetails = () => {
                     </button>
                   </span>
                 )}
-              <button className="w-full py-2 border text-[13px] lg:text-[14px] text-[#088269] rounded-full">
+              <button className="w-full py-2 border text-[12px] lg:text-[14px] hover:border-[#07745E] text-[#088269] rounded-full">
                 Задать вопрос
               </button>
               <button
                 onClick={() => handleAddToCart(product)}
-                className="px-2 w-full py-2 text-[13px] lg:text-[14px] border bg-[#088269] text-[#fff] rounded-full"
+                className="px-2 w-full py-2 text-[12px] lg:text-[14px] border hover:bg-[#07745E] bg-[#088269] text-[#fff] rounded-full"
               >
                 Добавить в корзину
               </button>

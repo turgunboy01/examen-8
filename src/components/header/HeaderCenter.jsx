@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from "react";
-import { FaSearch } from "react-icons/fa";
 import {
   HeaderIcon1,
   HeaderIcon2,
@@ -12,13 +11,19 @@ import { IoIosSearch, IoMdArrowDropdown } from "react-icons/io";
 import { Products } from "../../data/ProductsData";
 import { ModalContext } from "../../context/modal/ModalContext";
 import Modal from "../modal/auth/Modal";
+import { useSelector } from "react-redux";
+import { SelectSrav } from "../../redux/SravSlice";
+import { selectCard } from "../../redux/CartSlice";
+import { SelectWishList } from "../../redux/WishlistSlice";
 
 const HeaderCenter = () => {
   const [searchProduct, setSearchProduct] = useState("");
   const { regModal, setRegModal } = useContext(ModalContext);
   const [dropdown, setDropdown] = useState(false);
   const [categories, setCategories] = useState([]);
-
+  const SravList = useSelector(SelectSrav);
+  const CartList = useSelector(selectCard);
+  const WishList = useSelector(SelectWishList);
   const navigate = useNavigate();
 
   const handleInputChange = (e) => {
@@ -149,27 +154,45 @@ const HeaderCenter = () => {
           </button>
           <NavLink
             to={"/wishlist"}
-            className="flex flex-col gap-1 items-center"
+            className="flex flex-col gap-1 items-center relative"
           >
             <HeaderIcon2 />
             <p className="text-[#8a8694] text-[14px] hidden lg:block">
               Избранное
-            </p>
+            </p>{" "}
+            {WishList.length > 0 && (
+              <div className="absolute -top-1 right-4  w-[15px] h-[15px] rounded-full text-[#fff] font-semibold text-[12px] flex justify-center items-center bg-[#088269]">
+                {WishList.length}
+              </div>
+            )}
           </NavLink>
           <NavLink
             to={"/sravnenie"}
-            className="flex flex-col gap-1 items-center"
+            className="flex flex-col gap-1 items-center relative"
           >
             <HeaderIcon3 />
             <p className="text-[#8a8694] text-[14px] hidden lg:block">
               Сравнить
             </p>
+            {SravList > 0 && (
+              <div className="absolute -top-1 right-2  w-[15px] h-[15px] rounded-full text-[#fff] font-semibold text-[12px] flex justify-center items-center bg-[#088269]">
+                {SravList.length}
+              </div>
+            )}
           </NavLink>
-          <Link to={"/cart"} className="flex flex-col gap-1 items-center">
+          <Link
+            to={"/cart"}
+            className="flex flex-col gap-1 items-center relative"
+          >
             <HeaderIcon4 />
             <p className="text-[#8a8694] text-[14px] hidden lg:block">
               Корзина
             </p>
+            {CartList.length > 0 && (
+              <div className="absolute -top-1 right-2  w-[15px] h-[15px] rounded-full text-[#fff] font-semibold text-[12px] flex justify-center items-center bg-[#088269] ">
+                {CartList.length}
+              </div>
+            )}
           </Link>
         </div>
       </div>

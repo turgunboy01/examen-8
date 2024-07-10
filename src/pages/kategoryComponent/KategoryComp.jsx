@@ -7,12 +7,15 @@ import {
 } from "@mui/material";
 import React, { useState, useEffect } from "react";
 import { IoIosArrowDown, IoIosSearch } from "react-icons/io";
-import { MdKeyboardArrowDown } from "react-icons/md";
+import {
+  MdKeyboardArrowDown,
+  MdOutlineKeyboardArrowRight,
+} from "react-icons/md";
 import Product2 from "../../components/ui/Product2";
 import Product from "../../components/ui/Product";
 import { FilterSvg1, FilterSvg2 } from "../../assets/HomeSvg";
 import { Products } from "../../data/ProductsData";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const countries = [
   "Австралия",
@@ -95,8 +98,21 @@ const KategoryComp = () => {
   }, [selectedOption, value, category]);
 
   return (
-    <div className="bg-[#f8f7f3] py-[80px] overflow-hidden">
+    <div className="bg-[#f8f7f3] py-[10px] overflow-hidden">
       <div className="max-w-[1350px] mx-auto px-5">
+        <div className="flex gap-1 items-center py-[20px] pt-[20px] ">
+          <Link to={"/"} className="text-[#7A7687] text-[14px]">
+            Главная
+          </Link>
+          <MdOutlineKeyboardArrowRight />
+          <Link to={"/katalog"} className="text-[#7A7687] text-[14px]">
+            Каталог
+          </Link>
+          <MdOutlineKeyboardArrowRight />
+          <Link className="text-[14px]" to={"/katalog"}>
+            {category}
+          </Link>
+        </div>
         <div className="flex gap-4 overflow-x-scroll">
           <button className="py-2 px-5 bg-[#fff] border rounded-full">
             Дерматологическое оборудование
@@ -315,10 +331,16 @@ const KategoryComp = () => {
                   </span>
                 </div>
                 <div className="flex items-center gap-1">
-                  <div className="cursor-pointer" onClick={() => setVertical(true)}>
+                  <div
+                    className="cursor-pointer"
+                    onClick={() => setVertical(true)}
+                  >
                     <FilterSvg1 color={vertical ? "#088269" : "#7a7687"} />
                   </div>
-                  <div className="cursor-pointer" onClick={() => setVertical(false)}>
+                  <div
+                    className="cursor-pointer"
+                    onClick={() => setVertical(false)}
+                  >
                     <FilterSvg2 color={vertical ? "#7a7687" : "#088269"} />
                   </div>
                 </div>

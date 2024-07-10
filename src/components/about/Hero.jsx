@@ -11,8 +11,8 @@ const Hero = () => {
             Главная
           </Link>
           <MdOutlineKeyboardArrowRight />
-          <Link className="text-[14px]" to={"/katalog"}>
-            Каталог
+          <Link className="text-[14px]" to={"/about"}>
+            О компании
           </Link>
         </div>
         <div className="py-[30px]">
